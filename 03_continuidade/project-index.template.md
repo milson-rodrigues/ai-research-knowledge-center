@@ -1,6 +1,6 @@
 # project-index.md: [NOME DO PROJETO]
 
-Catálogo e ponto de entrada do projeto. Este arquivo fica nas **fontes do projeto**. Atualizado em: [YYYY-MM-DD] | Versão do kit em uso: [1.0.0] | Versão da rota em uso: [1.3]
+Catálogo e ponto de entrada do projeto. Este arquivo fica nas **fontes do projeto**. Atualizado em: [YYYY-MM-DD] | Versão do kit em uso: [1.0.0] | Versão da rota em uso: [2.0]
 
 ## 1. Identificação
 
@@ -17,9 +17,9 @@ Catálogo e ponto de entrada do projeto. Este arquivo fica nas **fontes do proje
 | project-index.md | Fontes do projeto | Este catálogo |
 | current-status.md | Fontes do projeto | Estado atual |
 | decisions.md | Fontes do projeto | Decisões aprovadas |
-| 00_ROTA-DE-CONSULTA.md | Fontes do projeto e Biblioteca | Ponto de entrada: rota de consulta (versão [x.y]) |
-| PROMPT-modelo.md | Fontes do projeto e Biblioteca | Modelo de prompt |
-| skills-catalog.md | Biblioteca, pasta ai-research-knowledge-center | Índice de skills aprovadas |
+| 00_ROTA-DE-CONSULTA.md | Fontes do projeto | Ponto de entrada: rota de consulta (versão [x.y]) |
+| PROMPT-modelo.md | Repositório GitHub (opcional nas fontes, como seguro) | Modelo de prompt |
+| skills-catalog.md | Repositório GitHub, `04_skills/` | Índice de skills aprovadas |
 | kit-operacional.md | Opcional: fontes do projeto, só como fallback | Playbook e modelos (versão [x.y.z]) |
 
 ## 3. Stack aprovada (resumo)

@@ -1,6 +1,6 @@
 # Catálogo de skills
 
-Fica na Biblioteca (pasta "ai-research-knowledge-center"). É um **índice de links com commit fixado**: não copie os SKILL.md para a Biblioteca. O orquestrador só recomenda como aplicada uma skill da tabela "Aprovadas". Outra pode ser citada como candidata, sem uso.
+Fica no repositório GitHub (`04_skills/skills-catalog.md`), lido pela rota. É um **índice de links com commit fixado**: não copie os SKILL.md para o repositório. O orquestrador só recomenda como aplicada uma skill da tabela "Aprovadas". Outra pode ser citada como candidata, sem uso.
 
 Formato: padrão aberto de Agent Skills (SKILL.md com nome e descrição). Referência: https://agentskills.io/home.
 

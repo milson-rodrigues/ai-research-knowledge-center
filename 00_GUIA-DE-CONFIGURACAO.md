@@ -2,49 +2,54 @@
 
 Rótulos: **FATO** = confirmado na documentação oficial da OpenAI, na tela do produto ou informado por você; **INFERÊNCIA** = dedução minha; **A VERIFICAR** = não confirmado; **RECOMENDAÇÃO** = decisão de projeto. Fontes e data da verificação no fim (2026-10-16).
 
-## Parte 1: uma vez só (Biblioteca)
+## Parte 1: uma vez só (repositório e app GitHub)
 
-1. Na Biblioteca do ChatGPT (web), crie a pasta **ai-research-knowledge-center** e envie o conteúdo deste kit, com as subpastas (a sua Biblioteca já mostra as subpastas `01_instrucoes` a `04_skills`).
-2. **FATO:** a Biblioteca está disponível na web, em Free, Go, Plus, Pro e Business, e em workspaces Enterprise, Edu e Healthcare, inclusive no EEE, Suíça e Reino Unido. Armazenamento: Free 500 MB, Go 4 GB, Plus e Business 20 GB, Pro 100 GB.
-3. **FATO:** a referência automática a arquivos da Biblioteca é um controle de **dono de workspace**. A página não descreve esse controle para conta pessoal. **A VERIFICAR** se a sua conta lê a Biblioteca por conta própria.
-4. **RECOMENDAÇÃO:** não conte com leitura automática. É para isso que existe o `00_ROTA-DE-CONSULTA.md`: ele entra nas fontes de todo projeto e manda o chat ler os modelos da Biblioteca por situação.
+1. **Repositório:** `milson-rodrigues/ai-research-knowledge-center`, branch `main`. **FATO (API do GitHub):** é privado.
+2. **FATO (help.openai.com, "Connecting GitHub to ChatGPT"):** o app GitHub do ChatGPT recupera, sob demanda, conteúdo permitido do repositório (código, README e outros documentos). O acesso é ao vivo, sem índice, e **somente leitura**. Para escrever, a página aponta o Codex.
+3. **FATO:** o app pode estar disponível no chat padrão, no deep research ou no agente, conforme plano, workspace e superfície. A página não lista planos e **não menciona Projects**.
+4. **Ativar:** Configurações, Plugins (ou Apps), GitHub. Instale e autorize o app do ChatGPT no GitHub e escolha o repositório. **FATO:** repositórios levam cerca de 5 minutos para aparecer, e os privados só aparecem depois que o app é instalado para a conta certa e recebe acesso.
+5. **FATO:** o seletor de repositórios do app busca nomes, não conteúdo. Por isso a rota informa o nome completo do repositório e o caminho exato de cada arquivo.
+6. **A VERIFICAR:** se o app GitHub funciona dentro de chats de Projects na sua conta. É o primeiro teste da Parte 5.
+7. **FATO:** o ChatGPT converte seus pedidos em consultas enviadas ao GitHub. Em conta pessoal, o uso para treinamento depende da opção "Improve the model for everyone". O repositório só tem modelos e regras, sem segredos.
+8. **Plano B (opcional):** manter uma cópia dos arquivos na Biblioteca do ChatGPT. A rota só a usa se o app GitHub falhar, e o chat precisa declarar isso no bloco CONSULTA.
 
 ## Parte 2: para cada projeto novo
 
 1. **Criar o projeto** e abrir Configurações do projeto (menu ••• do projeto).
 2. **Memória.**
    - **FATO:** cada projeto usa memória **Padrão** ou **Project-only**, escolhida na criação ou alterada depois em Configurações do projeto → Memory (a mudança pode levar algumas horas). Em Project-only, memórias salvas não são referenciadas, os chats do projeto não referenciam conversas de fora e as de fora não referenciam as do projeto. Fora do Enterprise, a memória exige "Reference saved memories" e "Reference chat history" ligados.
+   - **RECOMENDAÇÃO:** testar Project-only, que isola o projeto. A instrução já proíbe usar outros chats ou projetos como fonte de estado.
+3. **Acesso à Biblioteca.**
    - **FATO (tela do projeto):** "Acesso à Biblioteca: Ativado" vale enquanto o projeto permanecer privado. Compartilhar o projeto desativa o acesso.
-   - **A VERIFICAR:** se o acesso à Biblioteca depende do tipo de memória. A documentação não trata desse campo. Você relatou que depende; confira na tela ao trocar.
-   - **RECOMENDAÇÃO:** testar Project-only, que isola o projeto. Se o acesso à Biblioteca deixar de funcionar, volte para Padrão. A instrução já proíbe usar outros chats ou projetos como fonte de estado.
-3. **Instrução.** Cole o conteúdo de `01_instrucoes/instrucao-projeto.md` no campo Instruções.
+   - **RECOMENDAÇÃO:** para **testar o GitHub**, deixe o acesso à Biblioteca **Desativado**. Assim o chat não consegue cair no plano B sem você perceber. Reative depois, se quiser o plano B.
+4. **Instrução.** Cole o conteúdo de `01_instrucoes/instrucao-projeto.md` no campo Instruções.
    - **FATO:** as instruções do projeto valem só nele e substituem suas instruções personalizadas globais.
-   - **FATO (informado por você):** o campo do projeto aceita até 8.000 caracteres; a instrução tem 4.140. A página de ajuda não cita esse limite.
+   - **FATO (informado por você):** o campo do projeto aceita até 8.000 caracteres. A página de ajuda não cita esse limite.
    - **FATO:** instruções personalizadas globais têm 1.500 caracteres em Free e Go, e 5.000 nos demais planos. Não dependa delas.
-4. **Fontes do projeto (5 arquivos).** Use o botão "Adicionar da Biblioteca" ou faça upload:
+5. **Fontes do projeto.** Adicione, por upload:
    - `00_ROTA-DE-CONSULTA.md`
-   - `PROMPT-modelo.md`
    - `project-index.md`, `current-status.md`, `decisions.md`, criados a partir dos `.template.md`. No primeiro dia entram só com o cabeçalho. Quando o arquivo real existir, tire o template das fontes.
-   - **FATO:** limite por projeto: Free 5, Go e Plus 25, Pro, Business, Edu e Enterprise 40. Só 10 arquivos podem ser enviados de uma vez. Arquivos salvos na Biblioteca não são apagados quando o projeto é excluído.
-5. **Primeiro chat:** descreva a ideia. O chat abre com o bloco CONSULTA, lê os três arquivos de estado, faz o kickoff e devolve o Dossiê.
+   - Opcional: `PROMPT-modelo.md`, como seguro, depois de validar que o GitHub funciona.
+   - **FATO:** limite por projeto: Free 5, Go e Plus 25, Pro, Business, Edu e Enterprise 40. Só 10 arquivos podem ser enviados de uma vez.
+6. **Primeiro chat:** descreva a ideia. O chat abre com o bloco CONSULTA, lê os três arquivos de estado, faz o kickoff e devolve o Dossiê.
 
-**Por que a rota nas fontes e não só a Biblioteca?**
+**Onde guardar os modelos?**
 
 | Opção | Vantagem | Desvantagem |
 |---|---|---|
-| Só Biblioteca | Um lugar para atualizar | Leitura automática não documentada em conta pessoal; falha silenciosa |
-| Biblioteca + rota e `PROMPT-modelo.md` nas fontes (**recomendada**) | A leitura da rota é garantida; o desvio mais caro (prompt fora do modelo) fica coberto | Duas cópias a reenviar quando mudar |
-| Tudo nas fontes | Máxima garantia | Ocupa vagas e diverge a cada mudança |
+| GitHub como fonte, lido pelo app (**recomendada**) | Fonte única e versionada; sem reenviar arquivos; caminhos exatos | Depende do app estar disponível nos chats de projeto (não documentado); um commit na `main` muda todos os projetos de uma vez |
+| Biblioteca do ChatGPT | Funcionou nos testes | Leitura automática não documentada em conta pessoal; reenvio manual a cada mudança |
+| Tudo nas fontes do projeto | Máxima garantia de leitura | Ocupa vagas e diverge a cada mudança |
 
-`kit-operacional.md` é fallback opcional: anexe-o às fontes só se a Biblioteca não for legível. O campo "Versão da rota em uso" do `project-index.md` mostra se um projeto ficou para trás.
+A rota é a única cópia fora do repositório. O campo "Versão da rota em uso" do `project-index.md` mostra se um projeto ficou para trás.
 
 ## Parte 3: rotina a cada chat
 
-1. Abra o chat dentro do projeto. O chat abre a resposta com o bloco CONSULTA e confirma o estado pelos três arquivos.
+1. Abra o chat dentro do projeto. Ele abre a resposta com o bloco CONSULTA e confirma o estado pelos três arquivos.
 2. Trabalhe bloco a bloco: prompt, agente, relatório, validação.
-3. Ao fechar bloco, decisão ou fase: o chat entrega os arquivos de estado **completos**; **você substitui** os arquivos nas fontes. O chat não edita as fontes.
+3. Ao fechar bloco, decisão ou fase: o chat entrega os arquivos de estado **completos**; **você substitui** os arquivos nas fontes. O chat não edita as fontes nem o repositório.
 4. **Handoff:** com o chat grande, escreva **"Gere o handoff deste chat."** O chat entrega `current-status.md` completo, `decisions.md` e `project-index.md` se mudaram, e o texto de abertura. Substitua as fontes, abra o novo chat **dentro do mesmo projeto** e cole só o texto de abertura. Se o chat avisar que não leu os arquivos, anexe os três na primeira mensagem.
-5. Não suba arquivos de estado para a Biblioteca: lá ficam só os modelos.
+5. Não coloque arquivos de estado no repositório do kit: lá ficam só os modelos.
 
 ## Parte 4: skills
 
@@ -57,20 +62,26 @@ Siga `04_skills/skills-catalog.md`.
 
 ## Parte 5: testes de aceitação (eu não consigo executá-los por você)
 
-Em um projeto de teste, confirme:
+**Teste do GitHub** (projeto com Biblioteca desativada e só a rota nas fontes):
 
-1. Cada resposta abre com o bloco CONSULTA, com os arquivos certos. Se um arquivo não abriu, o chat avisa em vez de improvisar.
-2. O prompt gerado tem os títulos idênticos aos do `PROMPT-modelo.md`, incluindo `[AUTHORIZED CHANGES]`, e todos os campos de Header e Execution Configuration.
-3. Modelo e esforço sugeridos são só os que você declarou ter; skill citada só se estiver no catálogo.
-4. Com os arquivos de estado vazios ou só template, o chat avisa em vez de inventar estado.
-5. Ao colar um relatório de agente inventado e sem evidências, ele recusa declarar sucesso e pede evidência.
-6. Ao fechar o bloco, entrega o `current-status.md` completo, no formato do template.
-7. "Gere o handoff deste chat." entrega os arquivos e o texto de abertura; um chat novo no mesmo projeto, com as fontes substituídas, recupera o estado só pelos arquivos.
+1. Peça: "Gere um prompt para fazer uma varredura de tudo que já foi criado, para darmos continuidade com o projeto."
+2. No bloco CONSULTA, os arquivos de `02_modelos` e do playbook aparecem com **Fonte = GitHub**, com caminho e identificador (commit ou URL) ou `sem identificador`.
+3. Se o chat disser que não tem o app GitHub neste chat, anote a mensagem exata. É a resposta ao item A VERIFICAR da Parte 1.
+
+**Testes de qualidade** (em um projeto de teste):
+
+4. O prompt tem os títulos idênticos aos do `PROMPT-modelo.md`, todos os campos de Header e Execution Configuration, e `[OUTPUT]` exigindo o relatório no formato `modelo-resposta-agente.md`.
+5. Modelo e esforço sugeridos são só os que você declarou (ou `[A CONFIRMAR]`); skill citada só se estiver no catálogo.
+6. Com os arquivos de estado vazios ou só template, o chat avisa em vez de inventar estado.
+7. Ao colar um relatório de agente inventado e sem evidências, ele recusa declarar sucesso e pede evidência.
+8. Ao fechar o bloco, entrega o `current-status.md` completo, no formato do template.
+9. "Gere o handoff deste chat." entrega os arquivos e o texto de abertura; um chat novo no mesmo projeto, com as fontes substituídas, recupera o estado só pelos arquivos.
 
 Se um teste falhar, anote qual e ajuste a rota (suba a versão dela).
 
 ## Fontes
 
+- Connecting GitHub to ChatGPT: https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt
 - Projects in ChatGPT: https://help.openai.com/en/articles/10169521-projects-in-chatgpt
 - Using Library to manage files in ChatGPT: https://help.openai.com/en/articles/20001052-using-library-to-manage-files-in-chatgpt
 - Skills in ChatGPT: https://help.openai.com/en/articles/20001066-skills-in-chatgpt
