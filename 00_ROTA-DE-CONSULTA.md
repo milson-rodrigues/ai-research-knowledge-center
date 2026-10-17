@@ -1,15 +1,26 @@
 # 00_ROTA-DE-CONSULTA (ponto de entrada)
 
-Versão do kit: 1.0.0 | Versão deste arquivo: 2.0
+Versão do kit: 1.0.0 | Versão deste arquivo: 2.1
 
 Este arquivo entra nas fontes de **todo** projeto. Ele diz onde estão os modelos, o que ler por situação e o que conferir antes de entregar. Os modelos moram no repositório GitHub; para mudar a rota, edite o mestre no repositório e reenvie este arquivo aos projetos.
 
 ## Passo 0: onde estão os arquivos
 
-- **Repositório (principal):** `milson-rodrigues/ai-research-knowledge-center`, branch `main`. É privado e o acesso é **somente leitura**, pelo app GitHub do ChatGPT.
+### Modelos, regras e skills (repositório do kit)
+
+- **Fonte principal:** repositório `milson-rodrigues/ai-research-knowledge-center`, branch `main`. É privado e o acesso é **somente leitura**, pelo app GitHub do ChatGPT.
 - **Como buscar:** o seletor de repositórios do app procura só nomes, não conteúdo. Informe o nome completo do repositório e o **caminho exato** do arquivo (coluna "Arquivos" abaixo).
-- **Plano B, só se o app GitHub não estiver disponível neste chat ou falhar:** arquivo de mesmo nome na Biblioteca do ChatGPT, ou anexo do usuário. Diga que usou o plano B e por quê.
+- **Plano B, só se o app GitHub não estiver disponível ou falhar:** arquivo de mesmo nome na Biblioteca do ChatGPT, ou anexo do usuário. Diga que usou o plano B e por quê.
 - **Sem nenhuma das fontes:** diga qual arquivo faltou e peça o anexo. Não reconstrua de memória. Não gere prompt sem ter lido `02_modelos/PROMPT-modelo.md`.
+
+### Arquivos de estado do projeto (project-index.md, current-status.md, decisions.md)
+
+Ordem de busca obrigatória:
+
+1. **GitHub** — repositório do próprio projeto (caminho exato informado pelo usuário ou registrado no project-index.md).
+2. **Biblioteca do projeto** — se o GitHub não retornar o arquivo ou o app não estiver disponível.
+3. **Gerar do template** — se nenhuma das fontes acima retornar o arquivo (ou o arquivo for só o template sem estado real): leia o template correspondente em `03_continuidade/` do repositório `milson-rodrigues/ai-research-knowledge-center`, preencha os campos com o que for conhecido neste chat e entregue o arquivo ao usuário com a nota: _"Arquivo inicializado do template — nenhuma versão anterior foi encontrada. Substitua nas fontes do projeto e confirme para continuar."_ Não assuma estado de outros chats ou projetos.
+
 
 ## Rota: leia antes de agir
 
@@ -31,9 +42,10 @@ Abra toda resposta que use a rota com uma tabela de três colunas:
 | Arquivo (caminho) | Fonte | Identificador |
 |---|---|---|
 
-- **Fonte:** `GitHub`, `Biblioteca`, `Anexo`, `Fonte do projeto` ou `Não acessado`.
+- **Fonte:** `GitHub`, `Biblioteca`, `Anexo`, `Gerado do template` ou `Não acessado`.
 - **Identificador:** o commit ou a URL do arquivo no GitHub, quando o app mostrar. Se não mostrar, escreva `sem identificador`. Nunca invente.
 - Arquivo `Não acessado` deve vir com o motivo.
+- Arquivo `Gerado do template` deve indicar qual template foi usado e que o usuário precisa salvar o arquivo gerado nas fontes do projeto.
 
 ## Portão obrigatório antes de entregar um prompt
 
@@ -48,7 +60,8 @@ Abra toda resposta que use a rota com uma tabela de três colunas:
 
 ## Regras
 
-- O estado do projeto vem das fontes do projeto (`project-index.md`, `current-status.md`, `decisions.md`), nunca do repositório do kit. Os `*.template.md` são modelos, não estado.
+- O estado do projeto vem dos arquivos de estado do projeto (`project-index.md`, `current-status.md`, `decisions.md`), buscados na ordem: GitHub do projeto → Biblioteca do projeto → gerado do template. Os `*.template.md` do repositório do kit são modelos, não estado.
+- Arquivo de estado gerado do template: entregue ao usuário com a nota _"Arquivo inicializado do template — nenhuma versão anterior foi encontrada. Substitua nas fontes do projeto e confirme para continuar."_ Registre `Gerado do template` no bloco CONSULTA.
 - Arquivo de estado entregue: abra com o bloco CONSULTA (template lido), siga o template correspondente e entregue o arquivo **completo**, pronto para substituir o das fontes, nunca só o trecho alterado.
 - Pedido de handoff: execute a seção 2 do `handoff-novo-chat.md` sem exigir que o usuário cole o texto longo. Entregue `current-status.md` completo, `decisions.md` e `project-index.md` só se mudaram, e o texto de abertura do próximo chat já preenchido. Lembre o usuário de substituir os arquivos nas fontes do projeto e de abrir o novo chat **dentro do mesmo projeto** antes de colar o texto de abertura.
 - O repositório é somente leitura para você: não tente escrever nele nem pedir permissão de escrita.
