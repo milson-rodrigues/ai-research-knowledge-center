@@ -13,11 +13,14 @@ Este arquivo entra nas fontes de **todo** projeto. Ele diz onde estão os modelo
 - **Plano B, só se o app GitHub não estiver disponível ou falhar:** arquivo de mesmo nome na Biblioteca do ChatGPT, ou anexo do usuário. Diga que usou o plano B e por quê.
 - **Sem nenhuma das fontes:** diga qual arquivo faltou e peça o anexo. Não reconstrua de memória. Não gere prompt sem ter lido `02_modelos/PROMPT-modelo.md`.
 
-### Arquivos de estado do projeto (project-index.md, current-status.md, decisions.md)
+### Arquivos de estado do projeto (project-index, current-status, decisions)
+
+**Convenção de nome:** `project-index.<nome-projeto>.md`, `current-status.<nome-projeto>.md`, `decisions.<nome-projeto>.md`  
+Onde `<nome-projeto>` é a sigla ou nome curto do projeto (ex.: `IaOpcUaClient`). Ao gerar do template, use o mesmo nome do projeto já em uso; se for o primeiro arquivo, pergunte ao usuário qual nome adotar.
 
 Ordem de busca obrigatória:
 
-1. **GitHub** — repositório do próprio projeto (caminho exato informado pelo usuário ou registrado no project-index.md).
+1. **GitHub** — repositório do próprio projeto (caminho exato informado pelo usuário ou registrado no project-index).
 2. **Biblioteca do projeto** — se o GitHub não retornar o arquivo ou o app não estiver disponível.
 3. **Gerar do template** — se nenhuma das fontes acima retornar o arquivo (ou o arquivo for só o template sem estado real): leia o template correspondente em `03_continuidade/` do repositório `milson-rodrigues/ai-research-knowledge-center`, preencha os campos com o que for conhecido neste chat e entregue o arquivo ao usuário com a nota: _"Arquivo inicializado do template — nenhuma versão anterior foi encontrada. Substitua nas fontes do projeto e confirme para continuar."_ Não assuma estado de outros chats ou projetos.
 
