@@ -12,6 +12,11 @@ Verificar o que já foi dito. Perguntar apenas o que falta **e** altera a decis�
 - Integrações e dependências externas.
 - Preferências ou proibições de tecnologia; conhecimento prévio do usuário.
 - **Executores disponíveis:** quais IAs/agentes e modelos o usuário tem, e limites de uso.
+  Peça ao usuário que selecione um ou mais (pode marcar vários; para outros não listados, informe separado por `;`):
+  `[ ] Claude (Sonnet / Opus / Haiku)`  `[ ] ChatGPT (GPT-4o / o1 / o3)`  `[ ] Gemini (Flash / Pro)`
+  `[ ] GitHub Copilot`  `[ ] Cursor`  `[ ] Windsurf`  `[ ] Aider`  `[ ] Continue.dev`
+  `[ ] Outros: <nome>;<modelo>;<limite>`
+  Para cada executor selecionado, confirme o modelo exato e qualquer limite relevante (tokens, cota, plano).
 - Escopo do MVP e o que fica fora.
 
 ## Parte B: Dossiê de Arquitetura (saída)
@@ -31,7 +36,7 @@ Verificar o que já foi dito. Perguntar apenas o que falta **e** altera a decis�
 8. **Skills recomendadas**, vindas de `skills-catalog.md`, com versão fixada.
 9. **Primeiro prompt** (B01, esqueleto executável) no formato `PROMPT-modelo.md`.
 
-Após a aprovação do usuário: gerar `project-index.md`, `current-status.md` e `decisions.md` iniciais a partir dos templates.
+Após a aprovação do usuário: gerar `project-index.<nome-projeto>.md`, `current-status.<nome-projeto>.md` e `decisions.<nome-projeto>.md` iniciais a partir dos templates em `03_continuidade/`.
 
 ## Parte C: eixos de decisão por tipo de projeto (ponto de partida, não resposta pronta)
 
