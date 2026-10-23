@@ -150,7 +150,7 @@ Consulte `regras-prompt.md`, `../01_instrucoes/playbook-orquestrador.md`, `../01
 - Testes proporcionais ao risco e relatório exigido.
 - Sem segredos; estado esperado e áreas preservadas definidos.
 
-No uso real, preencher todas as seções de `PROMPT-modelo.md`; o exemplo abaixo é apenas ilustrativo e não substitui o modelo.
+No uso real, preencher todas as seções de `PROMPT-modelo.md`; o consolidado resume as regras, e o documento mestre contém o guia completo.
 
 =====================================================================
 ## ARQUIVO MESTRE: 02_modelos/modelo-resposta-agente.md
