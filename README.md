@@ -53,27 +53,8 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 O fluxo começa pela rota, que aponta para os documentos necessários à tarefa. Esses documentos alimentam o prompt; depois da execução, o relatório permite validar os resultados e atualizar a continuidade.
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos.gif" alt="Fluxo animado: rota de consulta, guia, regras, playbook e metodologia orientam o prompt; o relatório do executor alimenta a validação e a continuidade." width="850">
+  <img src="assets/relacionamento-arquivos.png" alt="Diagrama do fluxo dos documentos do AI Research Knowledge Center, da rota de consulta à execução, validação e continuidade." width="850">
 </p>
-
-```mermaid
-flowchart TD
-    A["00_ROTA-DE-CONSULTA.md<br/>Ponto de entrada"] --> B["Guia de preenchimento"]
-    B --> C["Regras de prompt"]
-    B --> D["PROMPT-modelo.md"]
-    B --> E["Playbook do orquestrador"]
-    E --> F["Regras de projeto<br/>quando aplicável"]
-    E --> G["Metodologia específica<br/>quando aplicável"]
-    C --> H["Prompt executável"]
-    D --> H
-    F --> H
-    G --> H
-    H --> I["Agente executor"]
-    I --> J["Modelo de resposta"]
-    J --> K["Validação por evidências"]
-    K --> L["Atualizar estado e decisões"]
-    L --> B
-```
 
 ### Responsabilidade de cada camada
 
