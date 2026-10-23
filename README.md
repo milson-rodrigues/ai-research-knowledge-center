@@ -6,7 +6,7 @@
 
 Regras claras · Prompts verificáveis · Execução por blocos · Evidências reais
 
-[Começar](#comece-por-aqui) · [Fluxo](#como-os-arquivos-se-relacionam) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
+[Começar](#comece-por-aqui) · [Como funciona](#como-o-sistema-funciona) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
 
 </div>
 
@@ -30,7 +30,7 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 ## Comece por aqui
 
 1. **Configure o ChatGPT:** siga [`00_GUIA-DE-CONFIGURACAO.md`](00_GUIA-DE-CONFIGURACAO.md).
-2. **Adicione a rota ao projeto:** disponibilize [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) nas fontes do projeto. Ela é o ponto de entrada para selecionar os arquivos certos para cada tarefa.
+2. **Adicione o bootstrap uma única vez:** disponibilize [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) nas fontes do projeto. Ele permanece estável e manda consultar a rota operacional atual no GitHub; mudanças normais do kit não exigem reenviar esse arquivo.
 3. **Mantenha os arquivos de estado do projeto:** crie a partir dos templates em `03_continuidade/` os arquivos reais `project-index.<projeto>.md`, `current-status.<projeto>.md` e `decisions.<projeto>.md`. Esses arquivos pertencem ao projeto e não devem ser guardados como estado global do kit.
 4. **Prepare o prompt:** leia o modelo, o guia de preenchimento, as regras, o playbook e, quando aplicável, as regras do projeto e a metodologia específica.
 5. **Valide o resultado:** exija relatório no formato [`02_modelos/modelo-resposta-agente.md`](02_modelos/modelo-resposta-agente.md) e confira as evidências antes de avançar.
@@ -48,9 +48,66 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 | Perda de contexto | Usa arquivos de estado e handoff entre chats |
 | Regras contraditórias | Define documentos canônicos e responsabilidades explícitas |
 
+## Como o sistema funciona
+
+O bootstrap fica nas fontes do projeto ChatGPT. Em cada solicitação relevante, o chat lê do GitHub a rota operacional atual, classifica o pedido e consulta somente os documentos pertinentes. Os modelos e as regras globais não são copiados para o projeto.
+
+```mermaid
+flowchart TD
+    A["Pedido do usuário"] --> B["Bootstrap permanente"]
+    B --> C["Ler rota operacional atual no GitHub"]
+    C --> D{"Tipo de pedido"}
+    D -->|Projeto novo| E["Kickoff e requisitos"]
+    E --> F{"Falta informação essencial?"}
+    F -->|Sim| Q["Perguntas objetivas"]
+    F -->|Não| G["Dossiê, alternativas e aprovação"]
+    G --> H["Plano de blocos"]
+    D -->|Prompt / implementação| I["Inspecionar estado, escopo e critérios"]
+    D -->|Bug / correção| J["Ler erro, prompt, relatório e diff"]
+    J --> K["Diagnosticar ou delimitar correção"]
+    D -->|Validar execução| L["Comparar prompt, relatório e evidências"]
+    L --> M{"Critérios comprovados?"}
+    M -->|Sim| N["Registrar status verificado"]
+    M -->|Não| O["Identificar lacunas e próxima ação"]
+    D -->|Arquitetura / pesquisa| P["Consultar fontes e comparar alternativas"]
+    D -->|Estado / handoff| R["Ler estado e templates pertinentes"]
+    H --> S["Montagem comum do prompt"]
+    I --> S
+    K --> S
+    O --> S
+    S --> T["Modelo + guia + regras + playbook + relatório"]
+    T --> U{"Informação suficiente?"}
+    U -->|Não| Q
+    U -->|Sim| V["Entregar prompt completo"]
+    V --> W["Usuário envia ao agente executor"]
+    W --> X["Executor devolve relatório"]
+    X --> L
+    N --> Y["Atualizar continuidade com evidências"]
+    Y --> Z{"Há próximo bloco aprovado?"}
+    Z -->|Sim| I
+    Z -->|Não| AA["Fechar fase / handoff"]
+    Q --> AB["Entregar resultado no formato do kit"]
+    P --> AB
+    R --> AB
+    AA --> AB
+```
+
+### O ciclo em linguagem direta
+
+1. **Consultar:** ler a rota operacional atual e os arquivos indicados no GitHub. Registrar os arquivos realmente lidos na tabela `CONSULTA`.
+2. **Entender:** recuperar o estado e as decisões específicas do projeto; distinguir fatos, hipóteses e lacunas.
+3. **Escolher o caminho:** projeto novo, prompt/implementação, bug/correção, validação, pesquisa/arquitetura ou continuidade.
+4. **Preparar:** quando houver tarefa executável, todos os caminhos convergem para `02_modelos/PROMPT-modelo.md`, combinado com o guia, regras, playbook e relatório padronizado.
+5. **Perguntar ou entregar:** se faltar um dado indispensável, fazer perguntas objetivas. Caso contrário, entregar um prompt completo, com alterações autorizadas, restrições, critérios de aceite, testes e estado esperado.
+6. **Executar:** o usuário envia o prompt ao agente executor e devolve o relatório produzido por ele.
+7. **Validar:** comparar os critérios com evidências reais e marcar `CONCLUÍDO`, `PARCIAL`, `BLOQUEADO` ou `FALHOU`.
+8. **Repetir ou encerrar:** se algo falhou, investigar a causa e preparar um prompt de correção; se passou, atualizar os arquivos de continuidade e liberar o próximo bloco aprovado.
+
+**Importante:** o kit orquestra e valida; não executa sozinho as alterações de código. O agente executor é quem realiza o trabalho concreto.
+  
 ## Como os arquivos se relacionam
 
-O fluxo detalhado preserva as etapas de consulta, preparação, autorização, execução e validação. O infográfico oferece uma leitura resumida do mesmo ciclo. As duas imagens têm fundo transparente, cartões com preenchimento próprio e texto vetorial para manter a legibilidade em temas claros e escuros.
+O fluxo detalhado mostra as relações entre os documentos. O infográfico é a visão resumida. As duas imagens são SVGs, com cartões de contraste próprio e texto vetorial. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
@@ -68,7 +125,8 @@ O fluxo detalhado preserva as etapas de consulta, preparação, autorização, e
 
 | Camada | Arquivo | Responsabilidade |
 |---|---|---|
-| Entrada | [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) | Informa o que consultar por situação e como registrar fontes |
+| Bootstrap estável | [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) | Ponto de entrada permanente nas fontes do projeto; direciona para a rota dinâmica no GitHub |
+| Rota operacional | [`01_instrucoes/rota-operacional.md`](01_instrucoes/rota-operacional.md) | Árvore de decisão que pode evoluir sem reenviar o bootstrap |
 | Modelo | [`02_modelos/PROMPT-modelo.md`](02_modelos/PROMPT-modelo.md) | Define os títulos e a estrutura do prompt |
 | Preenchimento | [`02_modelos/guia-preenchimento-prompt.md`](02_modelos/guia-preenchimento-prompt.md) | Explica como preencher os campos |
 | Regras de prompt | [`02_modelos/regras-prompt.md`](02_modelos/regras-prompt.md) | Define grounding, escopo, Quality Gate, testes e evidências |
@@ -89,6 +147,7 @@ O fluxo detalhado preserva as etapas de consulta, preparação, autorização, e
 ├── 00_GUIA-DE-CONFIGURACAO.md
 ├── 01_instrucoes/
 │   ├── instrucao-projeto.md
+│   ├── rota-operacional.md
 │   ├── playbook-orquestrador.md
 │   └── regras-projetos.md
 ├── 02_modelos/
@@ -142,8 +201,9 @@ O Quality Gate não exige refatorar tudo: avalia apenas os critérios pertinente
 ## Manutenção e versionamento
 
 - Este repositório é a fonte canônica das regras e modelos do kit; o estado de cada projeto fica nas fontes daquele projeto.
-- Ao alterar regras ou modelos, atualize referências relacionadas e regenere `kit-operacional.md` quando ele for utilizado como fallback.
-- Ao alterar `00_ROTA-DE-CONSULTA.md`, atualize também a cópia disponibilizada nas fontes de cada projeto.
+- Os documentos globais do kit são consultados exclusivamente no GitHub. Se ele estiver indisponível, declare bloqueio em vez de usar cópias antigas.
+- Ao alterar regras, modelos ou metodologias, atualize as referências relacionadas e regenere `kit-operacional.md` para mantê-lo alinhado.
+- `00_ROTA-DE-CONSULTA.md` é um bootstrap permanente: mudanças comuns são feitas em `01_instrucoes/rota-operacional.md` e nos documentos mestres, sem solicitar novo upload do bootstrap.
 - Uma mudança na branch de trabalho não é publicada automaticamente para os projetos: revise o diff e incorpore a proposta na branch principal somente após aprovação.
 - Nunca armazene senhas, tokens ou credenciais.
 
