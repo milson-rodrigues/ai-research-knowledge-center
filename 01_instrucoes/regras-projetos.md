@@ -1,6 +1,6 @@
 # Regras transversais de projeto
 
-**Status:** proposta documental para revisão.  
+**Status:** vigente no kit a partir da versão 1.1.0.  
 **Escopo:** princípios para manutenção e evolução de projetos que usam o kit.
 
 Este documento complementa o playbook e as regras de prompt. Não substitui decisões aprovadas, contratos nem a documentação canônica do projeto.
