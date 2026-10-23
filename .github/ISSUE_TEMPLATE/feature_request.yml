@@ -1,0 +1,58 @@
+name: Propor melhoria
+description: Sugerir uma melhoria de fluxo, documentação, metodologia ou manutenção do kit.
+title: "[Melhoria]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Descreva a necessidade antes de propor a solução. Uma melhoria deve justificar o benefício, considerar o custo de manutenção e respeitar a separação entre bootstrap permanente e documentos dinâmicos no GitHub.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Necessidade ou problema
+      description: Que dificuldade, risco ou limitação a melhoria resolveria?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Resultado desejado
+      description: Como seria possível verificar que a melhoria funcionou?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: Explique a solução imaginada, sem tratá-la como decisão já aprovada.
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas e trade-offs
+      description: Inclua opções mais simples, riscos e custo de manutenção, se conhecidos.
+    validations:
+      required: false
+  - type: textarea
+    id: scope
+    attributes:
+      label: Arquivos ou fluxos possivelmente afetados
+      description: Informe documentos, metodologias, modelos, diagramas ou comportamento do kit que podem mudar.
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Liste resultados objetivos que permitam avaliar a melhoria.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
+      description: Links, exemplos não sensíveis ou evidências que ajudem a avaliar a proposta.
+    validations:
+      required: false
