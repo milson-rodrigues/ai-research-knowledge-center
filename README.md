@@ -168,8 +168,6 @@ O fluxo detalhado mostra as relações entre os documentos. O infográfico é a 
 │   ├── diagnostico-bugs.md
 │   └── revisao-codigo.md
 ├── assets/
-│   ├── Como os Documentos se Relacionam.png
-│   ├── Fluxograma do Processo de Consulta.png
 │   ├── relacionamento-arquivos-infografico.svg
 │   ├── relacionamento-arquivos.svg
 └── kit-operacional.md
