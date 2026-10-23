@@ -1,6 +1,6 @@
 # Regras para elaboração e execução de prompts
 
-**Status:** proposta documental para revisão.  
+**Status:** vigente no kit a partir da versão 1.1.0.  
 **Finalidade:** definir requisitos normativos para prompts de engenharia sem duplicar o fluxo operacional do playbook.
 
 ## 1. Grounding, fontes e precisão
