@@ -1,0 +1,61 @@
+name: Reportar bug
+description: Relatar um comportamento incorreto, contradição ou falha documental no kit.
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este formulário para defeitos reproduzíveis no kit, como instruções contraditórias, caminhos incorretos, links quebrados ou fluxos que não correspondem ao comportamento documentado. Não inclua segredos nem dados privados de projetos.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problema observado
+      description: Descreva um problema específico.
+      placeholder: O que está incorreto?
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Arquivo ou etapa afetada
+      description: Informe o caminho no repositório e, se possível, o título da seção.
+      placeholder: 01_instrucoes/rota-operacional.md — seção 3
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir ou verificar
+      description: Descreva os passos necessários para observar o problema.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+      description: O que o kit deveria fazer ou explicar?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento atual
+      description: O que acontece atualmente? Inclua trecho, link, screenshot ou saída não sensível, se ajudar.
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Commit ou referência
+      description: SHA do commit, URL do arquivo ou branch em que você observou o problema.
+      placeholder: main / commit SHA / URL
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexto adicional
+      description: Impacto, riscos ou outras informações relevantes.
+    validations:
+      required: false
