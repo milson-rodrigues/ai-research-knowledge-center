@@ -109,7 +109,10 @@ O fluxo detalhado preserva as etapas de consulta, preparação, autorização, e
 │   ├── diagnostico-bugs.md
 │   └── revisao-codigo.md
 ├── assets/
-│   └── relacionamento-arquivos.png
+│   ├── Como os Documentos se Relacionam.png
+│   ├── Fluxograma do Processo de Consulta.png
+│   ├── relacionamento-arquivos-infografico.svg
+│   ├── relacionamento-arquivos.svg
 └── kit-operacional.md
 ```
 
