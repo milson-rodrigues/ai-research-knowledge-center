@@ -4,7 +4,7 @@ Rótulos: **FATO** = confirmado na documentação oficial da OpenAI, na tela do 
 
 ## Parte 1: uma vez só (repositório e app GitHub)
 
-1. **Repositório:** `milson-rodrigues/ai-research-knowledge-center`, branch `main`. **FATO (API do GitHub):** é privado.
+1. **Repositório:** `milson-rodrigues/ai-research-knowledge-center`, branch `main`. **Estado confirmado nesta revisão (API do GitHub, 2026-10-23):** público. Confirme novamente se a visibilidade for alterada.
 2. **FATO (help.openai.com, "Connecting GitHub to ChatGPT"):** o app GitHub do ChatGPT recupera, sob demanda, conteúdo permitido do repositório (código, README e outros documentos). O acesso é ao vivo, sem índice, e **somente leitura**. Para escrever, a página aponta o Codex.
 3. **FATO:** o app pode estar disponível no chat padrão, no deep research ou no agente, conforme plano, workspace e superfície. A página não lista planos e **não menciona Projects**.
 4. **Ativar:** Configurações, Plugins (ou Apps), GitHub. Instale e autorize o app do ChatGPT no GitHub e escolha o repositório. **FATO:** repositórios levam cerca de 5 minutos para aparecer, e os privados só aparecem depois que o app é instalado para a conta certa e recebe acesso.

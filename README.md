@@ -1,46 +1,168 @@
+<div align="center">
+
 # AI Research Knowledge Center
 
-Kit versão **1.0.0** | Rota versão **2.0** | 2026-10-16
+**Um sistema documental para orientar agentes de IA em engenharia de software.**
 
-Repositório mestre para configurar o ChatGPT como Engenheiro Principal de Software, Orquestrador de Projetos com IA e Engenheiro de Prompt.
+Regras claras · Prompts verificáveis · Execução por blocos · Evidências reais
 
-## Princípio
+[Começar](#comece-por-aqui) · [Fluxo](#como-os-arquivos-se-relacionam) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
 
-- **Este repositório é a fonte única dos modelos, regras e skills.** O chat de cada projeto lê os arquivos pelo app GitHub do ChatGPT (somente leitura), seguindo o `00_ROTA-DE-CONSULTA.md`.
-- **Ponto de entrada: `00_ROTA-DE-CONSULTA.md`.** É a única cópia que vai para as fontes do projeto. Ela dá o nome do repositório, o caminho exato de cada arquivo e o que ler por situação (gerar prompt, validar resposta, atualizar estado, handoff).
-- **Todo uso é rastreável.** Cada resposta abre com o bloco CONSULTA, que informa, por arquivo, a fonte (GitHub, Biblioteca, anexo, fonte do projeto ou não acessado).
-- **O estado de um projeto nunca fica aqui.** `project-index.md`, `current-status.md` e `decisions.md` vivem só nas fontes do projeto a que pertencem.
-- **Plano B declarado:** se o app GitHub não estiver disponível no chat, a rota permite a Biblioteca do ChatGPT ou um anexo, e o chat precisa dizer que usou o plano B.
+</div>
 
-## Mapa
+---
 
-| Caminho | Função | Como o chat lê |
+## O que é
+
+O **AI Research Knowledge Center** organiza os modelos, regras, procedimentos, metodologias e skills utilizados para orientar o ChatGPT e outros agentes durante trabalhos de engenharia de software.
+
+Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabilidade clara:
+
+- **Modelos:** padronizam a estrutura de prompts, relatórios e kickoffs.
+- **Regras:** estabelecem limites de escopo, qualidade e evidências.
+- **Playbook:** coordena as etapas e o trabalho do orquestrador.
+- **Metodologias:** descrevem práticas específicas, como TDD, diagnóstico de bugs e revisão de código.
+- **Skills:** catalogam recursos externos com origem e versão identificáveis.
+- **Continuidade:** preserva o estado e as decisões de cada projeto.
+
+> O kit orienta o trabalho; não substitui as decisões aprovadas, a documentação oficial, os testes nem as evidências da execução.
+
+## Comece por aqui
+
+1. **Configure o ChatGPT:** siga [`00_GUIA-DE-CONFIGURACAO.md`](00_GUIA-DE-CONFIGURACAO.md).
+2. **Adicione a rota ao projeto:** disponibilize [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) nas fontes do projeto. Ela é o ponto de entrada para selecionar os arquivos certos para cada tarefa.
+3. **Mantenha os arquivos de estado do projeto:** crie a partir dos templates em `03_continuidade/` os arquivos reais `project-index.<projeto>.md`, `current-status.<projeto>.md` e `decisions.<projeto>.md`. Esses arquivos pertencem ao projeto e não devem ser guardados como estado global do kit.
+4. **Prepare o prompt:** leia o modelo, o guia de preenchimento, as regras, o playbook e, quando aplicável, as regras do projeto e a metodologia específica.
+5. **Valide o resultado:** exija relatório no formato [`02_modelos/modelo-resposta-agente.md`](02_modelos/modelo-resposta-agente.md) e confira as evidências antes de avançar.
+
+## Por que usar
+
+| Risco comum | Como o kit ajuda |
+|---|---|
+| Requisitos ambíguos | Explicita objetivo, escopo, restrições e critérios de aceite |
+| Prompts inconsistentes | Mantém um modelo fixo e um guia de preenchimento |
+| Alterações não autorizadas | Separa mudanças permitidas das proibidas |
+| Implementação grande demais | Divide o trabalho em blocos com dependências claras |
+| Sucesso declarado sem prova | Exige testes e evidências reais por critério |
+| Código difícil de manter | Considera arquitetura, extensibilidade, desempenho e complexidade proporcional |
+| Perda de contexto | Usa arquivos de estado e handoff entre chats |
+| Regras contraditórias | Define documentos canônicos e responsabilidades explícitas |
+
+## Como os arquivos se relacionam
+
+O fluxo começa pela rota, que aponta para os documentos necessários à tarefa. Esses documentos alimentam o prompt; depois da execução, o relatório permite validar os resultados e atualizar a continuidade.
+
+<p align="center">
+  <img src="assets/relacionamento-arquivos.gif" alt="Fluxo animado: rota de consulta, guia, regras, playbook e metodologia orientam o prompt; o relatório do executor alimenta a validação e a continuidade." width="850">
+</p>
+
+```mermaid
+flowchart TD
+    A["00_ROTA-DE-CONSULTA.md<br/>Ponto de entrada"] --> B["Guia de preenchimento"]
+    B --> C["Regras de prompt"]
+    B --> D["PROMPT-modelo.md"]
+    B --> E["Playbook do orquestrador"]
+    E --> F["Regras de projeto<br/>quando aplicável"]
+    E --> G["Metodologia específica<br/>quando aplicável"]
+    C --> H["Prompt executável"]
+    D --> H
+    F --> H
+    G --> H
+    H --> I["Agente executor"]
+    I --> J["Modelo de resposta"]
+    J --> K["Validação por evidências"]
+    K --> L["Atualizar estado e decisões"]
+    L --> B
+```
+
+### Responsabilidade de cada camada
+
+| Camada | Arquivo | Responsabilidade |
 |---|---|---|
-| `00_ROTA-DE-CONSULTA.md` | Ponto de entrada: rota por situação, bloco CONSULTA e portão de conferência | Fontes de todo projeto (cópia) |
-| `00_GUIA-DE-CONFIGURACAO.md` | Passo a passo de configuração e testes | Não |
-| `01_instrucoes/instrucao-projeto.md` | Texto do campo de instruções do projeto (limite do campo: 8.000 caracteres) | No campo do projeto |
-| `01_instrucoes/playbook-orquestrador.md` | Procedimentos detalhados | GitHub, pela rota |
-| `02_modelos/PROMPT-modelo.md` | Seu modelo de prompt (inalterado) | GitHub, pela rota (cópia opcional nas fontes, como seguro) |
-| `02_modelos/guia-preenchimento-prompt.md` | Como preencher cada campo | GitHub, pela rota |
-| `02_modelos/modelo-resposta-agente.md` | Formato do relatório do agente | GitHub, pela rota |
-| `02_modelos/kickoff-projeto.md` | Kickoff e Dossiê de Arquitetura | GitHub, pela rota |
-| `03_continuidade/handoff-novo-chat.md` | Passagem de um chat para o próximo | GitHub, pela rota |
-| `03_continuidade/*.template.md` | Modelos dos 3 arquivos de estado | GitHub, pela rota. Cada projeto cria os arquivos reais a partir deles |
-| `04_skills/skills-catalog.md` | Índice de skills: links com commit fixado | GitHub, pela rota |
-| `kit-operacional.md` | Consolidado de playbook + modelos | **Opcional:** fallback nas fontes do projeto, só se o GitHub não for legível |
+| Entrada | [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) | Informa o que consultar por situação e como registrar fontes |
+| Modelo | [`02_modelos/PROMPT-modelo.md`](02_modelos/PROMPT-modelo.md) | Define os títulos e a estrutura do prompt |
+| Preenchimento | [`02_modelos/guia-preenchimento-prompt.md`](02_modelos/guia-preenchimento-prompt.md) | Explica como preencher os campos |
+| Regras de prompt | [`02_modelos/regras-prompt.md`](02_modelos/regras-prompt.md) | Define grounding, escopo, Quality Gate, testes e evidências |
+| Orquestração | [`01_instrucoes/playbook-orquestrador.md`](01_instrucoes/playbook-orquestrador.md) | Coordena planejamento, blocos, validação e handoff |
+| Regras do projeto | [`01_instrucoes/regras-projetos.md`](01_instrucoes/regras-projetos.md) | Orienta arquitetura, contratos e evolução do projeto |
+| Metodologias | [`05_metodologias/`](05_metodologias/) | Apresenta procedimentos especializados aplicáveis por necessidade |
+| Relatório | [`02_modelos/modelo-resposta-agente.md`](02_modelos/modelo-resposta-agente.md) | Registra alterações, testes, evidências, desvios e estado final |
+| Continuidade | [`03_continuidade/`](03_continuidade/) | Fornece templates de estado e handoff |
 
-## Fontes de cada projeto
+**Regra de composição:** metodologia complementa as regras permanentes; não as substitui. O prompt final precisa conter as instruções críticas para o executor e não pode depender exclusivamente de links que talvez ele não consiga acessar.
 
-1. `00_ROTA-DE-CONSULTA.md`
-2. `project-index.md` (o real, criado do template)
-3. `current-status.md` (o real)
-4. `decisions.md` (o real)
+## Mapa do repositório
 
-Opcional: `PROMPT-modelo.md`, como seguro se o app GitHub não funcionar nos chats do projeto. Os `*.template.md` só entram nas fontes enquanto o arquivo real correspondente não existe.
+```text
+.
+├── README.md
+├── 00_ROTA-DE-CONSULTA.md
+├── 00_GUIA-DE-CONFIGURACAO.md
+├── 01_instrucoes/
+│   ├── instrucao-projeto.md
+│   ├── playbook-orquestrador.md
+│   └── regras-projetos.md
+├── 02_modelos/
+│   ├── PROMPT-modelo.md
+│   ├── guia-preenchimento-prompt.md
+│   ├── regras-prompt.md
+│   ├── modelo-resposta-agente.md
+│   └── kickoff-projeto.md
+├── 03_continuidade/
+│   ├── handoff-novo-chat.md
+│   └── *.template.md
+├── 04_skills/
+│   └── skills-catalog.md
+├── 05_metodologias/
+│   ├── README.md
+│   ├── decomposicao-tarefas.md
+│   ├── tdd.md
+│   ├── diagnostico-bugs.md
+│   └── revisao-codigo.md
+├── assets/
+│   └── relacionamento-arquivos.gif
+└── kit-operacional.md
+```
 
-## Manutenção
+## Princípios de engenharia
 
-- **Um commit na `main` vale para todos os projetos de imediato**, porque não há versão por projeto. Para congelar uma versão, crie uma tag (por exemplo, `kit-1.0.0`) e aponte a rota para ela.
-- Alterou qualquer modelo ou regra: subir a versão do kit e regenerar o `kit-operacional.md`. Registrar a troca em `decisions.md` do projeto.
-- Alterou a rota: subir a versão no cabeçalho dela e reenviá-la às fontes dos projetos. É a única cópia fora do repositório.
-- O repositório é privado. Nunca guardar segredos, tokens ou credenciais nele.
+- **Clarificar antes de construir:** compreender objetivo, escopo, limitações e critérios.
+- **Dividir para validar:** declarar dependências e validar cada bloco antes do próximo.
+- **Preservar o que funciona:** não expandir escopo silenciosamente nem alterar áreas não autorizadas.
+- **Usar fontes confiáveis:** preferir documentação oficial atual para versões, APIs e comportamentos mutáveis.
+- **Testar proporcionalmente ao risco:** relatar separadamente testes executados, não executados e bloqueados.
+- **Não inventar evidências:** resultados só são declarados quando realmente observados.
+- **Aplicar o Quality Gate:** avaliar manutenibilidade, arquitetura, extensibilidade, desempenho e se a complexidade introduzida é proporcional ao benefício.
+- **Diferenciar propostas de decisões:** somente decisões aprovadas entram no registro canônico.
+
+## Execução por blocos e Quality Gate
+
+Cada bloco deve conter objetivo verificável, escopo autorizado, dependências, critérios de aceite, testes/evidências e condição de interrupção. Tarefas que afetam dados, autenticação, migrações, contratos públicos ou produção exigem análise e validação proporcionalmente mais rigorosas.
+
+O Quality Gate não exige refatorar tudo: avalia apenas os critérios pertinentes ao escopo e ao risco. Uma alteração deve gerar benefício que justifique a complexidade e o custo introduzidos.
+
+## Skills e metodologias
+
+- Use [`04_skills/skills-catalog.md`](04_skills/skills-catalog.md) para skills externas aprovadas e com referência fixada.
+- Use [`05_metodologias/README.md`](05_metodologias/README.md) para escolher o procedimento adequado ao problema.
+- Não aplique todas as metodologias por padrão nem declare uma metodologia executada sem registrar as etapas e evidências correspondentes.
+
+## Manutenção e versionamento
+
+- Este repositório é a fonte canônica das regras e modelos do kit; o estado de cada projeto fica nas fontes daquele projeto.
+- Ao alterar regras ou modelos, atualize referências relacionadas e regenere `kit-operacional.md` quando ele for utilizado como fallback.
+- Ao alterar `00_ROTA-DE-CONSULTA.md`, atualize também a cópia disponibilizada nas fontes de cada projeto.
+- Uma mudança na branch de trabalho não é publicada automaticamente para os projetos: revise o diff e incorpore a proposta na branch principal somente após aprovação.
+- Nunca armazene senhas, tokens ou credenciais.
+
+## Referências e inspirações
+
+- [Matt Pocock — Skills for Real Engineers](https://github.com/mattpocock/skills): práticas pequenas e combináveis para clarificação de requisitos, loops de feedback, TDD, diagnóstico e revisão de arquitetura. O kit adapta esses princípios sem importar automaticamente skills ou fluxos externos.
+- [Documentação oficial do GitHub](https://docs.github.com/): referência para o comportamento da plataforma.
+- Documentação oficial da linguagem, framework ou serviço do projeto: referência prioritária para APIs, versões e comportamento técnico mutável.
+
+<div align="center">
+
+**Menos suposições. Blocos menores. Feedback real. Mudanças auditáveis.**
+
+</div>

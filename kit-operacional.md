@@ -1,6 +1,6 @@
-# KIT OPERACIONAL (versão 1.0.0)
+# KIT OPERACIONAL (versão 1.1.0)
 
-Consolidado gerado a partir dos arquivos mestres da biblioteca IA Resource Knowledge Center. Contém: playbook, modelo de prompt, guia de preenchimento, modelo de resposta do agente, kickoff e handoff. Não editar aqui: alterar o mestre, subir a versão e regenerar.
+Consolidado gerado a partir dos arquivos mestres da biblioteca IA Resource Knowledge Center. Contém os documentos operacionais centrais e o índice das novas regras/metodologias. Consolidado de conveniência: quando houver divergência, os arquivos mestres atuais são a fonte canônica. Não editar aqui como fonte de verdade; atualize os mestres e regenere.
 
 
 
@@ -10,80 +10,45 @@ Consolidado gerado a partir dos arquivos mestres da biblioteca IA Resource Knowl
 
 # Playbook do Orquestrador
 
-Versão do kit: 1.0.0 | Procedimentos detalhados que a instrução do projeto referencia. A instrução define *o que* fazer; este arquivo define *como*.
+Versão do kit: 1.1.0. A rota define **o que consultar**; regras e modelos definem **o que é obrigatório**; este playbook define **como coordenar o trabalho**.
 
 ## 1. Fluxo macro
+1. Kickoff para projeto novo e criação do Dossiê de Arquitetura.
+2. Aprovação do usuário para stack, arquitetura e MVP; só depois registrar decisões.
+3. Plano em blocos B01, B02... com objetivo, dependências, risco, critérios e status.
+4. Preparar prompt consultando modelo, guia, regras de prompt, este playbook e documentação/metodologias pertinentes.
+5. Executar bloco, receber relatório, validar evidências e então corrigir ou avançar.
+6. Fechar fase atualizando arquivos de continuidade e preparando handoff quando necessário.
 
-1. **Kickoff** (projeto novo): ver `kickoff-projeto.md`. Saída: Dossiê de Arquitetura.
-2. **Aprovação**: o usuário aprova stack, arquitetura e MVP. Só então registrar em `decisions.md`.
-3. **Plano de blocos**: lista numerada (B01, B02, ...) com objetivo, dependência, critério de aceite e status. Registrar em `project-index.md`.
-4. **Ciclo por bloco**: emitir prompt → usuário executa no agente → usuário devolve o relatório → validar → próximo prompt ou correção.
-5. **Fechamento de fase**: atualizar os três arquivos de continuidade; oferecer handoff para chat novo.
+## 2. Dividir e ordenar blocos
+- Um objetivo verificável por bloco; dependências explícitas.
+- Não misturar refatoração ampla e funcionalidade nova sem justificativa e autorização.
+- Aplicar `05_metodologias/decomposicao-tarefas.md` em trabalhos com várias etapas.
+- Respeitar dependências obrigatórias. Entre blocos prontos, equilibrar risco, custo, benefício e reversibilidade.
+- Mudanças em dados, autenticação, migrações, contratos públicos ou produção exigem análise mais rigorosa, testes de falha e plano de reversão proporcional.
+- Validar cada bloco antes de liberar o próximo. Paralelizar apenas tarefas comprovadamente independentes.
 
-## 2. Como dividir em blocos
+## 3. Modelo, esforço, sessão e modo
+- **Modelo:** somente os modelos que o usuário declarou disponíveis; confirmar capacidades mutáveis em fonte oficial atual.
+- **Esforço:** maior para arquitetura, bugs de causa desconhecida, dados e segurança; menor para tarefas mecânicas e delimitadas; justificar.
+- **Sessão:** `New` para bloco independente/contexto poluído; `Continue` quando a continuidade direta é útil; `Handoff` quando o contexto deve ser repassado por escrito.
+- **Modo:** `Research` investiga; `Plan` propõe sem alterar; `Execute` altera dentro da autorização; `Review`/`Audit` avalia sem alterar. Tarefas de alto risco devem passar por planejamento antes da execução.
+- Usar vários agentes apenas quando o ganho superar custo de coordenação, risco de alucinação e perda de contexto.
 
-- Um objetivo verificável por bloco; cabe em uma sessão do agente.
-- Dependências explícitas. Nada de bloco que só funciona se outro "talvez" tiver sido feito.
-- Não misturar refatoração com funcionalidade nova no mesmo bloco.
-- **RECOMENDAÇÃO:** o primeiro bloco é o esqueleto mínimo que roda ponta a ponta (build, execução, um teste). Ele valida ambiente, ferramentas e contratos antes de investir em volume.
-- Bloco de risco alto (dados, autenticação, migração, produção) recebe esforço maior e critérios de teste explícitos para falha, não só caminho feliz.
+## 4. Contexto mínimo
+Incluir estado confirmado, decisões aprovadas, contratos a preservar, caminhos canônicos, critérios de aceite, testes essenciais, limites e operações proibidas. Não colar arquivos inteiros que o executor possa ler; não depender apenas de links sem acesso confirmado. Nunca incluir segredos.
 
-## 3. Modelo, esforço, sessão, modo
+## 5. Validar relatório
+Verificar o modelo de resposta, evidências por critério, escopo autorizado, desvios, testes executados/não executados/bloqueados, estado esperado e Quality Gate. Status: `CONCLUÍDO`, `PARCIAL`, `BLOQUEADO` ou `FALHOU`. Para status diferente de concluído, registrar causa sustentada por evidência e próxima ação.
 
-Regras para preencher *Execution Configuration*:
+## 6. Bug complexo e decisão arquitetural
+Usar Diagnóstico → Causa raiz → Correção → Arquivos/código → Validação → Riscos. Distinguir FATO, INFERÊNCIA, HIPÓTESE e RECOMENDAÇÃO. Aplicar diagnóstico de bugs quando pertinente.
 
-| Campo | Regra |
-|---|---|
-| **Modelo** | Somente modelos que o usuário disse ter disponíveis. Se não souber, perguntar. Nomes e capacidades mudam: confirmar em fonte oficial atual antes de afirmar qualquer capacidade. |
-| **Esforço** | Subir com complexidade e risco (arquitetura, bug de causa desconhecida, dados, segurança). Descer para tarefas mecânicas e bem delimitadas. Justificar em uma linha. |
-| **Sessão** | `New` para bloco independente ou quando o contexto do agente está poluído. `Continue` quando o bloco depende diretamente do anterior e o agente ainda está com o contexto certo. `Handoff` quando a sessão anterior foi encerrada e o contexto precisa ser repassado por escrito no prompt. |
-| **Modo** | `Research` (levantar, sem alterar), `Plan` (propor, sem alterar), `Execute` (alterar dentro do autorizado), `Review`/`Audit` (avaliar sem alterar). Bloco de alto risco: Plan antes de Execute. |
-
-**Quantidade de agentes:** só mais de um quando houver ganho claro. Justificar por custo, benefício, risco de alucinação e perda de contexto. Agentes não conversam entre si; a coordenação passa por você (prompts e relatórios).
-
-## 4. Contexto mínimo no prompt
-
-- Incluir: estado confirmado, decisões aprovadas relevantes ao bloco (IDs de `decisions.md`), contratos que não podem quebrar, arquivos canônicos a consultar.
-- Não colar arquivos inteiros que o agente pode ler no repositório; apontar o caminho.
-- Não cortar: critérios de aceite, testes essenciais, operações proibidas.
-- Nunca incluir segredos, tokens ou credenciais.
-
-## 5. Validar a resposta do agente
-
-Checklist, nesta ordem:
-
-1. O relatório segue `modelo-resposta-agente`?
-2. Cada critério de aceite do prompt tem evidência (saída real, não descrição)?
-3. As alterações ficaram dentro de AUTHORIZED CHANGES? Houve desvio declarado?
-4. Testes: separados em executados, não executados e bloqueados, com motivo?
-5. O estado final bate com o Expected State?
-6. Algo parece inventado ou sem evidência? Pedir a evidência antes de aceitar.
-
-Status resultante: **CONCLUÍDO** (todos os critérios com evidência), **PARCIAL**, **BLOQUEADO** (dependência externa), **FALHOU**. Para qualquer um que não seja CONCLUÍDO: identificar a causa-raiz exata e emitir prompt de correção (ID com sufixo COR, ex.: `COR-001`) que referencia o item de origem.
-
-## 6. Bug complexo ou decisão arquitetural
-
-Usar a estrutura: Diagnóstico → Causa raiz → Correção → Código → Validação → Riscos. Em cada afirmação, rotular FATO, INFERÊNCIA, HIPÓTESE ou RECOMENDAÇÃO. Perguntas simples não usam essa estrutura.
-
-## 7. Continuidade e higiene de chat
-
-Abrir chat novo dentro do projeto quando:
-- uma fase foi fechada;
-- passaram muitos blocos no mesmo chat (**RECOMENDAÇÃO:** em torno de 5 a 8; ajustar pela experiência);
-- as respostas ficaram lentas, repetitivas ou contraditórias;
-- o usuário relatar lentidão do navegador.
-
-Antes de fechar o chat: entregar os arquivos de continuidade atualizados e o handoff (`handoff-novo-chat.md`). O novo chat começa lendo os três arquivos e confirmando o estado em poucas linhas.
+## 7. Continuidade
+Fazer handoff ao concluir uma fase ou quando o contexto ficar grande, contraditório ou lento. Atualizar arquivos de continuidade e seguir `03_continuidade/handoff-novo-chat.md`.
 
 ## 8. Anti-padrões
-
-- Prompt sem critério de aceite mensurável.
-- Declarar sucesso com base na descrição do agente, sem evidência.
-- Escolher tecnologia "porque é a mais usada" sem comparar alternativas.
-- Afirmar versão, API ou capacidade de modelo sem checar fonte atual.
-- Registrar em `decisions.md` algo que o usuário ainda não aprovou.
-- Deixar o chat crescer até perder contexto em vez de fazer handoff.
-
+Prompt sem critério verificável; sucesso sem evidência; tecnologia escolhida sem comparação quando relevante; versões/API/capacidades sem fonte atual; decisão sem aprovação; alteração fora da autorização; lote grande de mudanças sem validação intermediária; inventar acesso, testes ou resultados.
 
 =====================================================================
 ## ARQUIVO MESTRE: 02_modelos/PROMPT-modelo.md
@@ -152,57 +117,40 @@ Descreve o estado verificável esperado após a execução, incluindo o que deve
 
 # Guia de preenchimento do PROMPT
 
-O modelo `PROMPT-modelo.md` é o seu padrão e permanece sem alterações. Este guia diz como o orquestrador deve preenchê-lo.
+O `PROMPT-modelo.md` define a estrutura obrigatória e deve ser preservado. As regras normativas ficam em `regras-prompt.md` para evitar duplicação.
+
+## Consulta obrigatória antes de preencher
+Consulte `regras-prompt.md`, `../01_instrucoes/playbook-orquestrador.md`, `../01_instrucoes/regras-projetos.md` quando houver impacto duradouro, a metodologia pertinente em `../05_metodologias/`, `modelo-resposta-agente.md` e `PROMPT-modelo.md`. O prompt final deve conter as instruções críticas; não dependa apenas de links que o executor talvez não consiga acessar. Se um arquivo necessário estiver indisponível, declare a limitação; não o reconstrua de memória.
 
 ## Convenção de ID (RECOMENDAÇÃO)
-
 `PROMPT-<SIGLA>-<NNN>-<semver>`, por exemplo `PROMPT-IMG-003-1.0.0`.
-- `SIGLA`: sigla do projeto. `NNN`: sequência do prompt no projeto.
-- Correção de um item: `PROMPT-<SIGLA>-<NNN>-COR-<n>-<semver>`.
-- Nova versão do mesmo prompt: subir o semver e preencher `Previous Version`.
-- O ID também nomeia o relatório do agente: `responses/resposta-<ID>.md`.
+- Correção: `PROMPT-<SIGLA>-<NNN>-COR-<n>-<semver>`.
+- Nova versão: subir o semver e preencher `Previous Version`.
+- O relatório: `responses/resposta-<ID>.md`.
 
 ## Campo a campo
+- **Header:** status `Proposed` até aprovação; definir tipo correto.
+- **Execution Configuration:** somente modelos/esforços declarados disponíveis; seguir o playbook.
+- **ROLE:** papel específico e limites do agente.
+- **CONTEXT:** estado confirmado, decisões aprovadas, contratos e arquivos canônicos.
+- **TASK:** um objetivo verificável, escopo e fora de escopo.
+- **AUTHORIZED CHANGES:** áreas permitidas e operações proibidas; não alterar o que não está autorizado.
+- **CONSTRAINTS:** limites técnicos, operacionais, de segurança, compatibilidade, versão e custo.
+- **CRITERIA:** critérios mensuráveis, testes e evidência aceita por critério.
+- **OUTPUT:** relatório padronizado, arquivos esperados, pendências e próxima ação.
+- **Expected State:** estado final verificável e elementos que devem permanecer inalterados.
 
-| Seção | O que o orquestrador preenche |
-|---|---|
-| Header | Status começa em `Proposed` e vira `Approved` quando o usuário aprovar. `Type` conforme o bloco. |
-| Execution Configuration | Seguir a tabela do playbook (seção 3). Só modelos que o usuário tem. |
-| ROLE | Papel técnico específico do bloco (ex.: "Engenheiro de backend responsável por X") e limites do agente. |
-| CONTEXT | Estado confirmado; IDs de decisões aprovadas (`decisions.md`); contratos a preservar; caminhos canônicos. Sem colar o que o agente pode ler. |
-| TASK | Um objetivo, escopo e resultado esperado. Dizer o que está fora do escopo. |
-| AUTHORIZED CHANGES | Lista de caminhos/áreas permitidos e operações proibidas (exclusão, migração, dependência nova, rede, produção). Se não está listado, não está autorizado. |
-| CONSTRAINTS | Compatibilidade, segurança, custo, desempenho, versões fixadas. |
-| CRITERIA | Critérios **mensuráveis**, testes exigidos (caminho feliz, bordas, falhas) e a evidência aceita de cada um. |
-| OUTPUT | Relatório `.md` no formato `modelo-resposta-agente`, arquivos esperados, pendências e próxima ação. |
-| Expected State | Estado verificável ao final, e o que deve permanecer idêntico. |
+## Checklist
+- Títulos de seção idênticos aos do modelo.
+- Objetivo, escopo, fora de escopo e autorização explícitos.
+- Critérios verificáveis e evidência exigida por critério.
+- Dependências e blocos ordenados, quando aplicável.
+- Modelo/esforço confirmados; sem inventar capacidades.
+- Versões/API verificadas em fonte oficial quando necessário.
+- Testes proporcionais ao risco e relatório exigido.
+- Sem segredos; estado esperado e áreas preservadas definidos.
 
-## Antes de entregar o prompt, o orquestrador confere
-
-- [ ] Um único objetivo, escopo e fora-de-escopo claros.
-- [ ] Critérios verificáveis, cada um com evidência exigida.
-- [ ] Alterações autorizadas e proibidas listadas.
-- [ ] Modelo e esforço realmente disponíveis ao usuário; sessão e modo coerentes.
-- [ ] Nenhum segredo no texto.
-- [ ] Nenhum fato de versão/API afirmado sem checagem em fonte atual.
-- [ ] Entregue em bloco de código com cerca de 4 crases.
-
-## Exemplo ilustrativo (fictício, só para mostrar a densidade esperada)
-
-~~~
-PROMPT-IMG-001-1.0.0 — Esqueleto executável do editor de imagens
-Type: Implementation | Mode: Execute | Session: New
-ROLE: engenheiro responsável por criar o esqueleto mínimo do projeto.
-CONTEXT: decisões D-001 (plataforma) e D-002 (linguagem) aprovadas; repositório vazio.
-TASK: criar a estrutura base que compila, abre uma janela vazia e executa um teste.
-AUTHORIZED CHANGES: criar arquivos na raiz e em /src e /tests. Proibido: dependências fora da lista, acesso à rede, apagar arquivos.
-CRITERIA: (1) build sem erros, evidência = saída do comando; (2) 1 teste passando, evidência = saída; (3) README com como executar.
-OUTPUT: responses/resposta-PROMPT-IMG-001-1.0.0.md no formato do modelo.
-Expected State: repositório com esqueleto que executa; nenhum arquivo fora de /src, /tests e raiz.
-~~~
-
-No uso real, o prompt completo segue todas as seções do `PROMPT-modelo.md`.
-
+No uso real, preencher todas as seções de `PROMPT-modelo.md`; o consolidado resume as regras, e o documento mestre contém o guia completo.
 
 =====================================================================
 ## ARQUIVO MESTRE: 02_modelos/modelo-resposta-agente.md
@@ -347,3 +295,46 @@ Contexto adicional desta sessão: [nada | o que for essencial e não está nos a
 ## 4. Se o ChatGPT não conseguir ler os arquivos
 
 Anexe os três arquivos na primeira mensagem. Não deixe o chat reconstruir o estado de memória.
+
+
+=====================================================================
+## EXTENSÃO: 02_modelos/regras-prompt.md
+=====================================================================
+
+# Regras essenciais de prompt
+
+- Basear contexto em fontes canônicas e decisões aprovadas; priorizar documentação oficial atual para versões/API/comportamentos mutáveis.
+- Distinguir fatos, inferências, hipóteses e recomendações; não inventar arquivos, resultados ou testes.
+- Antes da execução, definir objetivo, escopo, fora de escopo, áreas autorizadas, dependências, riscos, critérios, testes e evidências.
+- Em projetos multifásicos, dividir em blocos pequenos e validar cada bloco antes do próximo.
+- Proteger contratos e comportamentos fora do escopo. Mudanças em código estável/produção exigem autorização, análise de impacto e validação adequada.
+- Aplicar Quality Gate proporcional: manutenibilidade, arquitetura, extensibilidade, desempenho e complexidade versus benefício.
+- Separar testes executados, não executados e bloqueados. Nunca declarar sucesso sem evidência real.
+- Manter propostas separadas das decisões aprovadas; registrar conflitos e resolvê-los antes de emitir instruções contraditórias.
+
+=====================================================================
+## EXTENSÃO: 01_instrucoes/regras-projetos.md
+=====================================================================
+
+# Regras transversais de projeto
+
+- Usar os arquivos canônicos do próprio projeto como fonte de estado; templates e exemplos não são estado real.
+- Antes de alterar arquitetura/interfaces, identificar módulos, consumidores, contratos e decisões afetados; comparar alternativas relevantes.
+- Não introduzir frameworks, dependências ou abstrações apenas por preferência ou popularidade.
+- Preservar comportamentos fora do escopo e evitar refatorações oportunistas.
+- Mudanças de alto impacto em dados, autenticação, migração ou produção exigem justificativa, autorização, análise de impacto, testes e reversão proporcionais.
+- Avaliar manutenibilidade, arquitetura, extensibilidade, desempenho, segurança, custo operacional e complexidade de forma proporcional.
+- Registrar decisões apenas após aprovação; atualizar documentação canônica e referências após a decisão.
+
+=====================================================================
+## EXTENSÃO: 05_metodologias/README.md
+=====================================================================
+
+Escolher metodologia de acordo com a tarefa; não aplicar todas por padrão:
+
+- `decomposicao-tarefas.md`: transforma trabalhos multifásicos em blocos com dependências, riscos e critérios verificáveis.
+- `tdd.md`: ciclo Red → Green → Refactor, testes de regressão e evidências.
+- `diagnostico-bugs.md`: reproduzir, formular hipóteses, observar, determinar causa e corrigir minimamente.
+- `revisao-codigo.md`: revisar aderência à especificação, qualidade, riscos, testes e limites autorizados.
+
+Metodologias complementam as regras de prompt e o playbook. Relate as etapas realmente executadas e as limitações. Inspiração composável: https://github.com/mattpocock/skills.
