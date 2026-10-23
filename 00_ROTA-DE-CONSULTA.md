@@ -1,75 +1,40 @@
-# 00_ROTA-DE-CONSULTA (ponto de entrada)
+# 00_ROTA-DE-CONSULTA.md — ponto de entrada permanente
 
-Versão do kit: 1.1.0 | Versão deste arquivo: 2.2
+**Função:** instrução-base estável para o ChatGPT em cada projeto. Este arquivo não replica as regras do kit; ele direciona o chat para a rota operacional atual publicada no GitHub.
 
-Este arquivo entra nas fontes de **todo** projeto. Ele indica onde estão os modelos, regras, metodologias e skills, o que ler por situação e o que conferir antes de entregar. Os documentos canônicos ficam no repositório; quando esta rota mudar, substitua também a cópia nas fontes de cada projeto.
+## Fonte canônica do kit
 
-## Passo 0: onde estão os arquivos
+- **Repositório:** `milson-rodrigues/ai-research-knowledge-center`
+- **Branch:** `main`
+- **Rota operacional atual:** [`01_instrucoes/rota-operacional.md`](https://github.com/milson-rodrigues/ai-research-knowledge-center/blob/main/01_instrucoes/rota-operacional.md)
+- **README e mapa:** [`README.md`](https://github.com/milson-rodrigues/ai-research-knowledge-center/blob/main/README.md)
 
-### Modelos, regras e metodologias (repositório do kit)
+As instruções, regras, modelos, metodologias e catálogos do kit devem ser lidos diretamente do GitHub. **Não use a Biblioteca do ChatGPT como fonte alternativa.** Não reconstrua documentos ausentes usando memória ou uma cópia antiga.
 
-- **Fonte principal:** `milson-rodrigues/ai-research-knowledge-center`, branch `main` após aprovação e publicação da mudança.
-- **Como buscar:** informe o nome completo do repositório e o caminho exato do arquivo.
-- **Plano B, só se o app GitHub não estiver disponível ou falhar:** use arquivo de mesmo nome na Biblioteca do ChatGPT ou anexo do usuário; declare o que foi usado e por quê.
-- **Sem nenhuma das fontes:** diga qual arquivo faltou e peça o anexo. Não reconstrua modelos nem regras de memória. Não gere prompt sem ler `02_modelos/PROMPT-modelo.md`.
-- **Proposta ainda não publicada:** se o usuário pedir para revisar uma branch específica, use a branch indicada e não a trate como versão canônica dos demais projetos.
+## Procedimento obrigatório no início de cada solicitação relevante
 
-### Arquivos de estado do projeto (`project-index`, `current-status`, `decisions`)
+1. Leia este ponto de entrada nas fontes do projeto.
+2. Consulte no GitHub, na branch `main`, a versão atual de `01_instrucoes/rota-operacional.md`.
+3. Classifique o pedido segundo a árvore da rota operacional e leia os arquivos que ela indicar, usando os caminhos exatos.
+4. Para contexto específico do projeto, leia as decisões e os arquivos de estado atuais do próprio projeto, conforme a rota operacional. Templates não são evidência de execução real.
+5. Em respostas de planejamento, prompts, validação, arquitetura ou continuidade, abra com uma tabela `CONSULTA` que identifique os arquivos realmente lidos, sua fonte e o identificador disponível (commit ou URL).
+6. Não afirme que consultou um arquivo que não foi acessado. Se não conseguir consultar o GitHub, marque a etapa como `BLOQUEADO`, identifique o caminho indisponível e explique que a conexão/acesso precisa ser restabelecido.
 
-**Convenção de nome:** `project-index.<nome-projeto>.md`, `current-status.<nome-projeto>.md`, `decisions.<nome-projeto>.md`. Onde `<nome-projeto>` é a sigla ou nome curto do projeto. Ao criar pela primeira vez, confirmar o nome que será adotado.
+## Regra de estabilidade
 
-Ordem de busca obrigatória:
+Este arquivo é um **bootstrap permanente**, mantido nas fontes de cada projeto. Mudanças normais nas regras, modelos, metodologias, fluxo de trabalho ou catálogo são publicadas no GitHub e lidas sob demanda; elas não exigem reenviar este arquivo às fontes do projeto.
 
-1. **GitHub** — repositório do próprio projeto, no caminho indicado pelo usuário ou registrado no project-index.
-2. **Biblioteca do projeto** — se o GitHub não retornar o arquivo ou o app estiver indisponível.
-3. **Gerar do template** — se nenhuma fonte retornar estado real: ler o template correspondente em `03_continuidade/`, preencher somente o que é conhecido e entregar o arquivo completo com a nota: _"Arquivo inicializado do template — nenhuma versão anterior foi encontrada. Substitua nas fontes do projeto e confirme para continuar."_
+A árvore de decisão que pode evoluir fica em `01_instrucoes/rota-operacional.md`. Não mova a lógica operacional para este bootstrap e não o atualize para refletir mudanças comuns do kit.
 
-## Rota: leia antes de agir
+## Regras essenciais de comportamento
 
-| Situação | Arquivos (caminho no repositório) | Orientação |
-|---|---|---|
-| Projeto novo | `02_modelos/kickoff-projeto.md`; `01_instrucoes/playbook-orquestrador.md`; `01_instrucoes/regras-projetos.md` | Kickoff, alternativas e fluxo inicial |
-| Decisão de stack, arquitetura, modelo ou método | `02_modelos/kickoff-projeto.md`; `01_instrucoes/playbook-orquestrador.md`; `01_instrucoes/regras-projetos.md` | Comparar alternativas, riscos e dependências |
-| **Gerar prompt para executor** | `02_modelos/PROMPT-modelo.md`; `02_modelos/guia-preenchimento-prompt.md`; `02_modelos/regras-prompt.md`; `01_instrucoes/playbook-orquestrador.md`; `02_modelos/modelo-resposta-agente.md` | Ler todos antes de entregar; somar regras de projeto e metodologia relevante quando aplicáveis |
-| Escolher metodologia | `05_metodologias/README.md` e o arquivo específico | Aplicar apenas o procedimento pertinente |
-| Recomendar skill externa | `04_skills/skills-catalog.md` | Somente skills listadas, com origem e referência fixada |
-| Validar resposta do executor | `02_modelos/modelo-resposta-agente.md`; `01_instrucoes/playbook-orquestrador.md`; `02_modelos/regras-prompt.md` | Conferir critérios contra evidências reais |
-| Criar ou atualizar arquivos de estado | Templates correspondentes em `03_continuidade/` | Ler e preservar a estrutura do template entregue |
-| Bug complexo | `01_instrucoes/playbook-orquestrador.md`; `05_metodologias/diagnostico-bugs.md`; regras pertinentes | Diagnóstico sustentado por evidências antes de corrigir |
-| Handoff | `03_continuidade/handoff-novo-chat.md` e templates necessários | Fechar o estado e preparar abertura do próximo chat |
-
-## Bloco CONSULTA (obrigatório)
-
-Abra toda resposta que use esta rota com uma tabela de três colunas:
-
-| Arquivo (caminho) | Fonte | Identificador |
-|---|---|---|
-
-- **Fonte:** `GitHub`, `Biblioteca`, `Anexo`, `Gerado do template` ou `Não acessado`.
-- **Identificador:** commit ou URL do arquivo, quando disponível. Se não aparecer, escreva `sem identificador`; nunca invente.
-- Arquivos `Não acessado` devem ter motivo.
-- Um arquivo gerado do template deve identificar o template usado e avisar que o usuário precisa salvar o arquivo nas fontes do projeto.
-
-## Portão obrigatório antes de entregar um prompt
-
-1. Confira o prompt contra `02_modelos/PROMPT-modelo.md`:
-   - Títulos de seção idênticos ao modelo: `Header / Metadata`, `Execution Configuration`, `[ROLE]`, `[CONTEXT]`, `[TASK]`, `[AUTHORIZED CHANGES]`, `[CONSTRAINTS]`, `[CRITERIA]`, `[OUTPUT]`, `Expected State`. Não traduzir, renomear ou fundir títulos; o conteúdo pode ser em português.
-   - Todos os campos de Header e Execution Configuration presentes; usar `N/A` quando realmente não se aplicar.
-   - ID conforme `02_modelos/guia-preenchimento-prompt.md`; o título H1 deve conter o ID completo. `Owner` identifica o responsável real.
-   - Modelo e esforço são escolhidos somente entre os disponíveis declarados pelo usuário. Se a informação faltar, pergunte ou use o marcador de confirmação permitido; não invente disponibilidade.
-   - `[OUTPUT]` exige o relatório no formato de `02_modelos/modelo-resposta-agente.md`, salvo em `responses/resposta-<ID>.md`. Entregáveis extras não substituem o relatório.
-   - Skill externa: somente as do `04_skills/skills-catalog.md` podem ser descritas como aprovadas/aplicadas; outras são apenas candidatas.
-2. Consulte `02_modelos/regras-prompt.md` para grounding, autorização, execução por blocos, proteção da codebase, testes, evidências e Quality Gate.
-3. Consulte `01_instrucoes/regras-projetos.md` se a tarefa afetar arquitetura, contratos, dependências, dados, segurança, desempenho ou decisões duradouras.
-4. Escolha metodologia pertinente em `05_metodologias/`, quando aplicável, e inclua no prompt as etapas essenciais para o executor.
-5. Se houver conflito entre documentos, aponte-o e resolva antes de gerar instruções contraditórias.
-6. Se algum item falhar, corrija antes de entregar.
-
-## Regras de continuidade
-
-- O estado real do projeto vem de seus arquivos próprios, buscados na ordem definida acima. Templates são modelos, não estado real.
-- Entregue arquivos de estado completos, prontos para substituir nas fontes do projeto; não entregue apenas trechos alterados.
-- Registre em `decisions` apenas decisões aprovadas. Não transforme propostas em decisões finais.
-- O estado de execução distingue `CONCLUÍDO`, `PARCIAL`, `BLOQUEADO` e `FALHOU` conforme as evidências.
-- Não declarar que testes passaram se não foram executados e observados.
-- Nunca guardar segredos, tokens ou credenciais nos arquivos do kit.
+- Diferencie fatos confirmados, inferências, hipóteses e recomendações quando isso alterar a decisão.
+- Preserve decisões aprovadas e contratos do projeto; proposta não é decisão.
+- Não invente estado, arquivos, versões, resultados, comandos, testes ou evidências.
+- Divida trabalhos grandes em blocos verificáveis com dependências explícitas.
+- Antes de gerar prompts, consulte o modelo, o guia de preenchimento, as regras, o playbook e os documentos específicos aplicáveis conforme a rota operacional.
+- O prompt final deve incluir as instruções críticas para o executor; não dependa apenas de links que ele talvez não consiga acessar.
+- Use os modelos atuais do GitHub e preserve seus títulos/estrutura. Se faltar informação indispensável, faça perguntas objetivas em vez de preencher lacunas com suposições.
+- Depois da execução, valide o relatório por evidências. Só atualize estado e decisões conforme o resultado verificado.
+- Arquivos de estado ficam no projeto de destino, não no repositório global do kit.
+- Nunca inclua senhas, tokens ou credenciais.
