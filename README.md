@@ -6,7 +6,7 @@
 
 Regras claras · Prompts verificáveis · Execução por blocos · Evidências reais
 
-[Começar](#comece-por-aqui) · [Como funciona](#como-o-sistema-funciona) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
+[Começar](#comece-por-aqui) · [Como funciona](#como-o-sistema-funciona) · [Contribuir](#como-contribuir) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
 
 </div>
 
@@ -143,6 +143,11 @@ O fluxo detalhado mostra as relações entre os documentos. O infográfico é a 
 ```text
 .
 ├── README.md
+├── CONTRIBUTING.md
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.yml
+│       └── feature_request.yml
 ├── 00_ROTA-DE-CONSULTA.md
 ├── 00_GUIA-DE-CONFIGURACAO.md
 ├── 01_instrucoes/
@@ -195,6 +200,17 @@ O Quality Gate não exige refatorar tudo: avalia apenas os critérios pertinente
 - Use [`04_skills/skills-catalog.md`](04_skills/skills-catalog.md) para skills externas aprovadas e com referência fixada.
 - Use [`05_metodologias/README.md`](05_metodologias/README.md) para escolher o procedimento adequado ao problema.
 - Não aplique todas as metodologias por padrão nem declare uma metodologia executada sem registrar as etapas e evidências correspondentes.
+
+## Como contribuir
+
+Use [`CONTRIBUTING.md`](CONTRIBUTING.md) como guia de contribuição.
+
+- **Bugs e defeitos documentais:** abra uma GitHub Issue usando o formulário *Reportar bug*.
+- **Melhorias e novas capacidades:** abra uma Issue usando o formulário *Propor melhoria*.
+- **Alterações propostas:** use branch e Pull Request para revisão; relacione a Issue quando houver.
+- **Histórico:** commits e Pull Requests registram o que foi alterado; Issues acompanham o problema, a discussão e o estado até a resolução.
+
+Não mantemos um `BUGS.md` ou `MELHORIAS.md` como backlog paralelo. Isso duplicaria o rastreamento do GitHub e tenderia a ficar desatualizado. O guia de contribuição também define as regras para preservar o bootstrap permanente, atualizar documentos dependentes e regenerar `kit-operacional.md`.
 
 ## Manutenção e versionamento
 
