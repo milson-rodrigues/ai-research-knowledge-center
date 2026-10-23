@@ -50,10 +50,18 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 
 ## Como os arquivos se relacionam
 
-O fluxo começa pela rota, que aponta para os documentos necessários à tarefa. Esses documentos alimentam o prompt; depois da execução, o relatório permite validar os resultados e atualizar a continuidade.
+O fluxo detalhado preserva as etapas de consulta, preparação, autorização, execução e validação. O infográfico oferece uma leitura resumida do mesmo ciclo. As duas imagens têm fundo transparente, cartões com preenchimento próprio e texto vetorial para manter a legibilidade em temas claros e escuros.
+
+### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos.png" alt="Diagrama do fluxo dos documentos do AI Research Knowledge Center, da rota de consulta à execução, validação e continuidade." width="850">
+  <img src="assets/relacionamento-arquivos.svg" alt="Fluxo detalhado: rota de consulta, guia, modelo, regras, playbook, metodologia, prompt, agente executor, modelo de resposta, validação e atualização de estado." width="850">
+</p>
+
+### Infográfico — visão resumida
+
+<p align="center">
+  <img src="assets/relacionamento-arquivos-infografico.svg" alt="Infográfico resumido: rota de consulta, guia de prompt, regras e playbook, metodologia, prompt final, agente, relatório, validação e continuidade." width="1000">
 </p>
 
 ### Responsabilidade de cada camada
