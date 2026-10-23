@@ -101,7 +101,7 @@ O fluxo começa pela rota, que aponta para os documentos necessários à tarefa.
 │   ├── diagnostico-bugs.md
 │   └── revisao-codigo.md
 ├── assets/
-│   └── relacionamento-arquivos.gif
+│   └── relacionamento-arquivos.png
 └── kit-operacional.md
 ```
 
