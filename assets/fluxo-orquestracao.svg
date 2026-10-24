@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="1810" viewBox="0 0 1450 1810">
+<defs>
+ <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8094B3"/></marker>
+ <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#142747" flood-opacity=".12"/></filter>
+<linearGradient id="canvasGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FCFDFF"/><stop offset="100%" stop-color="#EEF3F9"/></linearGradient>
+ <pattern id="canvasDotGrid" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#CBD6E5" opacity=".48"/></pattern>
+ <filter id="flowGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect class="canvas-background" x="1.5" y="1.5" width="1447" height="1807" rx="24" fill="url(#canvasGradient)" stroke="#D4DEEB" stroke-width="3"/>
+ <rect x="3" y="3" width="1444" height="1804" rx="22" fill="url(#canvasDotGrid)" opacity=".45"/>
+<text x="725" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#142747">AI Research Knowledge Center</text>
+<text x="725" y="73" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#4F6585">Fluxo detalhado: consulta, decisão, execução e continuidade</text>
+<!-- main chain -->
+<path d="M725 185 V230 M725 330 V385 M725 475 V515 H157 V550 M725 515 H432 V550 M725 515 V550 M725 515 H982 V550 M725 515 H1257 V550" fill="none" stroke="#8094B3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="420" y="105" width="610" height="80" rx="16" fill="#EAF2FF" stroke="#2563EB" stroke-width="3" filter="url(#shadow)"/>
+<text x="725" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">00_ROTA-DE-CONSULTA.md</text>
+<text x="725" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Bootstrap estável nas fontes do projeto</text>
+<rect x="420" y="230" width="610" height="100" rx="16" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3" filter="url(#shadow)"/>
+<text x="725" y="267" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">01_instrucoes/rota-operacional.md</text>
+<text x="725" y="297" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Árvore dinâmica lida diretamente no GitHub</text>
+<rect x="475" y="385" width="500" height="90" rx="16" fill="#F2ECFF" stroke="#7446D8" stroke-width="3" filter="url(#shadow)"/>
+<text x="725" y="421" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#142747">Classificar o pedido do usuário</text>
+<text x="725" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Escolher a ramificação e os arquivos pertinentes</text>
+<!-- branch cards -->
+<g filter="url(#shadow)" font-family="Arial,sans-serif" text-anchor="middle">
+ <rect x="35" y="550" width="245" height="125" rx="15" fill="#EAF2FF" stroke="#2563EB" stroke-width="3"/>
+ <text x="157" y="585" font-size="19" font-weight="700" fill="#142747">PROJETO NOVO</text><text x="157" y="615" font-size="17" fill="#4F6585">Kickoff · requisitos</text><text x="157" y="640" font-size="17" fill="#4F6585">alternativas · aprovação</text>
+ <rect x="310" y="550" width="245" height="125" rx="15" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/>
+ <text x="432" y="585" font-size="19" font-weight="700" fill="#142747">PROMPT / FEATURE</text><text x="432" y="615" font-size="17" fill="#4F6585">Inspecionar estado</text><text x="432" y="640" font-size="17" fill="#4F6585">escopo e dependências</text>
+ <rect x="585" y="550" width="245" height="125" rx="15" fill="#FFF0F2" stroke="#D83D5B" stroke-width="3"/>
+ <text x="707" y="585" font-size="19" font-weight="700" fill="#142747">BUG / CORREÇÃO</text><text x="707" y="615" font-size="17" fill="#4F6585">Ler erro, diff e relatório</text><text x="707" y="640" font-size="17" fill="#4F6585">diagnosticar antes de mudar</text>
+ <rect x="860" y="550" width="245" height="125" rx="15" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/>
+ <text x="982" y="585" font-size="19" font-weight="700" fill="#142747">VALIDAR EXECUÇÃO</text><text x="982" y="615" font-size="17" fill="#4F6585">Conferir prompt, testes</text><text x="982" y="640" font-size="17" fill="#4F6585">relatório e evidências</text>
+ <rect x="1135" y="550" width="280" height="125" rx="15" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/>
+ <text x="1275" y="585" font-size="19" font-weight="700" fill="#142747">PESQUISA / ESTADO</text><text x="1275" y="615" font-size="17" fill="#4F6585">Arquitetura, skills,</text><text x="1275" y="640" font-size="17" fill="#4F6585">templates e handoff</text>
+</g>
+<!-- branch to relevant docs -->
+<path d="M157 675 V725 M432 675 V725 M707 675 V725 M982 675 V725 M1275 675 V725" fill="none" stroke="#8094B3" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)" font-family="Arial,sans-serif" text-anchor="middle">
+ <rect x="35" y="725" width="245" height="112" rx="14" fill="#F5F8FF" stroke="#A9BCE0" stroke-width="2"/><text x="157" y="760" font-size="18" font-weight="700" fill="#142747">KICKOFF + REGRAS</text><text x="157" y="787" font-size="17" fill="#4F6585">Dossiê e decisões</text><text x="157" y="811" font-size="17" fill="#4F6585">antes de executar</text>
+ <rect x="310" y="725" width="245" height="112" rx="14" fill="#F0FAF7" stroke="#8CCDBC" stroke-width="2"/><text x="432" y="760" font-size="18" font-weight="700" fill="#142747">MODELO + GUIA</text><text x="432" y="787" font-size="17" fill="#4F6585">Regras de prompt</text><text x="432" y="811" font-size="17" fill="#4F6585">e playbook</text>
+ <rect x="585" y="725" width="245" height="112" rx="14" fill="#FFF5F6" stroke="#F1A0AF" stroke-width="2"/><text x="707" y="760" font-size="18" font-weight="700" fill="#142747">DIAGNÓSTICO</text><text x="707" y="787" font-size="17" fill="#4F6585">Causa, evidências</text><text x="707" y="811" font-size="17" fill="#4F6585">e correção mínima</text>
+ <rect x="860" y="725" width="245" height="112" rx="14" fill="#FFFBEC" stroke="#E4CE78" stroke-width="2"/><text x="982" y="760" font-size="18" font-weight="700" fill="#142747">RELATÓRIO + REGRAS</text><text x="982" y="787" font-size="17" fill="#4F6585">Critérios e testes</text><text x="982" y="811" font-size="17" fill="#4F6585">contra o prompt original</text>
+ <rect x="1135" y="725" width="280" height="112" rx="14" fill="#F8F4FF" stroke="#C5B5EE" stroke-width="2"/><text x="1275" y="760" font-size="18" font-weight="700" fill="#142747">CATÁLOGO / TEMPLATES</text><text x="1275" y="787" font-size="17" fill="#4F6585">Pesquisa, métodos,</text><text x="1275" y="811" font-size="17" fill="#4F6585">estado e handoff</text>
+</g>
+<!-- convergence and output -->
+<path d="M157 837 V870 H432 V930 M432 837 V930 M707 837 V870 H725 V930 M982 837 V870 H1015 V930 M1275 837 V880 H1300 V1090" fill="none" stroke="#8094B3" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="360" y="930" width="730" height="115" rx="16" fill="#EAF2FF" stroke="#2563EB" stroke-width="3" filter="url(#shadow)"/>
+<text x="725" y="968" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">Montagem comum do prompt</text>
+<text x="725" y="997" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">PROMPT-modelo + guia + regras + playbook + relatório</text>
+<text x="725" y="1023" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4F6585">Regras do projeto e metodologia entram quando aplicáveis</text>
+<path d="M725 1045 V1070 M725 1145 V1175 M725 1255 V1290 M725 1370 V1400 M725 1480 V1510 M725 1590 V1620" fill="none" stroke="#8094B3" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="475" y="1070" width="500" height="75" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/>
+<text x="725" y="1100" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#142747">Contexto indispensável confirmado?</text><text x="725" y="1127" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4F6585">Se não, perguntar antes de executar</text>
+<path d="M475 1108 H320 V1140" fill="none" stroke="#B98108" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="35" y="1140" width="285" height="100" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/><text x="177" y="1180" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#142747">Perguntas objetivas</text><text x="177" y="1210" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4F6585">ou bloqueio explícito</text>
+<rect x="475" y="1175" width="500" height="80" rx="14" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/><text x="725" y="1208" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Prompt completo</text><text x="725" y="1236" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Pronto para copiar e enviar ao executor</text>
+<rect x="475" y="1290" width="500" height="80" rx="14" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/><text x="725" y="1323" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Agente executor</text><text x="725" y="1351" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">O usuário encaminha o prompt</text>
+<rect x="475" y="1400" width="500" height="80" rx="14" fill="#EAF2FF" stroke="#2563EB" stroke-width="3"/><text x="725" y="1433" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Relatório padronizado</text><text x="725" y="1461" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Alterações, testes, desvios e evidências</text>
+<rect x="475" y="1510" width="500" height="80" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/><text x="725" y="1543" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Validação por evidências</text><text x="725" y="1571" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">CONCLUÍDO · PARCIAL · BLOQUEADO · FALHOU</text>
+<rect x="475" y="1620" width="500" height="85" rx="14" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/><text x="725" y="1654" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Atualizar continuidade</text><text x="725" y="1682" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Status, decisões aprovadas e próxima ação</text>
+<!-- correction loop and direct branch -->
+<path d="M975 1548 H1430 V985 H1090" fill="none" stroke="#D83D5B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1250" y="965" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#D83D5B">Falha: prompt de correção</text>
+<rect x="1120" y="1090" width="295" height="150" rx="14" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/><text x="1267" y="1130" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#142747">Saída direta</text><text x="1267" y="1160" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Pesquisa, recomendação,</text><text x="1267" y="1188" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Dossiê, estado ou</text><text x="1267" y="1216" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">perguntas conforme a rota</text>
+<text x="725" y="1763" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">O bootstrap permanece estável; o fluxo operacional é lido sob demanda no GitHub.</text>
+</svg>
