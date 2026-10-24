@@ -107,25 +107,30 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado usa uma animação SVG progressiva adaptativa aos temas claro e escuro. Uma esfera luminosa percorre cabos de fibra óptica e o quadrante de chegada ganha uma borda com brilho suave. Neste diagrama, os ramos do losango representam tipos alternativos de pedido, então a luz percorre uma rota por vez; um paralelismo real deve ser representado com sinais simultâneos. A versão estática com o mesmo fundo fica disponível logo abaixo. O infográfico resumido permanece estático, e os dois diagramas originais continuam preservados no repositório. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado tem versões estática e animada disponíveis no repositório. Neste README, a animação fica concentrada no infográfico resumido: uma esfera luminosa percorre os cabos de fibra óptica, acende o quadrante de chegada e percorre cada alternativa até o fim antes de iniciar a seguinte. O tema claro/escuro adapta fundo, contraste e brilho. A sequência é ilustrativa, não representa uma execução real. Os dois diagramas originais permanecem preservados. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <a href="assets/fluxo-orquestracao-animado.svg">
-    <img src="assets/fluxo-orquestracao-animado.svg" alt="Fluxo de orquestração animado e adaptativo aos temas: uma esfera luminosa percorre os cabos entre as etapas, e o quadrante de chegada acende com brilho suave." width="1000">
-  </a>
+  <img src="assets/fluxo-orquestracao.svg" alt="Fluxo detalhado estático e adaptativo aos temas: consulta, classificação, documentos de apoio, montagem do prompt, execução, validação e continuidade." width="850">
 </p>
 
 <p align="center">
-  <a href="assets/fluxo-orquestracao.svg">Ver versão estática com fundo (SVG)</a> ·
+  <a href="assets/fluxo-orquestracao-animado.svg">Abrir animação do fluxo detalhado (SVG)</a> ·
   <a href="assets/relacionamento-arquivos.svg">Ver diagrama original (SVG)</a>
 </p>
 
 ### Infográfico — visão resumida
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos-infografico.svg" alt="Infográfico estático resumido: bootstrap permanente, rota operacional, classificação, ramificações do pedido, montagem do prompt, execução e validação." width="1000">
+  <a href="assets/fluxo-orquestracao-infografico-animado.svg">
+    <img src="assets/fluxo-orquestracao-infografico-animado.svg" alt="Infográfico animado com tema claro ou escuro: uma esfera luminosa percorre, uma por vez, as cinco alternativas do fluxo e depois os caminhos de validação e retorno." width="1000">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/fluxo-orquestracao-infografico.svg">Ver infográfico estático adaptativo (SVG)</a> ·
+  <a href="assets/relacionamento-arquivos-infografico.svg">Ver infográfico original (SVG)</a>
 </p>
 
 ### Responsabilidade de cada camada
