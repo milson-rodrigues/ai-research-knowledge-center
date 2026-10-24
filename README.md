@@ -107,16 +107,18 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado tem versões estática e animada disponíveis no repositório. Neste README, a animação fica concentrada no infográfico resumido: uma esfera luminosa percorre os cabos de fibra óptica, acende o quadrante de chegada e percorre cada alternativa até o fim antes de iniciar a seguinte. O tema claro/escuro adapta fundo, contraste e brilho. A sequência é ilustrativa, não representa uma execução real. Os dois diagramas originais permanecem preservados. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado e o infográfico resumido têm animações progressivas no README. Em ambos, uma esfera luminosa percorre cabos de fibra óptica, destaca a etapa ao chegar e segue as conexões conforme a lógica do diagrama. As rotas alternativas são mostradas uma por vez; o retorno de correção também é representado. Fundo, contraste e brilho adaptam-se aos temas claro e escuro. A animação é ilustrativa e não representa uma execução em tempo real. Os dois diagramas originais permanecem preservados. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <img src="assets/fluxo-orquestracao.svg" alt="Fluxo detalhado estático e adaptativo aos temas: consulta, classificação, documentos de apoio, montagem do prompt, execução, validação e continuidade." width="850">
+  <a href="assets/fluxo-orquestracao-animado.svg">
+    <img src="assets/fluxo-orquestracao-animado.svg" alt="Fluxo detalhado animado: uma esfera luminosa percorre os cabos de fibra óptica, destaca o quadrante de chegada e percorre as alternativas e os retornos do processo." width="1000">
+  </a>
 </p>
 
 <p align="center">
-  <a href="assets/fluxo-orquestracao-animado.svg">Abrir animação do fluxo detalhado (SVG)</a> ·
+  <a href="assets/fluxo-orquestracao.svg">Ver versão estática adaptativa (SVG)</a> ·
   <a href="assets/relacionamento-arquivos.svg">Ver diagrama original (SVG)</a>
 </p>
 
