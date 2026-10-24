@@ -107,26 +107,23 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado mostra as relações entre os documentos. O infográfico é a visão resumida. As duas animações são SVGs vetoriais: as etapas ganham destaque sequencial e as conexões são percorridas na ordem do fluxo. As versões estáticas continuam disponíveis nos links abaixo de cada diagrama. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado usa uma animação SVG progressiva: uma borda dourada destaca a etapa atual e pequenos pontos percorrem as conexões para mostrar o caminho do processo. A versão estática com o mesmo fundo fica disponível logo abaixo. O infográfico resumido permanece estático, e os dois diagramas originais continuam preservados no repositório. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos-animado.svg" alt="Fluxo detalhado animado: consulta ao bootstrap e à rota operacional, classificação do pedido, documentos relevantes, montagem do prompt, executor, relatório, validação por evidências e continuidade." width="850">
+  <img src="assets/fluxo-orquestracao-animado.svg" alt="Fluxo de orquestração animado: brilho dourado destaca sequencialmente cada etapa e pontos percorrem as setas do fluxograma, desde a consulta até a validação e a continuidade." width="850">
 </p>
 
 <p align="center">
-  <a href="assets/relacionamento-arquivos.svg">Ver versão estática do fluxo detalhado (SVG)</a>
+  <a href="assets/fluxo-orquestracao.svg">Ver versão estática com fundo (SVG)</a> ·
+  <a href="assets/relacionamento-arquivos.svg">Ver diagrama original (SVG)</a>
 </p>
 
 ### Infográfico — visão resumida
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos-infografico-animado.svg" alt="Infográfico animado resumido: bootstrap permanente, rota operacional, classificação, ramificações do pedido, montagem do prompt, execução e validação." width="1000">
-</p>
-
-<p align="center">
-  <a href="assets/relacionamento-arquivos-infografico.svg">Ver versão estática do infográfico (SVG)</a>
+  <img src="assets/relacionamento-arquivos-infografico.svg" alt="Infográfico estático resumido: bootstrap permanente, rota operacional, classificação, ramificações do pedido, montagem do prompt, execução e validação." width="1000">
 </p>
 
 ### Responsabilidade de cada camada
