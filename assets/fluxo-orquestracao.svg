@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="1810" viewBox="0 0 1450 1810">
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="1810" viewBox="0 0 1450 1810" role="img" aria-labelledby="title desc">
+<title id="title">Fluxo de orquestração do AI Research Knowledge Center</title>
+<desc id="desc">Diagrama estático com fundo suave mostrando o bootstrap, a rota operacional, as ramificações, a montagem do prompt, a execução, a validação por evidências e a continuidade.</desc>
 <defs>
  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8094B3"/></marker>
  <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#142747" flood-opacity=".12"/></filter>
