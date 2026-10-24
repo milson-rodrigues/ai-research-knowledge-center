@@ -6,6 +6,10 @@
 
 Regras claras · Prompts verificáveis · Execução por blocos · Evidências reais
 
+<a href="assets/fluxo-orquestracao-animado.svg">
+  <img src="assets/fluxo-orquestracao-animado.gif" alt="Fluxo animado: pedido, rota operacional, prompt completo, agente executor, validação por evidências e continuidade." width="1000">
+</a>
+
 [Começar](#comece-por-aqui) · [Como funciona](#como-o-sistema-funciona) · [Contribuir](#como-contribuir) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
 
 </div>
