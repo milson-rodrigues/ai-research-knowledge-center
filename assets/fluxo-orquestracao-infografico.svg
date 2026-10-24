@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+<title id="title">Infográfico resumido — AI Research Knowledge Center</title>
+<desc id="desc">Visão resumida do bootstrap permanente, da rota operacional, da classificação do pedido, das cinco alternativas, da montagem do prompt, da execução, da validação e dos caminhos de retorno.</desc>
+<defs><marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#8094B3"/></marker><filter id="sh" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#142747" flood-opacity=".12"/></filter>
+  <linearGradient id="canvasGradient" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#FCFDFF"/><stop offset="100%" stop-color="#EEF3F9"/>
+  </linearGradient>
+  <linearGradient id="canvasGradientDark" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#081323"/><stop offset="100%" stop-color="#101E32"/>
+  </linearGradient>
+  <pattern id="canvasDotGrid" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.1" fill="#BFCDE0" opacity=".48"/>
+  </pattern>
+  <pattern id="canvasDotGridDark" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.1" fill="#2B4260" opacity=".62"/>
+  </pattern>
+  <filter id="flowGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="4.5" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <style>
+    .canvas-background{fill:url(#canvasGradient);stroke:#D4DEEB;stroke-width:3}
+    .canvas-grid{fill:url(#canvasDotGrid);opacity:.5}
+    @media(prefers-color-scheme:dark){
+      .canvas-background{fill:url(#canvasGradientDark)!important;stroke:#29415F!important}
+      .canvas-grid{fill:url(#canvasDotGridDark)!important;opacity:.55}
+      text[fill="#142747"]{fill:#EDF5FF!important}
+      text[fill="#4F6585"]{fill:#B9C9DE!important}
+      text[fill="#D83D5B"]{fill:#FF8299!important}
+      rect[fill="#EAF2FF"]{fill:#142B45!important}
+      rect[fill="#E5F7F0"]{fill:#123331!important}
+      rect[fill="#F2ECFF"]{fill:#26233F!important}
+      rect[fill="#FFF0F2"]{fill:#3B1E2A!important}
+      rect[fill="#FFF8DD"]{fill:#382F1C!important}
+      rect[stroke="#2563EB"]{stroke:#45B8FF!important}
+      rect[stroke="#0C8A70"]{stroke:#3BDBBA!important}
+      rect[stroke="#7446D8"]{stroke:#A18CFF!important}
+      rect[stroke="#D83D5B"]{stroke:#FF7892!important}
+      rect[stroke="#B98108"]{stroke:#F2C75B!important}
+      path[stroke="#8094B3"]{stroke:#5B7697!important}
+      path[fill="#8094B3"]{fill:#5B7697!important}
+    }
+  </style>
+</defs>
+<rect class="canvas-background" x="1.5" y="1.5" width="1597" height="1047" rx="24"/>
+<rect class="canvas-grid" x="3" y="3" width="1594" height="1044" rx="22"/>
+<text x="800" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142747">Como o sistema funciona</text>
+<text x="800" y="80" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#4F6585">Bootstrap permanente · rota dinâmica · prompt comum · validação com evidências</text>
+<path d="M800 185 V220 M800 325 V360 M800 445 V480 M160 590 V604 H800 M480 590 V604 H800 M800 590 V620 M1120 590 V604 H800 M1440 590 V604 H800 M800 715 V750 M800 845 V875" fill="none" stroke="#8094B3" stroke-width="4" marker-end="url(#arr)"/>
+<rect x="450" y="105" width="700" height="80" rx="16" fill="#EAF2FF" stroke="#2563EB" stroke-width="3" filter="url(#sh)"/><text x="800" y="137" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">00_ROTA-DE-CONSULTA.md</text><text x="800" y="163" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Bootstrap estável nas fontes do projeto</text>
+<rect x="450" y="220" width="700" height="105" rx="16" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3" filter="url(#sh)"/><text x="800" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">Rota operacional atual no GitHub</text><text x="800" y="288" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">01_instrucoes/rota-operacional.md — muda sem reenvio do bootstrap</text>
+<rect x="450" y="360" width="700" height="85" rx="16" fill="#F2ECFF" stroke="#7446D8" stroke-width="3" filter="url(#sh)"/><text x="800" y="394" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">Classificar a solicitação</text><text x="800" y="421" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Projeto novo · prompt · correção · validação · pesquisa · estado</text>
+<!-- branch chips -->
+<path d="M800 445 V465 H160 V490 M800 465 H480 V490 M800 465 V490 M800 465 H1120 V490 M800 465 H1440 V490" fill="none" stroke="#8094B3" stroke-width="3" marker-end="url(#arr)"/>
+<g font-family="Arial,sans-serif" text-anchor="middle" filter="url(#sh)">
+ <rect x="35" y="490" width="250" height="100" rx="14" fill="#EAF2FF" stroke="#2563EB" stroke-width="3"/><text x="160" y="525" font-size="19" font-weight="700" fill="#142747">PROJETO NOVO</text><text x="160" y="554" font-size="17" fill="#4F6585">Kickoff e aprovação</text>
+ <rect x="355" y="490" width="250" height="100" rx="14" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/><text x="480" y="525" font-size="19" font-weight="700" fill="#142747">PROMPT / FEATURE</text><text x="480" y="554" font-size="17" fill="#4F6585">Estado, escopo e blocos</text>
+ <rect x="675" y="490" width="250" height="100" rx="14" fill="#FFF0F2" stroke="#D83D5B" stroke-width="3"/><text x="800" y="525" font-size="19" font-weight="700" fill="#142747">BUG / CORREÇÃO</text><text x="800" y="554" font-size="17" fill="#4F6585">Diagnóstico e correção</text>
+ <rect x="995" y="490" width="250" height="100" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/><text x="1120" y="525" font-size="19" font-weight="700" fill="#142747">VALIDAR EXECUÇÃO</text><text x="1120" y="554" font-size="17" fill="#4F6585">Critérios e evidências</text>
+ <rect x="1315" y="490" width="250" height="100" rx="14" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/><text x="1440" y="525" font-size="19" font-weight="700" fill="#142747">PESQUISA / ESTADO</text><text x="1440" y="554" font-size="17" fill="#4F6585">Fontes, templates, handoff</text>
+</g>
+<rect x="360" y="620" width="880" height="95" rx="16" fill="#EAF2FF" stroke="#2563EB" stroke-width="3" filter="url(#sh)"/><text x="800" y="657" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#142747">Montagem comum do prompt</text><text x="800" y="686" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Modelo + guia + regras + playbook + relatório do executor</text>
+<rect x="360" y="750" width="880" height="95" rx="16" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3" filter="url(#sh)"/><text x="800" y="787" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#142747">Perguntas ou prompt executável completo</text><text x="800" y="816" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Sem contexto suficiente: perguntar · Com contexto: entregar no padrão do kit</text>
+<rect x="360" y="875" width="880" height="95" rx="16" fill="#F2ECFF" stroke="#7446D8" stroke-width="3" filter="url(#sh)"/><text x="800" y="912" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#142747">Executor → Relatório → Validação</text><text x="800" y="941" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Evidências reais decidem se conclui, corrige ou bloqueia o próximo bloco</text>
+<path d="M360 922 H25 V666 H360 M1240 922 H1575 V666 H1240" fill="none" stroke="#D83D5B" stroke-width="3" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="28" y="645" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#D83D5B">Correção retorna</text><text x="1430" y="645" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#D83D5B">Estado atualizado</text>
+<text x="800" y="1015" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">O chat orquestra; o agente externo executa; o usuário encaminha o prompt e devolve o relatório.</text>
+</svg>
