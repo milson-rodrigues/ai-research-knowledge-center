@@ -37,13 +37,13 @@
 @keyframes focus-10{0%,63%{opacity:0} 63.35%,68.3%{opacity:1} 68.8%,100%{opacity:0}}
 @keyframes focus-11{0%,70%{opacity:0} 70.35%,75.3%{opacity:1} 75.8%,100%{opacity:0}}
 @keyframes focus-12{0%,77%{opacity:0} 77.35%,82.3%{opacity:1} 82.8%,100%{opacity:0}}
-@keyframes trace-1{0%,0%{stroke-dashoffset:1000;opacity:0} 0.7%%{opacity:1} 12%{stroke-dashoffset:0;opacity:1} 13%%,100%{stroke-dashoffset:0;opacity:0}} 0.7%{opacity:1} 7%{stroke-dashoffset:0;opacity:1} 8%,100%{stroke-dashoffset:0;opacity:0}}
-@keyframes trace-2{0%,20%{stroke-dashoffset:1000;opacity:0} 20.7%%{opacity:1} 28%{stroke-dashoffset:0;opacity:1} 29%%,100%{stroke-dashoffset:0;opacity:0}} 7.7%{opacity:1} 14%{stroke-dashoffset:0;opacity:1} 15%,100%{stroke-dashoffset:0;opacity:0}}
-@keyframes trace-3{0%,28%{stroke-dashoffset:1000;opacity:0} 28.7%%{opacity:1} 35%{stroke-dashoffset:0;opacity:1} 36%%,100%{stroke-dashoffset:0;opacity:0}} 14.7%{opacity:1} 21%{stroke-dashoffset:0;opacity:1} 22%,100%{stroke-dashoffset:0;opacity:0}}
-@keyframes trace-4{0%,35%{stroke-dashoffset:1000;opacity:0} 35.7%%{opacity:1} 42%{stroke-dashoffset:0;opacity:1} 43%%,100%{stroke-dashoffset:0;opacity:0}} 21.7%{opacity:1} 28%{stroke-dashoffset:0;opacity:1} 29%,100%{stroke-dashoffset:0;opacity:0}}
-@keyframes trace-5{0%,42%{stroke-dashoffset:1000;opacity:0} 42.7%%{opacity:1} 84%{stroke-dashoffset:0;opacity:1} 85%%,100%{stroke-dashoffset:0;opacity:0}} 42.7%{opacity:1} 72%{stroke-dashoffset:0;opacity:1} 73%,100%{stroke-dashoffset:0;opacity:0}}
-@keyframes trace-6{0%,70%{stroke-dashoffset:1000;opacity:0} 70.7%%{opacity:1} 82%{stroke-dashoffset:0;opacity:1} 83%%,100%{stroke-dashoffset:0;opacity:0}} 70.7%{opacity:1} 81%{stroke-dashoffset:0;opacity:1} 82%,100%{stroke-dashoffset:0;opacity:0}}
-@keyframes trace-7{0%,20%{stroke-dashoffset:1000;opacity:0} 20.7%%{opacity:1} 28%{stroke-dashoffset:0;opacity:1} 29%%,100%{stroke-dashoffset:0;opacity:0}} 28.7%{opacity:1} 35%{stroke-dashoffset:0;opacity:1} 36%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-1{0%,0%{stroke-dashoffset:1000;opacity:0} 0.7%{opacity:1} 12%{stroke-dashoffset:0;opacity:1} 13%,100%{stroke-dashoffset:0;opacity:0}} 0.7%{opacity:1} 7%{stroke-dashoffset:0;opacity:1} 8%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-2{0%,20%{stroke-dashoffset:1000;opacity:0} 20.7%{opacity:1} 28%{stroke-dashoffset:0;opacity:1} 29%,100%{stroke-dashoffset:0;opacity:0}} 7.7%{opacity:1} 14%{stroke-dashoffset:0;opacity:1} 15%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-3{0%,28%{stroke-dashoffset:1000;opacity:0} 28.7%{opacity:1} 35%{stroke-dashoffset:0;opacity:1} 36%,100%{stroke-dashoffset:0;opacity:0}} 14.7%{opacity:1} 21%{stroke-dashoffset:0;opacity:1} 22%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-4{0%,35%{stroke-dashoffset:1000;opacity:0} 35.7%{opacity:1} 42%{stroke-dashoffset:0;opacity:1} 43%,100%{stroke-dashoffset:0;opacity:0}} 21.7%{opacity:1} 28%{stroke-dashoffset:0;opacity:1} 29%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-5{0%,42%{stroke-dashoffset:1000;opacity:0} 42.7%{opacity:1} 84%{stroke-dashoffset:0;opacity:1} 85%,100%{stroke-dashoffset:0;opacity:0}} 42.7%{opacity:1} 72%{stroke-dashoffset:0;opacity:1} 73%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-6{0%,70%{stroke-dashoffset:1000;opacity:0} 70.7%{opacity:1} 82%{stroke-dashoffset:0;opacity:1} 83%,100%{stroke-dashoffset:0;opacity:0}} 70.7%{opacity:1} 81%{stroke-dashoffset:0;opacity:1} 82%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes trace-7{0%,20%{stroke-dashoffset:1000;opacity:0} 20.7%{opacity:1} 28%{stroke-dashoffset:0;opacity:1} 29%,100%{stroke-dashoffset:0;opacity:0}} 28.7%{opacity:1} 35%{stroke-dashoffset:0;opacity:1} 36%,100%{stroke-dashoffset:0;opacity:0}}
   .canvas-background{fill:#FFFFFF}
   @media(prefers-reduced-motion:reduce){.focus-card,.trace{animation:none!important;opacity:0!important}}
   </style>
