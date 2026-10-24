@@ -107,7 +107,7 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado usa uma animação SVG progressiva: uma borda dourada destaca a etapa atual e pequenos pontos percorrem as conexões para mostrar o caminho do processo. A versão estática com o mesmo fundo fica disponível logo abaixo. O infográfico resumido permanece estático, e os dois diagramas originais continuam preservados no repositório. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado usa uma animação SVG progressiva sobre fundo azul-marinho: uma borda dourada destaca a etapa atual, pequenos pontos percorrem as conexões e um cursor de mão acompanha o caminho. A versão estática com o mesmo fundo fica disponível logo abaixo. O infográfico resumido permanece estático, e os dois diagramas originais continuam preservados no repositório. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
