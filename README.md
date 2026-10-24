@@ -107,18 +107,32 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado mostra as relações entre os documentos. O infográfico é a visão resumida. As duas imagens são SVGs, com cartões de contraste próprio e texto vetorial. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado e o infográfico resumido têm animações progressivas no README. Em ambos, uma esfera luminosa percorre cabos de fibra óptica, destaca a etapa ao chegar e segue as conexões conforme a lógica do diagrama. As rotas alternativas são mostradas uma por vez; o retorno de correção também é representado. Fundo, contraste e brilho adaptam-se aos temas claro e escuro. A animação é ilustrativa e não representa uma execução em tempo real. Os dois diagramas originais permanecem preservados. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos.svg" alt="Fluxo detalhado: rota de consulta, guia, modelo, regras, playbook, metodologia, prompt, agente executor, modelo de resposta, validação e atualização de estado." width="850">
+  <a href="assets/fluxo-orquestracao-animado.svg">
+    <img src="assets/fluxo-orquestracao-animado.svg" alt="Fluxo detalhado animado: uma esfera luminosa percorre os cabos de fibra óptica, destaca o quadrante de chegada e percorre as alternativas e os retornos do processo." width="1000">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/fluxo-orquestracao.svg">Ver versão estática adaptativa (SVG)</a> ·
+  <a href="assets/relacionamento-arquivos.svg">Ver diagrama original (SVG)</a>
 </p>
 
 ### Infográfico — visão resumida
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos-infografico.svg" alt="Infográfico resumido: rota de consulta, guia de prompt, regras e playbook, metodologia, prompt final, agente, relatório, validação e continuidade." width="1000">
+  <a href="assets/fluxo-orquestracao-infografico-animado.svg">
+    <img src="assets/fluxo-orquestracao-infografico-animado.svg" alt="Infográfico animado com tema claro ou escuro: uma esfera luminosa percorre, uma por vez, as cinco alternativas do fluxo e depois os caminhos de validação e retorno." width="1000">
+  </a>
+</p>
+
+<p align="center">
+  <a href="assets/fluxo-orquestracao-infografico.svg">Ver infográfico estático adaptativo (SVG)</a> ·
+  <a href="assets/relacionamento-arquivos-infografico.svg">Ver infográfico original (SVG)</a>
 </p>
 
 ### Responsabilidade de cada camada
