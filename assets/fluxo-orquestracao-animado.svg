@@ -1,0 +1,319 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="1810" viewBox="0 0 1450 1810">
+<defs>
+ <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 Z" fill="#8094B3"/></marker>
+ <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#142747" flood-opacity=".12"/></filter>
+<linearGradient id="canvasGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FCFDFF"/><stop offset="100%" stop-color="#EEF3F9"/></linearGradient>
+ <pattern id="canvasDotGrid" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#CBD6E5" opacity=".48"/></pattern>
+ <filter id="flowGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<style>
+.focus-box{vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.glow-1{animation:glow-1 32s ease-in-out infinite}
+.glow-2{animation:glow-2 32s ease-in-out infinite}
+.glow-3{animation:glow-3 32s ease-in-out infinite}
+.glow-4{animation:glow-4 32s ease-in-out infinite}
+.glow-5{animation:glow-5 32s ease-in-out infinite}
+.glow-6{animation:glow-6 32s ease-in-out infinite}
+.glow-7{animation:glow-7 32s ease-in-out infinite}
+.glow-8{animation:glow-8 32s ease-in-out infinite}
+.glow-9{animation:glow-9 32s ease-in-out infinite}
+.glow-10{animation:glow-10 32s ease-in-out infinite}
+.glow-11{animation:glow-11 32s ease-in-out infinite}
+.glow-12{animation:glow-12 32s ease-in-out infinite}
+@keyframes glow-1{0%{opacity:0} 0%{opacity:0} 1.2%{opacity:.42} 3.5%{opacity:.42} 3.9%{opacity:0} 100%{opacity:0}}
+@keyframes glow-2{0%{opacity:0} 3.3%{opacity:0} 4.8%{opacity:.42} 7%{opacity:.42} 7.4%{opacity:0} 100%{opacity:0}}
+@keyframes glow-3{0%{opacity:0} 6.8%{opacity:0} 8.3%{opacity:.42} 11.2%{opacity:.42} 11.6%{opacity:0} 100%{opacity:0}}
+@keyframes glow-4{0%{opacity:0} 11%{opacity:0} 12.5%{opacity:.42} 18.5%{opacity:.42} 18.9%{opacity:0} 100%{opacity:0}}
+@keyframes glow-5{0%{opacity:0} 18.3%{opacity:0} 19.8%{opacity:.42} 30.2%{opacity:.42} 30.6%{opacity:0} 100%{opacity:0}}
+@keyframes glow-6{0%{opacity:0} 30%{opacity:0} 31.5%{opacity:.42} 37%{opacity:.42} 37.4%{opacity:0} 100%{opacity:0}}
+@keyframes glow-7{0%{opacity:0} 36.8%{opacity:0} 38.3%{opacity:.42} 49.5%{opacity:.42} 49.9%{opacity:0} 100%{opacity:0}}
+@keyframes glow-8{0%{opacity:0} 49.3%{opacity:0} 50.8%{opacity:.42} 54.4%{opacity:.42} 54.8%{opacity:0} 100%{opacity:0}}
+@keyframes glow-9{0%{opacity:0} 54.2%{opacity:0} 55.7%{opacity:.42} 56.8%{opacity:.42} 57.2%{opacity:0} 100%{opacity:0}}
+@keyframes glow-10{0%{opacity:0} 56.6%{opacity:0} 58.1%{opacity:.42} 59.2%{opacity:.42} 59.6%{opacity:0} 100%{opacity:0}}
+@keyframes glow-11{0%{opacity:0} 59%{opacity:0} 60.5%{opacity:.42} 64%{opacity:.42} 64.4%{opacity:0} 100%{opacity:0}}
+@keyframes glow-12{0%{opacity:0} 61.4%{opacity:0} 62.9%{opacity:.42} 66.5%{opacity:.42} 66.9%{opacity:0} 100%{opacity:0}}
+.flow-trace{fill:none;stroke:#C4A031;stroke-width:4.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;opacity:0;pointer-events:none;filter:url(#flowGlow)}
+.flow-particle{fill:#E3B52E;stroke:#FFFFFF;stroke-width:1.7;filter:url(#flowGlow);opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.focus-box,.flow-trace,.flow-particle{animation:none!important;opacity:0!important}}
+</style>
+</defs>
+<rect class="canvas-background" x="1.5" y="1.5" width="1447" height="1807" rx="24" fill="url(#canvasGradient)" stroke="#D4DEEB" stroke-width="3"/>
+ <rect x="3" y="3" width="1444" height="1804" rx="22" fill="url(#canvasDotGrid)" opacity=".45"/>
+<text x="725" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#142747">AI Research Knowledge Center</text>
+<text x="725" y="73" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#4F6585">Fluxo detalhado: consulta, decisão, execução e continuidade</text>
+<!-- main chain -->
+<path d="M725 185 V230 M725 330 V385 M725 475 V515 H157 V550 M725 515 H432 V550 M725 515 V550 M725 515 H982 V550 M725 515 H1257 V550" fill="none" stroke="#8094B3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="420" y="105" width="610" height="80" rx="16" fill="#EAF2FF" stroke="#2563EB" stroke-width="3" filter="url(#shadow)"/>
+<rect class="focus-box glow-1" x="420" y="105" width="610" height="80" rx="16" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+<text x="725" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">00_ROTA-DE-CONSULTA.md</text>
+<text x="725" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Bootstrap estável nas fontes do projeto</text>
+<rect x="420" y="230" width="610" height="100" rx="16" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3" filter="url(#shadow)"/>
+<rect class="focus-box glow-2" x="420" y="230" width="610" height="100" rx="16" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+<text x="725" y="267" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">01_instrucoes/rota-operacional.md</text>
+<text x="725" y="297" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Árvore dinâmica lida diretamente no GitHub</text>
+<rect x="475" y="385" width="500" height="90" rx="16" fill="#F2ECFF" stroke="#7446D8" stroke-width="3" filter="url(#shadow)"/>
+<rect class="focus-box glow-3" x="475" y="385" width="500" height="90" rx="16" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+<text x="725" y="421" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#142747">Classificar o pedido do usuário</text>
+<text x="725" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Escolher a ramificação e os arquivos pertinentes</text>
+<!-- branch cards -->
+<g filter="url(#shadow)" font-family="Arial,sans-serif" text-anchor="middle">
+ <rect x="35" y="550" width="245" height="125" rx="15" fill="#EAF2FF" stroke="#2563EB" stroke-width="3"/>
+<rect class="focus-box glow-4" x="35" y="550" width="245" height="125" rx="15" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+ <text x="157" y="585" font-size="19" font-weight="700" fill="#142747">PROJETO NOVO</text><text x="157" y="615" font-size="17" fill="#4F6585">Kickoff · requisitos</text><text x="157" y="640" font-size="17" fill="#4F6585">alternativas · aprovação</text>
+ <rect x="310" y="550" width="245" height="125" rx="15" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/>
+<rect class="focus-box glow-4" x="310" y="550" width="245" height="125" rx="15" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+ <text x="432" y="585" font-size="19" font-weight="700" fill="#142747">PROMPT / FEATURE</text><text x="432" y="615" font-size="17" fill="#4F6585">Inspecionar estado</text><text x="432" y="640" font-size="17" fill="#4F6585">escopo e dependências</text>
+ <rect x="585" y="550" width="245" height="125" rx="15" fill="#FFF0F2" stroke="#D83D5B" stroke-width="3"/>
+<rect class="focus-box glow-4" x="585" y="550" width="245" height="125" rx="15" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+ <text x="707" y="585" font-size="19" font-weight="700" fill="#142747">BUG / CORREÇÃO</text><text x="707" y="615" font-size="17" fill="#4F6585">Ler erro, diff e relatório</text><text x="707" y="640" font-size="17" fill="#4F6585">diagnosticar antes de mudar</text>
+ <rect x="860" y="550" width="245" height="125" rx="15" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/>
+<rect class="focus-box glow-4" x="860" y="550" width="245" height="125" rx="15" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+ <text x="982" y="585" font-size="19" font-weight="700" fill="#142747">VALIDAR EXECUÇÃO</text><text x="982" y="615" font-size="17" fill="#4F6585">Conferir prompt, testes</text><text x="982" y="640" font-size="17" fill="#4F6585">relatório e evidências</text>
+ <rect x="1135" y="550" width="280" height="125" rx="15" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/>
+<rect class="focus-box glow-4" x="1135" y="550" width="280" height="125" rx="15" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+ <text x="1275" y="585" font-size="19" font-weight="700" fill="#142747">PESQUISA / ESTADO</text><text x="1275" y="615" font-size="17" fill="#4F6585">Arquitetura, skills,</text><text x="1275" y="640" font-size="17" fill="#4F6585">templates e handoff</text>
+</g>
+<!-- branch to relevant docs -->
+<path d="M157 675 V725 M432 675 V725 M707 675 V725 M982 675 V725 M1275 675 V725" fill="none" stroke="#8094B3" stroke-width="3" marker-end="url(#arrow)"/>
+<g filter="url(#shadow)" font-family="Arial,sans-serif" text-anchor="middle">
+ <rect x="35" y="725" width="245" height="112" rx="14" fill="#F5F8FF" stroke="#A9BCE0" stroke-width="2"/>
+<rect class="focus-box glow-5" x="35" y="725" width="245" height="112" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="157" y="760" font-size="18" font-weight="700" fill="#142747">KICKOFF + REGRAS</text><text x="157" y="787" font-size="17" fill="#4F6585">Dossiê e decisões</text><text x="157" y="811" font-size="17" fill="#4F6585">antes de executar</text>
+ <rect x="310" y="725" width="245" height="112" rx="14" fill="#F0FAF7" stroke="#8CCDBC" stroke-width="2"/>
+<rect class="focus-box glow-5" x="310" y="725" width="245" height="112" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="432" y="760" font-size="18" font-weight="700" fill="#142747">MODELO + GUIA</text><text x="432" y="787" font-size="17" fill="#4F6585">Regras de prompt</text><text x="432" y="811" font-size="17" fill="#4F6585">e playbook</text>
+ <rect x="585" y="725" width="245" height="112" rx="14" fill="#FFF5F6" stroke="#F1A0AF" stroke-width="2"/>
+<rect class="focus-box glow-5" x="585" y="725" width="245" height="112" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="707" y="760" font-size="18" font-weight="700" fill="#142747">DIAGNÓSTICO</text><text x="707" y="787" font-size="17" fill="#4F6585">Causa, evidências</text><text x="707" y="811" font-size="17" fill="#4F6585">e correção mínima</text>
+ <rect x="860" y="725" width="245" height="112" rx="14" fill="#FFFBEC" stroke="#E4CE78" stroke-width="2"/>
+<rect class="focus-box glow-5" x="860" y="725" width="245" height="112" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="982" y="760" font-size="18" font-weight="700" fill="#142747">RELATÓRIO + REGRAS</text><text x="982" y="787" font-size="17" fill="#4F6585">Critérios e testes</text><text x="982" y="811" font-size="17" fill="#4F6585">contra o prompt original</text>
+ <rect x="1135" y="725" width="280" height="112" rx="14" fill="#F8F4FF" stroke="#C5B5EE" stroke-width="2"/>
+<rect class="focus-box glow-5" x="1135" y="725" width="280" height="112" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="1275" y="760" font-size="18" font-weight="700" fill="#142747">CATÁLOGO / TEMPLATES</text><text x="1275" y="787" font-size="17" fill="#4F6585">Pesquisa, métodos,</text><text x="1275" y="811" font-size="17" fill="#4F6585">estado e handoff</text>
+</g>
+<!-- convergence and output -->
+<path d="M157 837 V870 H432 V930 M432 837 V930 M707 837 V870 H725 V930 M982 837 V870 H1015 V930 M1275 837 V880 H1300 V1090" fill="none" stroke="#8094B3" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="360" y="930" width="730" height="115" rx="16" fill="#EAF2FF" stroke="#2563EB" stroke-width="3" filter="url(#shadow)"/>
+<rect class="focus-box glow-6" x="360" y="930" width="730" height="115" rx="16" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+<text x="725" y="968" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">Montagem comum do prompt</text>
+<text x="725" y="997" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">PROMPT-modelo + guia + regras + playbook + relatório</text>
+<text x="725" y="1023" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4F6585">Regras do projeto e metodologia entram quando aplicáveis</text>
+<path d="M725 1045 V1070 M725 1145 V1175 M725 1255 V1290 M725 1370 V1400 M725 1480 V1510 M725 1590 V1620" fill="none" stroke="#8094B3" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="475" y="1070" width="500" height="75" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/>
+<rect class="focus-box glow-7" x="475" y="1070" width="500" height="75" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/>
+<text x="725" y="1100" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#142747">Contexto indispensável confirmado?</text><text x="725" y="1127" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4F6585">Se não, perguntar antes de executar</text>
+<path d="M475 1108 H320 V1140" fill="none" stroke="#B98108" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="35" y="1140" width="285" height="100" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/>
+<rect class="focus-box glow-7" x="35" y="1140" width="285" height="100" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="177" y="1180" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#142747">Perguntas objetivas</text><text x="177" y="1210" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4F6585">ou bloqueio explícito</text>
+<rect x="475" y="1175" width="500" height="80" rx="14" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/>
+<rect class="focus-box glow-8" x="475" y="1175" width="500" height="80" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="725" y="1208" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Prompt completo</text><text x="725" y="1236" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Pronto para copiar e enviar ao executor</text>
+<rect x="475" y="1290" width="500" height="80" rx="14" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/>
+<rect class="focus-box glow-9" x="475" y="1290" width="500" height="80" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="725" y="1323" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Agente executor</text><text x="725" y="1351" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">O usuário encaminha o prompt</text>
+<rect x="475" y="1400" width="500" height="80" rx="14" fill="#EAF2FF" stroke="#2563EB" stroke-width="3"/>
+<rect class="focus-box glow-10" x="475" y="1400" width="500" height="80" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="725" y="1433" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Relatório padronizado</text><text x="725" y="1461" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Alterações, testes, desvios e evidências</text>
+<rect x="475" y="1510" width="500" height="80" rx="14" fill="#FFF8DD" stroke="#B98108" stroke-width="3"/>
+<rect class="focus-box glow-11" x="475" y="1510" width="500" height="80" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="725" y="1543" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Validação por evidências</text><text x="725" y="1571" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">CONCLUÍDO · PARCIAL · BLOQUEADO · FALHOU</text>
+<rect x="475" y="1620" width="500" height="85" rx="14" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3"/>
+<rect class="focus-box glow-12" x="475" y="1620" width="500" height="85" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="725" y="1654" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#142747">Atualizar continuidade</text><text x="725" y="1682" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Status, decisões aprovadas e próxima ação</text>
+<!-- correction loop and direct branch -->
+<path d="M975 1548 H1430 V985 H1090" fill="none" stroke="#D83D5B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1250" y="965" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#D83D5B">Falha: prompt de correção</text>
+<rect x="1120" y="1090" width="295" height="150" rx="14" fill="#F2ECFF" stroke="#7446D8" stroke-width="3"/>
+<rect class="focus-box glow-7" x="1120" y="1090" width="295" height="150" rx="14" fill="#C4A031" fill-opacity=".11" stroke="#D5A72D" stroke-width="6" opacity="0" filter="url(#flowGlow)" pointer-events="none"/><text x="1267" y="1130" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#142747">Saída direta</text><text x="1267" y="1160" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Pesquisa, recomendação,</text><text x="1267" y="1188" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">Dossiê, estado ou</text><text x="1267" y="1216" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">perguntas conforme a rota</text>
+<text x="725" y="1763" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4F6585">O bootstrap permanece estável; o fluxo operacional é lido sob demanda no GitHub.</text>
+<path class="flow-trace route-0" pathLength="1000" d="M725 185 V230">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.002;0.035;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.002;0.035;0.041" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 185 V230" keyPoints="0;0;1;1" keyTimes="0;0.002;0.035;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.002;0.035;0.041" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-1" pathLength="1000" d="M725 330 V385">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.036;0.069;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.036;0.069;0.07500000000000001" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 330 V385" keyPoints="0;0;1;1" keyTimes="0;0.036;0.069;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.036;0.069;0.07500000000000001" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-2" pathLength="1000" d="M725 475 V515 H157 V550">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.071;0.093;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.071;0.093;0.099" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 475 V515 H157 V550" keyPoints="0;0;1;1" keyTimes="0;0.071;0.093;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.071;0.093;0.099" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-3" pathLength="1000" d="M725 515 H432 V550">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.094;0.116;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.094;0.116;0.12200000000000001" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 515 H432 V550" keyPoints="0;0;1;1" keyTimes="0;0.094;0.116;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.094;0.116;0.12200000000000001" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-4" pathLength="1000" d="M725 515 V550">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.117;0.139;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.117;0.139;0.14500000000000002" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 515 V550" keyPoints="0;0;1;1" keyTimes="0;0.117;0.139;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.117;0.139;0.14500000000000002" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-5" pathLength="1000" d="M725 515 H982 V550">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.14;0.162;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.162;0.168" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 515 H982 V550" keyPoints="0;0;1;1" keyTimes="0;0.14;0.162;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.14;0.162;0.168" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-6" pathLength="1000" d="M725 515 H1257 V550">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.163;0.185;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.163;0.185;0.191" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 515 H1257 V550" keyPoints="0;0;1;1" keyTimes="0;0.163;0.185;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.163;0.185;0.191" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-7" pathLength="1000" d="M157 675 V725">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.188;0.21;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.188;0.21;0.216" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M157 675 V725" keyPoints="0;0;1;1" keyTimes="0;0.188;0.21;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.188;0.21;0.216" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-8" pathLength="1000" d="M432 675 V725">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.211;0.233;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.211;0.233;0.23900000000000002" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M432 675 V725" keyPoints="0;0;1;1" keyTimes="0;0.211;0.233;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.211;0.233;0.23900000000000002" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-9" pathLength="1000" d="M707 675 V725">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.234;0.256;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.234;0.256;0.262" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M707 675 V725" keyPoints="0;0;1;1" keyTimes="0;0.234;0.256;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.234;0.256;0.262" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-10" pathLength="1000" d="M982 675 V725">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.257;0.279;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.257;0.279;0.28500000000000003" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M982 675 V725" keyPoints="0;0;1;1" keyTimes="0;0.257;0.279;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.257;0.279;0.28500000000000003" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-11" pathLength="1000" d="M1275 675 V725">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.28;0.302;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.28;0.302;0.308" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M1275 675 V725" keyPoints="0;0;1;1" keyTimes="0;0.28;0.302;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.28;0.302;0.308" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-12" pathLength="1000" d="M157 837 V870 H432 V930">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.305;0.337;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.305;0.337;0.343" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M157 837 V870 H432 V930" keyPoints="0;0;1;1" keyTimes="0;0.305;0.337;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.305;0.337;0.343" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-13" pathLength="1000" d="M432 837 V930">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.338;0.37;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.338;0.37;0.376" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M432 837 V930" keyPoints="0;0;1;1" keyTimes="0;0.338;0.37;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.338;0.37;0.376" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-14" pathLength="1000" d="M707 837 V870 H725 V930">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.371;0.403;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.371;0.403;0.40900000000000003" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M707 837 V870 H725 V930" keyPoints="0;0;1;1" keyTimes="0;0.371;0.403;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.371;0.403;0.40900000000000003" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-15" pathLength="1000" d="M982 837 V870 H1015 V930">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.404;0.436;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.404;0.436;0.442" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M982 837 V870 H1015 V930" keyPoints="0;0;1;1" keyTimes="0;0.404;0.436;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.404;0.436;0.442" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-16" pathLength="1000" d="M1275 837 V880 H1300 V1090">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.437;0.47;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.437;0.47;0.476" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M1275 837 V880 H1300 V1090" keyPoints="0;0;1;1" keyTimes="0;0.437;0.47;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.437;0.47;0.476" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-17" pathLength="1000" d="M725 1045 V1070">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.473;0.495;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.473;0.495;0.501" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 1045 V1070" keyPoints="0;0;1;1" keyTimes="0;0.473;0.495;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.473;0.495;0.501" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-18" pathLength="1000" d="M475 1108 H320 V1140">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.496;0.52;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.496;0.52;0.526" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M475 1108 H320 V1140" keyPoints="0;0;1;1" keyTimes="0;0.496;0.52;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.496;0.52;0.526" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-19" pathLength="1000" d="M725 1145 V1175">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.521;0.544;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.521;0.544;0.55" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 1145 V1175" keyPoints="0;0;1;1" keyTimes="0;0.521;0.544;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.521;0.544;0.55" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-20" pathLength="1000" d="M725 1255 V1290">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.545;0.568;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.545;0.568;0.574" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 1255 V1290" keyPoints="0;0;1;1" keyTimes="0;0.545;0.568;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.545;0.568;0.574" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-21" pathLength="1000" d="M725 1370 V1400">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.569;0.592;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.569;0.592;0.598" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 1370 V1400" keyPoints="0;0;1;1" keyTimes="0;0.569;0.592;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.569;0.592;0.598" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-22" pathLength="1000" d="M725 1480 V1510">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.593;0.616;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.593;0.616;0.622" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 1480 V1510" keyPoints="0;0;1;1" keyTimes="0;0.593;0.616;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.593;0.616;0.622" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-23" pathLength="1000" d="M725 1590 V1620">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.617;0.64;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.617;0.64;0.646" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M725 1590 V1620" keyPoints="0;0;1;1" keyTimes="0;0.617;0.64;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.617;0.64;0.646" calcMode="linear"/>
+ </circle>
+<path class="flow-trace route-24" pathLength="1000" d="M975 1548 H1430 V985 H1090">
+  <animate attributeName="stroke-dashoffset" dur="32s" repeatCount="indefinite" values="1000;1000;0;0" keyTimes="0;0.665;0.805;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.665;0.805;0.811" calcMode="linear"/>
+ </path>
+ <circle class="flow-particle" r="5.2">
+  <animateMotion dur="32s" repeatCount="indefinite" path="M975 1548 H1430 V985 H1090" keyPoints="0;0;1;1" keyTimes="0;0.665;0.805;1" calcMode="linear"/>
+  <animate attributeName="opacity" dur="32s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.665;0.805;0.811" calcMode="linear"/>
+ </circle>
+</svg>
