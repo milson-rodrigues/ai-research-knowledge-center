@@ -6,10 +6,6 @@
 
 Regras claras · Prompts verificáveis · Execução por blocos · Evidências reais
 
-<a href="assets/fluxo-orquestracao-animado.svg">
-  <img src="assets/fluxo-orquestracao-animado.gif" alt="Fluxo animado: pedido, rota operacional, prompt completo, agente executor, validação por evidências e continuidade." width="1000">
-</a>
-
 [Começar](#comece-por-aqui) · [Como funciona](#como-o-sistema-funciona) · [Contribuir](#como-contribuir) · [Estrutura](#mapa-do-repositório) · [Benefícios](#por-que-usar)
 
 </div>
@@ -111,18 +107,26 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado mostra as relações entre os documentos. O infográfico é a visão resumida. As duas imagens são SVGs, com cartões de contraste próprio e texto vetorial. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado mostra as relações entre os documentos. O infográfico é a visão resumida. As duas animações são SVGs vetoriais: as etapas ganham destaque sequencial e as conexões são percorridas na ordem do fluxo. As versões estáticas continuam disponíveis nos links abaixo de cada diagrama. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos.svg" alt="Fluxo detalhado: rota de consulta, guia, modelo, regras, playbook, metodologia, prompt, agente executor, modelo de resposta, validação e atualização de estado." width="850">
+  <img src="assets/relacionamento-arquivos-animado.svg" alt="Fluxo detalhado animado: consulta ao bootstrap e à rota operacional, classificação do pedido, documentos relevantes, montagem do prompt, executor, relatório, validação por evidências e continuidade." width="850">
+</p>
+
+<p align="center">
+  <a href="assets/relacionamento-arquivos.svg">Ver versão estática do fluxo detalhado (SVG)</a>
 </p>
 
 ### Infográfico — visão resumida
 
 <p align="center">
-  <img src="assets/relacionamento-arquivos-infografico.svg" alt="Infográfico resumido: rota de consulta, guia de prompt, regras e playbook, metodologia, prompt final, agente, relatório, validação e continuidade." width="1000">
+  <img src="assets/relacionamento-arquivos-infografico-animado.svg" alt="Infográfico animado resumido: bootstrap permanente, rota operacional, classificação, ramificações do pedido, montagem do prompt, execução e validação." width="1000">
+</p>
+
+<p align="center">
+  <a href="assets/relacionamento-arquivos-infografico.svg">Ver versão estática do infográfico (SVG)</a>
 </p>
 
 ### Responsabilidade de cada camada
