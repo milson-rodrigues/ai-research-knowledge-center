@@ -107,12 +107,14 @@ flowchart TD
   
 ## Como os arquivos se relacionam
 
-O fluxo detalhado usa uma animação SVG progressiva sobre fundo azul-marinho: uma borda dourada destaca a etapa atual, pequenos pontos percorrem as conexões e um cursor de mão acompanha o caminho. A versão estática com o mesmo fundo fica disponível logo abaixo. O infográfico resumido permanece estático, e os dois diagramas originais continuam preservados no repositório. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
+O fluxo detalhado usa uma animação SVG progressiva adaptativa aos temas claro e escuro. Uma esfera luminosa percorre cabos de fibra óptica e o quadrante de chegada ganha uma borda com brilho suave. Neste diagrama, os ramos do losango representam tipos alternativos de pedido, então a luz percorre uma rota por vez; um paralelismo real deve ser representado com sinais simultâneos. A versão estática com o mesmo fundo fica disponível logo abaixo. O infográfico resumido permanece estático, e os dois diagramas originais continuam preservados no repositório. Para entender as ramificações conforme o tipo de pedido, veja também a árvore abaixo.
 
 ### Fluxo detalhado — dependências e retorno
 
 <p align="center">
-  <img src="assets/fluxo-orquestracao-animado.svg" alt="Fluxo de orquestração animado: brilho dourado destaca sequencialmente cada etapa e pontos percorrem as setas do fluxograma, desde a consulta até a validação e a continuidade." width="850">
+  <a href="assets/fluxo-orquestracao-animado.svg">
+    <img src="assets/fluxo-orquestracao-animado.svg" alt="Fluxo de orquestração animado e adaptativo aos temas: uma esfera luminosa percorre os cabos entre as etapas, e o quadrante de chegada acende com brilho suave." width="1000">
+  </a>
 </p>
 
 <p align="center">
