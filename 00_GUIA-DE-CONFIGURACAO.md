@@ -83,9 +83,13 @@ Não confunda o provedor/modelo com o armazenamento. Identifique o produto e con
 
 ### 4.3 Resolver origem e destino
 
-- **Chats de IA:** procurar nos arquivos/fontes acessíveis do projeto ou na biblioteca suportada pelo produto. Não presuma acesso de leitura/escrita à Biblioteca. Se não houver acesso, informar o bloqueio e preparar arquivos para importação quando possível.
-- **Agentes de IA:** usar o diretório de trabalho do projeto ao qual o agente tem acesso. Não solicitar um repositório GitHub separado se o workspace atual já identifica o destino.
-- **GitHub:** confirmar repositório, branch e diretório remoto de destino. Não presumir que seja o repositório do kit. Verificar o estado existente antes de editar.
+- **Chats de IA (ChatGPT, Claude ou equivalente):** pesquisar primeiro os arquivos acessíveis do projeto e a Biblioteca do produto. Se o arquivo estiver na Biblioteca e houver ferramenta compatível, ler diretamente dali; não exigir anexação às fontes do projeto apenas para permitir leitura.
+  - Ao fechar uma conversa e gerar o prompt de continuidade, criar automaticamente um registro independente na Biblioteca quando houver suporte a gravação. Use nome por tipo/assunto e sequência, por exemplo `project-index-prompt_01.md`, `project-index-bug_01.md` ou `project-index-continuidade_01.md`. Antes de criar, listar/buscar os registros existentes da mesma série e escolher o próximo número livre; nunca sobrescrever outro registro de conversa.
+  - O registro deve conter estado confirmado ao encerrar o chat, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e o prompt de abertura do próximo chat. Use os templates de continuidade pertinentes e preserve a estrutura exigida por eles.
+  - Depois de gravar, pesquisar o arquivo pelo nome/caminho e ler seu conteúdo para confirmar persistência. Só declare sucesso após essa verificação. Se a gravação falhar ou não houver ferramenta compatível, marque `BLOQUEADO` para a gravação e entregue o Markdown completo para salvar manualmente; não alegue que o arquivo foi criado.
+  - Não dependa de sincronização automática entre Biblioteca e fontes do projeto. A Biblioteca é o destino do registro no ambiente ChatGPT; as fontes do projeto não precisam ser alteradas para cada handoff, salvo se o usuário solicitar ou o fluxo exigir explicitamente.
+- **Agentes de IA:** usar o diretório de trabalho do projeto ao qual o agente tem acesso. Criar/atualizar o registro de continuidade no próprio workspace e verificar o arquivo gravado. Não solicitar um repositório GitHub separado se o workspace atual já identifica o destino.
+- **GitHub:** confirmar repositório, branch e diretório remoto de destino. Não presumir que seja o repositório do kit. Verificar o estado existente antes de editar; criar registro separado por conversa, evitando sobrescrever histórico, e reler o arquivo remoto após o commit.
 
 O ambiente selecionado determina onde procurar e salvar. Não troque silenciosamente de ambiente nem use outra origem como fallback.
 
@@ -101,12 +105,13 @@ O ambiente selecionado determina onde procurar e salvar. Não troque silenciosam
 ### 4.5 Preparar e validar
 
 1. Consultar `03_continuidade/handoff-novo-chat.md` e apenas os templates pertinentes à operação.
-2. Copiar os templates oficiais para o destino do projeto conforme o procedimento definido.
-3. Aplicar a convenção de nomes indicada pelos templates e pelo projeto; não inventar nomes alternativos.
-4. Preencher apenas fatos confirmados, decisões aprovadas, pendências e próxima ação. Marcar lacunas como desconhecidas.
-5. Preservar arquivos existentes e alterações do usuário. Não sobrescrever conteúdo preexistente sem conferir e sem autorização quando houver risco de perda.
-6. Gerar o prompt de continuidade completo, pronto para copiar e colar.
-7. Verificar os arquivos finais e informar exatamente o que foi criado, alterado, não alterado ou bloqueado.
+2. Identificar o destino de gravação conforme o ambiente. No ChatGPT, usar a Biblioteca diretamente quando estiver acessível e houver operação de gravação; não exigir importação para as fontes do projeto apenas para leitura.
+3. Para cada fechamento de conversa, criar um arquivo de registro independente com a convenção `project-index-<assunto>_<NN>.md` (ex.: `project-index-prompt_01.md`, `project-index-bug_01.md`). Antes de escolher o número, pesquisar os arquivos existentes da mesma série e usar o próximo número livre. Não sobrescrever registros anteriores.
+4. Preencher apenas fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências e próxima ação. Marcar lacunas como desconhecidas.
+5. Incluir no registro o prompt completo de abertura do próximo chat, pronto para copiar e colar, e instruções para validar o estado antes de continuar.
+6. Gravar o arquivo no destino real do ambiente. Em seguida, pesquisar/listar o arquivo e reler o conteúdo para confirmar persistência. A preparação local ou o sucesso do upload sem verificação posterior não basta para declarar concluído.
+7. Se não houver capacidade de gravação, marcar a gravação como `BLOQUEADO` e entregar o Markdown completo para importação manual; não alegar que o registro foi criado.
+8. Preservar arquivos existentes e alterações do usuário. Informar exatamente o que foi criado, alterado, não alterado ou bloqueado.
 
 ### 4.6 Arquivos de estado
 
@@ -207,7 +212,7 @@ O prompt deve conter objetivo, contexto, alterações autorizadas/proibidas, res
 | T04 | `/bug` sem causa comprovada | Diagnóstico antes de correção prescritiva |
 | T05 | `/validar` com relatório sem evidências | Não marca `CONCLUÍDO` |
 | T06 | `/continuidade` com pasta inexistente | Informa caminho pesquisado e bloqueia preparação dependente |
-| T07 | `/continuidade` no ambiente ChatGPT sem escrita disponível | Não afirma que gravou; oferece arquivos para importação |
+| T07 | `/continuidade` no ambiente ChatGPT | Procura na Biblioteca e fontes acessíveis; cria registro independente na Biblioteca quando houver suporte; relê para verificar; se gravação indisponível, marca `BLOQUEADO` e entrega Markdown completo |
 | T08 | Pedido de arquitetura | Não consulta templates de continuidade sem necessidade |
 | T09 | Continuidade + correção de bug | Combina `CONT-01` e `BUG-01`, sem repetir dependências |
 | T10 | Menção `@Continuidade` sem skill disponível | Trata como texto comum e usa o roteador |
