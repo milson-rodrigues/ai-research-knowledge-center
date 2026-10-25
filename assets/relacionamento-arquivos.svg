@@ -11,7 +11,7 @@
 <text x="725" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">00_ROTA-DE-CONSULTA.md</text>
 <text x="725" y="164" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Bootstrap estável nas fontes do projeto</text>
 <rect x="420" y="230" width="610" height="100" rx="16" fill="#E5F7F0" stroke="#0C8A70" stroke-width="3" filter="url(#shadow)"/>
-<text x="725" y="267" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">01_instrucoes/rota-operacional.md</text>
+<text x="725" y="267" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#142747">00_GUIA-DE-CONFIGURACAO.md</text>
 <text x="725" y="297" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#4F6585">Árvore dinâmica lida diretamente no GitHub</text>
 <rect x="475" y="385" width="500" height="90" rx="16" fill="#F2ECFF" stroke="#7446D8" stroke-width="3" filter="url(#shadow)"/>
 <text x="725" y="421" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#142747">Classificar o pedido do usuário</text>
