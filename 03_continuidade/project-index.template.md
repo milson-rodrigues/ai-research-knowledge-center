@@ -20,8 +20,9 @@ Catálogo e ponto de entrada do projeto. Este arquivo fica nas **fontes do proje
 | project-index.md | Fontes do projeto ou repositório do projeto | Este catálogo |
 | current-status.md | Fontes do projeto ou repositório do projeto | Estado real da execução |
 | decisions.md | Fontes do projeto ou repositório do projeto | Decisões aprovadas |
-| 00_ROTA-DE-CONSULTA.md | Fontes do projeto ChatGPT | Bootstrap permanente; aponta para a rota operacional atual no GitHub |
-| 01_instrucoes/rota-operacional.md | Repositório do kit, branch `main` | Árvore dinâmica consultada sob demanda, sem cópia no projeto |
+| 00_ROTA-DE-CONSULTA.md | Fontes do projeto ChatGPT | Bootstrap permanente; aponta para `00_GUIA-DE-CONFIGURACAO.md` |
+| 00_GUIA-DE-CONFIGURACAO.md | Repositório do kit, branch `main` | Índice operacional canônico e mutável; aliases, fluxos e dependências |
+| 01_instrucoes/rota-operacional.md | Repositório do kit, branch `main` | Ponte estável para o guia canônico; não mantém uma árvore separada |
 | PROMPT-modelo.md | Repositório do kit, `02_modelos/` | Modelo de prompt atual |
 | skills-catalog.md | Repositório do kit, `04_skills/` | Índice de skills e referências aprovadas |
 | kit-operacional.md | Repositório do kit, branch `main` | Snapshot consolidado para auditoria; não é a fonte canônica nem precisa ser copiado para as fontes do projeto |
