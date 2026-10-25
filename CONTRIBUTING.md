@@ -17,7 +17,7 @@ Antes de abrir uma Issue, pesquise as Issues existentes para evitar duplicatas. 
 ## 2. Fluxo recomendado
 
 1. **Registre ou encontre uma Issue.** Explique o problema ou necessidade, o comportamento atual, o resultado esperado e as evidências disponíveis.
-2. **Leia os documentos afetados.** Comece pelo [README](README.md), pela [rota operacional](01_instrucoes/rota-operacional.md) e pelos arquivos mestres relacionados.
+2. **Leia os documentos afetados.** Comece pelo [README](README.md), pelo [guia operacional canônico](00_GUIA-DE-CONFIGURACAO.md) e pelos arquivos mestres relacionados.
 3. **Delimite a alteração.** Prefira o menor conjunto de mudanças que resolva o problema. Não misture uma correção documental com uma mudança de metodologia não relacionada.
 4. **Trabalhe em uma branch.** Convenções sugeridas: `docs/<assunto>`, `fix/<assunto>`, `feat/<assunto>` ou `method/<assunto>`.
 5. **Atualize as referências dependentes.** Se mudar um documento mestre, procure links, instruções, diagramas e outros documentos que dependam dele.
@@ -32,7 +32,8 @@ Não faça commit direto na `main` como fluxo normal de contribuição. Use o Pu
 
 - O repositório GitHub, branch `main`, é a fonte canônica dos documentos globais publicados.
 - `00_ROTA-DE-CONSULTA.md` é um **bootstrap permanente**, mantido nas fontes de cada projeto ChatGPT. Não o altere por mudanças comuns nas regras, modelos ou metodologias, nem solicite que os projetos baixem a rota novamente.
-- A árvore que pode evoluir fica em `01_instrucoes/rota-operacional.md`. Atualize esse arquivo quando mudar a classificação dos pedidos, os documentos que cada caminho exige ou as saídas do fluxo.
+- O índice operacional canônico e mutável fica em `00_GUIA-DE-CONFIGURACAO.md`. Atualize esse guia quando mudar a classificação dos pedidos, os aliases, os documentos que cada fluxo exige ou as saídas do processo.
+- `01_instrucoes/rota-operacional.md` é uma ponte estável para o guia canônico; não mantém uma árvore operacional separada e não deve ser alterado em mudanças comuns.
 - O estado específico de uma aplicação pertence ao próprio projeto, não ao repositório global do kit.
 - Não recorra à Biblioteca do ChatGPT, à memória ou a cópias antigas como substituto silencioso de documentos atuais inacessíveis.
 
