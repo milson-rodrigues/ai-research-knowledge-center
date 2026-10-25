@@ -84,10 +84,13 @@ Não confunda o provedor/modelo com o armazenamento. Identifique o produto e con
 ### 4.3 Resolver origem e destino
 
 - **Chats de IA (ChatGPT, Claude ou equivalente):** pesquisar primeiro os arquivos acessíveis do projeto e a Biblioteca do produto. Se o arquivo estiver na Biblioteca e houver ferramenta compatível, ler diretamente dali; não exigir anexação às fontes do projeto apenas para permitir leitura.
-  - Ao fechar uma conversa e gerar o prompt de continuidade, criar automaticamente um registro independente na Biblioteca quando houver suporte a gravação. Use nome por tipo/assunto e sequência, por exemplo `project-index-prompt_01.md`, `project-index-bug_01.md` ou `project-index-continuidade_01.md`. Antes de criar, listar/buscar os registros existentes da mesma série e escolher o próximo número livre; nunca sobrescrever outro registro de conversa.
-  - O registro deve conter estado confirmado ao encerrar o chat, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e o prompt de abertura do próximo chat. Use os templates de continuidade pertinentes e preserve a estrutura exigida por eles.
-  - Depois de gravar, pesquisar o arquivo pelo nome/caminho e ler seu conteúdo para confirmar persistência. Só declare sucesso após essa verificação. Se a gravação falhar ou não houver ferramenta compatível, marque `BLOQUEADO` para a gravação e entregue o Markdown completo para salvar manualmente; não alegue que o arquivo foi criado.
-  - Não dependa de sincronização automática entre Biblioteca e fontes do projeto. A Biblioteca é o destino do registro no ambiente ChatGPT; as fontes do projeto não precisam ser alteradas para cada handoff, salvo se o usuário solicitar ou o fluxo exigir explicitamente.
+  - Os registros de conversa são históricos independentes, com nomes por assunto e sequência, por exemplo `project-index-prompt_01.md`, `project-index-bug_01.md` e `project-index-continuidade_01.md`. Antes de criar um registro, listar/buscar a série correspondente e escolher o próximo número livre. Nunca sobrescrever nem excluir registros de conversa como parte da manutenção do índice.
+  - O índice central usa versionamento explícito: `project-index-v1.md`, `project-index-v2.md` etc. Depois de uma atualização bem-sucedida, deve existir somente uma versão vigente. Cada versão registra o número, data, versão anterior, motivo, seções alteradas e itens adicionados/removidos. O índice cataloga os registros disponíveis, resume sua finalidade e permite seleção do contexto.
+  - Ao iniciar a continuidade, ler o índice vigente e apresentar opções: (a) todos os registros catalogados pertinentes; (b) um ou vários registros escolhidos; (c) registro mais recente de um assunto; ou (d) somente o estado atual. Se a escolha for ambígua e mudar materialmente o contexto, perguntar uma única questão objetiva. Ler apenas os registros escolhidos e suas dependências necessárias.
+  - O registro de conversa deve conter estado confirmado ao encerrar o chat, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e o prompt completo de abertura do próximo chat. Use os templates pertinentes e preserve a estrutura exigida por eles.
+  - Atualização do índice: localizar e ler a única versão vigente; preparar integralmente a próxima versão; gravar; pesquisar/listar e reler a nova versão; validar conteúdo, integridade do catálogo e histórico de alterações; somente então excluir a versão anterior. Depois, listar novamente e confirmar que só a versão nova permanece. Nunca excluir a versão anterior antes da validação da substituta.
+  - Se a criação, leitura de verificação, renomeação ou exclusão falhar, preservar a última versão comprovadamente válida, marcar a operação como `BLOQUEADO`, informar a etapa exata e entregar o conteúdo completo que precisa ser salvo. Não criar cópias com nomes alternativos repetidamente nem afirmar que a atualização foi concluída sem verificação.
+  - Não dependa de sincronização automática entre Biblioteca e fontes do projeto. A Biblioteca é o destino dos registros no ambiente ChatGPT; as fontes do projeto são separadas.
 - **Agentes de IA:** usar o diretório de trabalho do projeto ao qual o agente tem acesso. Criar/atualizar o registro de continuidade no próprio workspace e verificar o arquivo gravado. Não solicitar um repositório GitHub separado se o workspace atual já identifica o destino.
 - **GitHub:** confirmar repositório, branch e diretório remoto de destino. Não presumir que seja o repositório do kit. Verificar o estado existente antes de editar; criar registro separado por conversa, evitando sobrescrever histórico, e reler o arquivo remoto após o commit.
 
@@ -105,22 +108,27 @@ O ambiente selecionado determina onde procurar e salvar. Não troque silenciosam
 ### 4.5 Preparar e validar
 
 1. Consultar `03_continuidade/handoff-novo-chat.md` e apenas os templates pertinentes à operação.
-2. Identificar o destino de gravação conforme o ambiente. No ChatGPT, usar a Biblioteca diretamente quando estiver acessível e houver operação de gravação; não exigir importação para as fontes do projeto apenas para leitura.
-3. Para cada fechamento de conversa, criar um arquivo de registro independente com a convenção `project-index-<assunto>_<NN>.md` (ex.: `project-index-prompt_01.md`, `project-index-bug_01.md`). Antes de escolher o número, pesquisar os arquivos existentes da mesma série e usar o próximo número livre. Não sobrescrever registros anteriores.
-4. Preencher apenas fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências e próxima ação. Marcar lacunas como desconhecidas.
-5. Incluir no registro o prompt completo de abertura do próximo chat, pronto para copiar e colar, e instruções para validar o estado antes de continuar.
-6. Gravar o arquivo no destino real do ambiente. Em seguida, pesquisar/listar o arquivo e reler o conteúdo para confirmar persistência. A preparação local ou o sucesso do upload sem verificação posterior não basta para declarar concluído.
-7. Se não houver capacidade de gravação, marcar a gravação como `BLOQUEADO` e entregar o Markdown completo para importação manual; não alegar que o registro foi criado.
-8. Preservar arquivos existentes e alterações do usuário. Informar exatamente o que foi criado, alterado, não alterado ou bloqueado.
+2. Identificar o destino de gravação conforme o ambiente. No ChatGPT, usar a Biblioteca diretamente quando estiver acessível e houver operação compatível; não exigir importação para as fontes do projeto apenas para leitura.
+3. Antes de selecionar registros, listar os arquivos do ambiente e ler o índice central vigente (`project-index-vN.md`). Se houver zero ou múltiplas versões candidatas e não for possível determinar qual é válida pelas evidências, não adivinhar: marcar a resolução como `BLOQUEADO` e informar a inconsistência.
+4. Apresentar a escolha de contexto: todos os registros pertinentes catalogados; um ou vários registros específicos; o registro mais recente de um assunto; ou apenas o estado atual. Respeitar a escolha e consultar dependências obrigatórias. Não ler todos os históricos por padrão.
+5. Para cada fechamento de conversa, criar um registro independente com a convenção `project-index-<assunto>_<NN>.md`. Pesquisar/listar a série e usar o próximo número livre. Nunca sobrescrever registros de conversa existentes.
+6. Preencher somente fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências e próxima ação. Marcar lacunas como desconhecidas. Incluir o prompt completo de abertura do próximo chat.
+7. Gravar o registro no destino real e pesquisar/listar e reler o conteúdo para confirmar persistência. Não declarar sucesso sem verificação.
+8. Atualizar o índice central por versionamento: (a) ler a versão vigente; (b) preparar a próxima `project-index-vN.md`, preservando o conteúdo e registrando alterações; (c) gravar e reler a nova versão; (d) validar seções, catálogo e histórico de mudanças; (e) excluir a versão anterior somente após validação; (f) listar novamente e confirmar que apenas a versão nova permanece.
+9. Se qualquer operação de escrita, leitura de verificação ou exclusão falhar, preservar a última versão comprovadamente válida, marcar `BLOQUEADO`, identificar a operação que falhou e fornecer o Markdown completo para salvamento manual. Não gerar cópias alternativas em série para contornar falhas.
+10. Informar exatamente o que foi lido, criado, atualizado, excluído, verificado ou bloqueado.
 
-### 4.6 Arquivos de estado
+### 4.6 Arquivos de estado e índice versionado
 
-Os nomes recomendados são:
-- `project-index.<projeto>.md`
-- `current-status.<projeto>.md`
-- `decisions.<projeto>.md`
+Diferencie o índice de continuidade, os registros de conversa e os arquivos de estado do projeto:
 
-Use os templates reais em `03_continuidade/`. Decisões entram em `decisions` somente após aprovação. Se o estado real não existir, criar um estado inicial claramente identificado, sem simular histórico.
+- Índice de continuidade na Biblioteca do ChatGPT: `project-index-vN.md`; somente a última versão válida deve permanecer após atualização concluída.
+- Registros de conversa: `project-index-<assunto>_<NN>.md`; são históricos independentes e não devem ser removidos durante a atualização do índice.
+- Arquivos de estado de projeto, quando aplicáveis: `current-status.<projeto>.md` e `decisions.<projeto>.md`. O índice pode catalogá-los, mas não substitui suas responsabilidades.
+
+Cada versão do índice deve incluir: versão, data, versão anterior, motivo da alteração, resumo das seções alteradas e lista de registros adicionados/removidos. Decisões entram em `decisions` somente após aprovação. Se o estado real não existir, criar um estado inicial claramente identificado, sem simular histórico.
+
+A exclusão de versões anteriores só pode ocorrer quando a nova versão foi gravada e lida de volta com sucesso. Se o ambiente não permitir excluir ou substituir arquivos, não simular sucesso nem apagar o arquivo válido.
 
 ### 4.7 Saída mínima
 
@@ -213,6 +221,11 @@ O prompt deve conter objetivo, contexto, alterações autorizadas/proibidas, res
 | T05 | `/validar` com relatório sem evidências | Não marca `CONCLUÍDO` |
 | T06 | `/continuidade` com pasta inexistente | Informa caminho pesquisado e bloqueia preparação dependente |
 | T07 | `/continuidade` no ambiente ChatGPT | Procura na Biblioteca e fontes acessíveis; cria registro independente na Biblioteca quando houver suporte; relê para verificar; se gravação indisponível, marca `BLOQUEADO` e entrega Markdown completo |
+| T11 | Índice com várias versões candidatas | Não escolhe arbitrariamente; verifica evidências ou bloqueia com a inconsistência descrita |
+| T12 | Seleção de um ou mais registros | Lê apenas os selecionados e as dependências necessárias |
+| T13 | Atualização do índice versionado | Cria a próxima versão, documenta mudanças, relê e valida antes de excluir a anterior |
+| T14 | Falha ao excluir versão antiga | Mantém os arquivos existentes, marca `BLOQUEADO` e não cria cópias de contorno |
+| T15 | Atualização completa bem-sucedida | Confirma por listagem final que somente a última versão do índice permanece e os históricos continuam intactos |
 | T08 | Pedido de arquitetura | Não consulta templates de continuidade sem necessidade |
 | T09 | Continuidade + correção de bug | Combina `CONT-01` e `BUG-01`, sem repetir dependências |
 | T10 | Menção `@Continuidade` sem skill disponível | Trata como texto comum e usa o roteador |
