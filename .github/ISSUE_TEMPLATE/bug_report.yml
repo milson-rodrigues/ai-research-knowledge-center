@@ -20,7 +20,7 @@ body:
     attributes:
       label: Arquivo ou etapa afetada
       description: Informe o caminho no repositório e, se possível, o título da seção.
-      placeholder: 01_instrucoes/rota-operacional.md — seção 3
+      placeholder: 00_GUIA-DE-CONFIGURACAO.md — seção 3
     validations:
       required: true
   - type: textarea
