@@ -95,7 +95,7 @@ O bootstrap fica nas fontes do projeto ChatGPT. Em cada solicitação relevante,
 ```mermaid
 flowchart TD
     A["Pedido do usuário"] --> B["Bootstrap permanente"]
-    B --> C["Ler rota operacional atual no GitHub"]
+    B --> C["Ler guia operacional canônico no GitHub"]
     C --> D{"Tipo de pedido"}
     D -->|Projeto novo| E["Kickoff e requisitos"]
     E --> F{"Falta informação essencial?"}
