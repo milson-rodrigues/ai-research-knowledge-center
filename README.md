@@ -35,6 +35,46 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 4. **Prepare o prompt:** leia o modelo, o guia de preenchimento, as regras, o playbook e, quando aplicável, as regras do projeto e a metodologia específica.
 5. **Valide o resultado:** exija relatório no formato [`02_modelos/modelo-resposta-agente.md`](02_modelos/modelo-resposta-agente.md) e confira as evidências antes de avançar.
 
+## Como usar comandos e informar contexto
+
+Use o formato **`/comando [contexto]`**: escreva primeiro o comando e, depois, se necessário, acrescente o contexto. O contexto é opcional.
+
+- **Somente o comando** — use quando a intenção já estiver clara ou o contexto relevante estiver estabelecido na conversa. O roteador consulta o guia operacional e recupera apenas as informações necessárias.
+- **Comando + contexto** — use quando quiser indicar explicitamente o projeto, o objetivo, o sintoma, a restrição ou outra informação importante para a solicitação.
+- **Contexto insuficiente ou ambíguo** — o roteador usa as informações disponíveis e faz uma pergunta objetiva somente quando faltar algo indispensável para seguir com segurança.
+
+### Exemplos
+
+```text
+/continuidade
+```
+
+Inicia o fluxo de continuidade usando o contexto disponível na conversa e os arquivos de estado acessíveis.
+
+```text
+/continuidade SmartCart
+```
+
+Indica que a continuidade solicitada é para o projeto SmartCart.
+
+```text
+/prompt Criar uma skill para o Claude Code
+```
+
+Solicita a preparação de um prompt para criar uma skill destinada ao Claude Code.
+
+```text
+/bug O aplicativo falha ao salvar uma categoria. O erro aparece depois de clicar em Salvar.
+```
+
+Fornece o sintoma inicial para orientar o diagnóstico; não presume a causa do defeito.
+
+### Regra de roteamento
+
+O formato padrão é **`/comando [contexto]`**, não sendo necessário repetir informações que já estejam claras na conversa. O comando identifica o fluxo; o contexto restringe ou esclarece a tarefa. Se o contexto não for informado, o roteador não deve inventá-lo nem assumir dados ausentes: deve consultar as fontes pertinentes e perguntar apenas se a lacuna impedir a execução correta.
+
+Os comandos listados no guia operacional são **aliases textuais**, não comandos nativos garantidos pela plataforma. Seu funcionamento depende de o chat ou agente ter recebido as instruções do kit. Uma menção como `@Continuidade` só deve ser tratada como chamada de skill/agente quando esse recurso estiver realmente disponível.
+
 ## Por que usar
 
 | Risco comum | Como o kit ajuda |
