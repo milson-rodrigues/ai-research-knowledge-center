@@ -30,7 +30,7 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 ## Comece por aqui
 
 1. **Configure o ChatGPT:** siga [`00_GUIA-DE-CONFIGURACAO.md`](00_GUIA-DE-CONFIGURACAO.md).
-2. **Adicione o bootstrap uma única vez:** disponibilize [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) nas fontes do projeto. Ele permanece estável e manda consultar a rota operacional atual no GitHub; mudanças normais do kit não exigem reenviar esse arquivo.
+2. **Adicione o bootstrap uma única vez:** disponibilize [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) nas fontes do projeto. Ele é estável e direciona para [`00_GUIA-DE-CONFIGURACAO.md`](00_GUIA-DE-CONFIGURACAO.md), o índice operacional canônico e mutável.
 3. **Mantenha os arquivos de estado do projeto:** crie a partir dos templates em `03_continuidade/` os arquivos reais `project-index.<projeto>.md`, `current-status.<projeto>.md` e `decisions.<projeto>.md`. Esses arquivos pertencem ao projeto e não devem ser guardados como estado global do kit.
 4. **Prepare o prompt:** leia o modelo, o guia de preenchimento, as regras, o playbook e, quando aplicável, as regras do projeto e a metodologia específica.
 5. **Valide o resultado:** exija relatório no formato [`02_modelos/modelo-resposta-agente.md`](02_modelos/modelo-resposta-agente.md) e confira as evidências antes de avançar.
@@ -50,7 +50,7 @@ Em vez de concentrar tudo em um prompt gigante, cada arquivo tem uma responsabil
 
 ## Como o sistema funciona
 
-O bootstrap fica nas fontes do projeto ChatGPT. Em cada solicitação relevante, o chat lê do GitHub a rota operacional atual, classifica o pedido e consulta somente os documentos pertinentes. Os modelos e as regras globais não são copiados para o projeto.
+O bootstrap fica nas fontes do projeto ChatGPT. Em cada solicitação relevante, o chat consulta `00_GUIA-DE-CONFIGURACAO.md`, identifica a intenção e segue somente o fluxo e as dependências obrigatórias. `01_instrucoes/rota-operacional.md` é uma ponte estável para o mesmo guia. Os documentos globais continuam no GitHub e não são copiados para o projeto.
 
 ```mermaid
 flowchart TD
@@ -94,7 +94,7 @@ flowchart TD
 
 ### O ciclo em linguagem direta
 
-1. **Consultar:** ler a rota operacional atual e os arquivos indicados no GitHub. Registrar os arquivos realmente lidos na tabela `CONSULTA`.
+1. **Consultar:** ler o índice `00_GUIA-DE-CONFIGURACAO.md` e somente os arquivos exigidos pelo fluxo selecionado. Registrar as fontes realmente lidas na tabela `CONSULTA`.
 2. **Entender:** recuperar o estado e as decisões específicas do projeto; distinguir fatos, hipóteses e lacunas.
 3. **Escolher o caminho:** projeto novo, prompt/implementação, bug/correção, validação, pesquisa/arquitetura ou continuidade.
 4. **Preparar:** quando houver tarefa executável, todos os caminhos convergem para `02_modelos/PROMPT-modelo.md`, combinado com o guia, regras, playbook e relatório padronizado.
@@ -139,8 +139,9 @@ O fluxo detalhado e o infográfico resumido têm animações progressivas no REA
 
 | Camada | Arquivo | Responsabilidade |
 |---|---|---|
-| Bootstrap estável | [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) | Ponto de entrada permanente nas fontes do projeto; direciona para a rota dinâmica no GitHub |
-| Rota operacional | [`01_instrucoes/rota-operacional.md`](01_instrucoes/rota-operacional.md) | Árvore de decisão que pode evoluir sem reenviar o bootstrap |
+| Índice operacional | [`00_GUIA-DE-CONFIGURACAO.md`](00_GUIA-DE-CONFIGURACAO.md) | Fonte canônica mutável do roteamento, aliases, fluxos e caminhos de consulta |
+| Bootstrap estável | [`00_ROTA-DE-CONSULTA.md`](00_ROTA-DE-CONSULTA.md) | Ponto de entrada permanente nas fontes do projeto; aponta para o índice operacional |
+| Ponte estável | [`01_instrucoes/rota-operacional.md`](01_instrucoes/rota-operacional.md) | Direciona para o índice; não duplica regras operacionais |
 | Modelo | [`02_modelos/PROMPT-modelo.md`](02_modelos/PROMPT-modelo.md) | Define os títulos e a estrutura do prompt |
 | Preenchimento | [`02_modelos/guia-preenchimento-prompt.md`](02_modelos/guia-preenchimento-prompt.md) | Explica como preencher os campos |
 | Regras de prompt | [`02_modelos/regras-prompt.md`](02_modelos/regras-prompt.md) | Define grounding, escopo, Quality Gate, testes e evidências |
@@ -231,7 +232,7 @@ Não mantemos um `BUGS.md` ou `MELHORIAS.md` como backlog paralelo. Isso duplica
 - Este repositório é a fonte canônica das regras e modelos do kit; o estado de cada projeto fica nas fontes daquele projeto.
 - Os documentos globais do kit são consultados exclusivamente no GitHub. Se ele estiver indisponível, declare bloqueio em vez de usar cópias antigas.
 - Ao alterar regras, modelos ou metodologias, atualize as referências relacionadas e regenere `kit-operacional.md` para mantê-lo alinhado.
-- `00_ROTA-DE-CONSULTA.md` é um bootstrap permanente: mudanças comuns são feitas em `01_instrucoes/rota-operacional.md` e nos documentos mestres, sem solicitar novo upload do bootstrap.
+- `00_ROTA-DE-CONSULTA.md` e `01_instrucoes/rota-operacional.md` são arquivos estáveis: não devem ser alterados em mudanças comuns do kit. O roteamento e os fluxos são mantidos em `00_GUIA-DE-CONFIGURACAO.md` e nos documentos especializados indicados por ele.
 - Uma mudança na branch de trabalho não é publicada automaticamente para os projetos: revise o diff e incorpore a proposta na branch principal somente após aprovação.
 - Nunca armazene senhas, tokens ou credenciais.
 
