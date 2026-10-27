@@ -23,7 +23,7 @@ Validar separadamente a continuidade na Biblioteca do ChatGPT, em workspace de a
 
 | ID | Cenário | Procedimento | Critério de aprovação | Estado/evidência |
 |---|---|---|---|---|
-| CT-01 | Identificar projeto e destino | Localizar arquivos no ambiente selecionado | Projeto, caminho e arquivos encontrados documentados; falha de acesso não é confundida com inexistência | Pendente |
+| CT-01 | Identificar projeto e destino | Localizar projeto e pasta `continuidade`; se o projeto existir e a subpasta estiver ausente, criá-la no local correto e confirmar sua presença | Projeto e caminho confirmados; subpasta criada quando ausente e suportada; falha de acesso não é confundida com inexistência | Pendente |
 | CT-02 | Publicar versão na Biblioteca | Criar arquivo completo com nome novo, adicionar e reler | Nova publicação acessível e completa antes de alterar a anterior | Pendente |
 | CT-03 | Renomear/excluir versão anterior | Após validar a nova, tentar a operação se suportada | Se indisponível, preservar ambas e registrar a limitação no índice | Pendente |
 | CT-04 | Separar estado e histórico | Inspecionar papéis dos arquivos | Estado, decisões, catálogo e históricos têm responsabilidades distintas | Pendente |
@@ -57,3 +57,8 @@ Para cada cenário, registrar data, ambiente, projeto/caminho, arquivos consulta
 9. Testes são executados separadamente por ambiente; aprovação em um não comprova os demais.
 
 Não marque um cenário como executado apenas porque seu procedimento está documentado.
+
+
+### Regra de criação para CT-01
+
+A ausência de `continuidade/` dentro de uma pasta de projeto identificada não é, por si só, um bloqueio. O executor deve criar a subpasta no projeto correto quando a plataforma permitir e verificar que ela existe. Em seguida, deve inspecionar os arquivos necessários e criar os que estiverem ausentes a partir dos templates aplicáveis, identificando claramente arquivos iniciais. É bloqueio somente se o projeto/destino não puder ser identificado ou a operação necessária não estiver disponível. Nunca criar uma pasta substituta em outro local.
