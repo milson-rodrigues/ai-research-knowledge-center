@@ -83,16 +83,38 @@ Não confunda o provedor/modelo com o armazenamento. Identifique o produto e con
 
 ### 4.3 Resolver origem e destino
 
-- **Chats de IA (ChatGPT, Claude ou equivalente):** pesquisar primeiro os arquivos acessíveis do projeto e a Biblioteca do produto. Se o arquivo estiver na Biblioteca e houver ferramenta compatível, ler diretamente dali; não exigir anexação às fontes do projeto apenas para permitir leitura.
-  - Os registros de conversa são históricos independentes, com nomes por assunto e sequência, por exemplo `project-index-prompt_01.md`, `project-index-bug_01.md` e `project-index-continuidade_01.md`. Antes de criar um registro, listar/buscar a série correspondente e escolher o próximo número livre. Nunca sobrescrever nem excluir registros de conversa como parte da manutenção do índice.
-  - O índice central usa versionamento explícito: `project-index-v1.md`, `project-index-v2.md` etc. Depois de uma atualização bem-sucedida, deve existir somente uma versão vigente. Cada versão registra o número, data, versão anterior, motivo, seções alteradas e itens adicionados/removidos. O índice cataloga os registros disponíveis, resume sua finalidade e permite seleção do contexto.
-  - Ao iniciar a continuidade, ler o índice vigente e apresentar opções: (a) todos os registros catalogados pertinentes; (b) um ou vários registros escolhidos; (c) registro mais recente de um assunto; ou (d) somente o estado atual. Se a escolha for ambígua e mudar materialmente o contexto, perguntar uma única questão objetiva. Ler apenas os registros escolhidos e suas dependências necessárias.
-  - O registro de conversa deve conter estado confirmado ao encerrar o chat, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e o prompt completo de abertura do próximo chat. Use os templates pertinentes e preserve a estrutura exigida por eles.
-  - Atualização do índice: localizar e ler a única versão vigente; preparar integralmente a próxima versão; gravar; pesquisar/listar e reler a nova versão; validar conteúdo, integridade do catálogo e histórico de alterações; somente então excluir a versão anterior. Depois, listar novamente e confirmar que só a versão nova permanece. Nunca excluir a versão anterior antes da validação da substituta.
-  - Se a criação, leitura de verificação, renomeação ou exclusão falhar, preservar a última versão comprovadamente válida, marcar a operação como `BLOQUEADO`, informar a etapa exata e entregar o conteúdo completo que precisa ser salvo. Não criar cópias com nomes alternativos repetidamente nem afirmar que a atualização foi concluída sem verificação.
-  - Não dependa de sincronização automática entre Biblioteca e fontes do projeto. A Biblioteca é o destino dos registros no ambiente ChatGPT; as fontes do projeto são separadas.
-- **Agentes de IA:** usar o diretório de trabalho do projeto ao qual o agente tem acesso. Criar/atualizar o registro de continuidade no próprio workspace e verificar o arquivo gravado. Não solicitar um repositório GitHub separado se o workspace atual já identifica o destino.
-- **GitHub:** confirmar repositório, branch e diretório remoto de destino. Não presumir que seja o repositório do kit. Verificar o estado existente antes de editar; criar registro separado por conversa, evitando sobrescrever histórico, e reler o arquivo remoto após o commit.
+A persistência deve respeitar as operações efetivamente disponíveis em cada ambiente. A estrutura lógica é comum, mas o método de publicação não é.
+
+#### Chats de IA e Biblioteca do ChatGPT
+
+Trate a Biblioteca como um repositório de publicações: arquivos podem ser adicionados, renomeados ou excluídos conforme os recursos disponíveis, mas não presuma edição direta como em um sistema de arquivos.
+
+- Identifique o projeto e procure os arquivos de continuidade acessíveis. Não afirme que existe uma pasta ou arquivo sem evidência.
+- A estrutura lógica esperada é:
+  - `current-status.md`: estado operacional atual;
+  - `decisions.md`: decisões aprovadas;
+  - `project-index-vN.md`: catálogo versionado;
+  - `continuity/chat-<assunto>-<NN>.md`: histórico imutável por conversa.
+- Ao atualizar um documento na Biblioteca, gere um arquivo completo com nome de versão/sequência nova, por exemplo `current-status-v03.md` ou `chat-continuidade-04.md`. Adicione a nova publicação e confirme que está acessível e completo antes de tentar renomear ou excluir a versão anterior.
+- Se não for possível excluir ou renomear a versão antiga, mantenha as versões e registre no índice qual é `VIGENTE), `SUBSTITUÍDO) ou `ARQUIVADO). Não permita duas versões declaradas vigentes para o mesmo papel.
+- Nunca exclua a última versão comprovadamente válida antes de validar a substituta. Se a nova publicação não puder ser lida de volta, a anterior continua sendo a fonte válida.
+- Não presuma que Biblioteca e fontes do projeto sejam sincronizadas. Se a plataforma não oferecer leitura ou escrita, entregue o conteúdo completo e marque a etapa como `BLOQUEADO).
+
+#### Agentes de IA
+
+- Identifique o workspace real do projeto antes de escrever.
+- Leia o arquivo atual e o template aplicável; preserve contratos e conteúdo fora do escopo.
+- Atualize diretamente os arquivos canônicos existentes, sem criar versões paralelas desnecessárias.
+- Crie um novo registro em `continuity/chat-<assunto>-<NN>.md` para cada fechamento que deva integrar o histórico imutável.
+- Releia os arquivos gravados e valide o resultado. Não declare sucesso sem evidência.
+
+#### GitHub
+
+- Confirme repositório, branch e caminhos antes de alterar.
+- Inspecione os arquivos atuais e atualize os arquivos canônicos diretamente na branch autorizada.
+- Preserve os registros históricos; não crie uma nova versão de `current-status.md` ou `decisions.md` a cada sessão sem uma necessidade explícita.
+- Use commits como histórico de alterações do estado canônico. Para registros de conversa que devam ser imutáveis, crie um novo arquivo em `continuity/`.
+- Após gravar, releia os arquivos remotos e confira o diff. Não faça commit em `main` quando houver branch de trabalho definida.
 
 O ambiente selecionado determina onde procurar e salvar. Não troque silenciosamente de ambiente nem use outra origem como fallback.
 
@@ -107,28 +129,31 @@ O ambiente selecionado determina onde procurar e salvar. Não troque silenciosam
 
 ### 4.5 Preparar e validar
 
-1. Consultar `03_continuidade/handoff-novo-chat.md` e apenas os templates pertinentes à operação.
-2. Identificar o destino de gravação conforme o ambiente. No ChatGPT, usar a Biblioteca diretamente quando estiver acessível e houver operação compatível; não exigir importação para as fontes do projeto apenas para leitura.
-3. Antes de selecionar registros, listar os arquivos do ambiente e ler o índice central vigente (`project-index-vN.md`). Se houver zero ou múltiplas versões candidatas e não for possível determinar qual é válida pelas evidências, não adivinhar: marcar a resolução como `BLOQUEADO` e informar a inconsistência.
-4. Apresentar a escolha de contexto: todos os registros pertinentes catalogados; um ou vários registros específicos; o registro mais recente de um assunto; ou apenas o estado atual. Respeitar a escolha e consultar dependências obrigatórias. Não ler todos os históricos por padrão.
-5. Para cada fechamento de conversa, criar um registro independente com a convenção `project-index-<assunto>_<NN>.md`. Pesquisar/listar a série e usar o próximo número livre. Nunca sobrescrever registros de conversa existentes.
-6. Preencher somente fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências e próxima ação. Marcar lacunas como desconhecidas. Incluir o prompt completo de abertura do próximo chat.
-7. Gravar o registro no destino real e pesquisar/listar e reler o conteúdo para confirmar persistência. Não declarar sucesso sem verificação.
-8. Atualizar o índice central por versionamento: (a) ler a versão vigente; (b) preparar a próxima `project-index-vN.md`, preservando o conteúdo e registrando alterações; (c) gravar e reler a nova versão; (d) validar seções, catálogo e histórico de mudanças; (e) excluir a versão anterior somente após validação; (f) listar novamente e confirmar que apenas a versão nova permanece.
-9. Se qualquer operação de escrita, leitura de verificação ou exclusão falhar, preservar a última versão comprovadamente válida, marcar `BLOQUEADO`, identificar a operação que falhou e fornecer o Markdown completo para salvamento manual. Não gerar cópias alternativas em série para contornar falhas.
-10. Informar exatamente o que foi lido, criado, atualizado, excluído, verificado ou bloqueado.
+1. Consultar este guia, `03_continuidade/handoff-novo-chat.md` e apenas os templates pertinentes à operação.
+2. Identificar o ambiente e o destino real. Listar ou pesquisar os arquivos existentes antes de criar ou substituir qualquer publicação.
+3. Distinguir os quatro papéis: estado atual, decisões aprovadas, índice/catalogação e histórico de conversa. Não usar um registro histórico como substituto automático do estado atual.
+4. Para a Biblioteca, publicar uma nova versão completa com nome novo; depois, abrir/ler a nova publicação e verificar conteúdo e referências. Somente após validação, tentar renomear ou excluir a anterior, se a plataforma permitir. Se não permitir, manter ambas e atualizar o índice para declarar o status de cada uma.
+5. Para agentes locais e GitHub, atualizar os arquivos canônicos no local selecionado e reler o conteúdo gravado. No GitHub, conferir branch, commit e diff.
+6. Criar um novo arquivo histórico para o fechamento de conversa, sem sobrescrever históricos existentes. Usar sequência livre e registrar somente fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e prompt de abertura do próximo chat.
+7. Carregar por padrão apenas o estado vigente e as decisões relevantes. Consultar registros históricos somente quando forem necessários para esclarecer dependências, evidências, decisões ou contradições.
+8. Validar a integridade das referências do índice e a preservação do conteúdo anterior relevante.
+9. Se a criação, leitura de verificação, atualização, renomeação ou exclusão falhar, preservar a última versão comprovadamente válida, marcar a etapa como `BLOQUEADO` ou `PARCIAL`, informar a operação exata e entregar o conteúdo completo para ação manual quando necessário.
+10. Informar exatamente o que foi lido, criado, atualizado, excluído, verificado ou bloqueado. Não declarar persistência sem evidência.
 
-### 4.6 Arquivos de estado e índice versionado
+### 4.6 Arquivos de estado, publicações e índice
 
-Diferencie o índice de continuidade, os registros de conversa e os arquivos de estado do projeto:
+Diferencie os papéis lógicos dos nomes físicos de publicação:
 
-- Índice de continuidade na Biblioteca do ChatGPT: `project-index-vN.md`; somente a última versão válida deve permanecer após atualização concluída.
-- Registros de conversa: `project-index-<assunto>_<NN>.md`; são históricos independentes e não devem ser removidos durante a atualização do índice.
-- Arquivos de estado de projeto, quando aplicáveis: `current-status.<projeto>.md` e `decisions.<projeto>.md`. O índice pode catalogá-los, mas não substitui suas responsabilidades.
+- **Estado atual:** `current-status.md`. Em agentes/GitHub, é o arquivo canônico atualizável. Na Biblioteca, a publicação física pode ter sufixo de versão, como `current-status-v03.md`; o índice deve apontar para a publicação vigente.
+- **Decisões:** `decisions.md). Contém somente decisões aprovadas. Decisões substituídas permanecem registradas com status e referência à decisão sucessora.
+- **Índice:** `project-index-vN.md) na Biblioteca, com versões publicadas; em workspace/GitHub, pode existir um índice canônico atualizável conforme a estrutura do projeto.
+- **Histórico:** `continuity/chat-<assunto>-<NN>.md`. Cada registro de conversa é independente e imutável; não é removido durante a manutenção do índice.
 
-Cada versão do índice deve incluir: versão, data, versão anterior, motivo da alteração, resumo das seções alteradas e lista de registros adicionados/removidos. Decisões entram em `decisions` somente após aprovação. Se o estado real não existir, criar um estado inicial claramente identificado, sem simular histórico.
+Cada entrada do índice deve registrar nome do arquivo, papel, versão/data quando aplicável, status `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`, e referência à publicação substituta/anterior quando houver. Deve existir exatamente uma publicação `VIGENTE` por papel lógico, sempre que houver evidência suficiente para determinar isso.
 
-A exclusão de versões anteriores só pode ocorrer quando a nova versão foi gravada e lida de volta com sucesso. Se o ambiente não permitir excluir ou substituir arquivos, não simular sucesso nem apagar o arquivo válido.
+Na Biblioteca, se não for possível mudar o status dentro de um arquivo antigo, registre a substituição no novo índice vigente. Não presuma que seja possível editar metadados da publicação.
+
+Em qualquer ambiente, decisões entram em `decisions.md` somente após aprovação. Se o estado real não existir, criar um estado inicial claramente identificado, sem simular histórico. A exclusão de uma versão anterior é opcional e condicionada à validação da nova; preservar duas versões identificadas é preferível a perder a última publicação válida.
 
 ### 4.7 Saída mínima
 
@@ -223,9 +248,9 @@ O prompt deve conter objetivo, contexto, alterações autorizadas/proibidas, res
 | T07 | `/continuidade` no ambiente ChatGPT | Procura na Biblioteca e fontes acessíveis; cria registro independente na Biblioteca quando houver suporte; relê para verificar; se gravação indisponível, marca `BLOQUEADO` e entrega Markdown completo |
 | T11 | Índice com várias versões candidatas | Não escolhe arbitrariamente; verifica evidências ou bloqueia com a inconsistência descrita |
 | T12 | Seleção de um ou mais registros | Lê apenas os selecionados e as dependências necessárias |
-| T13 | Atualização do índice versionado | Cria a próxima versão, documenta mudanças, relê e valida antes de excluir a anterior |
-| T14 | Falha ao excluir versão antiga | Mantém os arquivos existentes, marca `BLOQUEADO` e não cria cópias de contorno |
-| T15 | Atualização completa bem-sucedida | Confirma por listagem final que somente a última versão do índice permanece e os históricos continuam intactos |
+| T13 | Publicação versionada na Biblioteca | Cria nova publicação completa, relê e valida; tenta renomear/excluir a anterior apenas depois, se suportado; caso contrário, mantém ambas e declara status no índice |
+| T14 | Falha ao excluir/renomear versão antiga | Mantém ambas as publicações, declara uma `VIGENTE` e a outra `SUBSTITUÍDO`, sem criar cópias de contorno |
+| T15 | Atualização completa na Biblioteca | Confirma que a nova publicação foi relida, que o índice identifica uma única versão `VIGENTE` por papel e que históricos continuam intactos; versões antigas podem permanecer |
 | T08 | Pedido de arquitetura | Não consulta templates de continuidade sem necessidade |
 | T09 | Continuidade + correção de bug | Combina `CONT-01` e `BUG-01`, sem repetir dependências |
 | T10 | Menção `@Continuidade` sem skill disponível | Trata como texto comum e usa o roteador |
