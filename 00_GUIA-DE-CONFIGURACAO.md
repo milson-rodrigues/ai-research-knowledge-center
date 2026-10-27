@@ -120,7 +120,7 @@ Trate a Biblioteca como repositório de publicações, não como sistema de edi�
 2. Se houver ambiguidade entre projetos, perguntar qual é o correto.
 3. Localizar a pasta real de continuidade no ambiente selecionado.
 4. Distinguir pasta inexistente de pasta inacessível.
-5. Se a pasta não existir, informar o ambiente e o caminho consultado; não criar uma pasta substituta sem autorização e sem previsão no procedimento.
+5. Se a pasta do projeto estiver identificada e `continuidade/` não existir, criar essa subpasta dentro do projeto quando a plataforma permitir, conforme a seção 4.3. Confirmar sua presença antes de criar/publicar arquivos. Não criar em outro local. Se a operação de criação não estiver disponível, registrar `BLOQUEADO` com o caminho e a limitação exatos.
 6. Identificar os templates e arquivos existentes antes de copiar ou renomear.
 
 ### 4.5 Preparar e validar
@@ -141,8 +141,8 @@ Trate a Biblioteca como repositório de publicações, não como sistema de edi�
 Diferencie os papéis lógicos dos nomes físicos de publicação:
 
 - **Estado atual:** `current-status.md`. Em agentes/GitHub, é o arquivo canônico atualizável. Na Biblioteca, a publicação física pode ter sufixo de versão, como `current-status-v03.md`; o índice deve apontar para a publicação vigente.
-- **Decisões:** `decisions.md). Contém somente decisões aprovadas. Decisões substituídas permanecem registradas com status e referência à decisão sucessora.
-- **Índice:** `project-index-vN.md) na Biblioteca, com versões publicadas; em workspace/GitHub, pode existir um índice canônico atualizável conforme a estrutura do projeto.
+- **Decisões:** `decisions.md`. Contém somente decisões aprovadas. Decisões substituídas permanecem registradas com status e referência à decisão sucessora.
+- **Índice:** `project-index-vN.md` na Biblioteca, com versões publicadas; em workspace/GitHub, pode existir um índice canônico atualizável conforme a estrutura do projeto.
 - **Histórico:** `continuity/chat-<assunto>-<NN>.md`. Cada registro de conversa é independente e imutável; não é removido durante a manutenção do índice.
 
 Cada entrada do índice deve registrar nome do arquivo, papel, versão/data quando aplicável, status `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`, e referência à publicação substituta/anterior quando houver. Deve existir exatamente uma publicação `VIGENTE` por papel lógico, sempre que houver evidência suficiente para determinar isso.
