@@ -1,11 +1,13 @@
 # current-status.md: [NOME DO PROJETO]
 
-Estado atual. Substituído por inteiro a cada fechamento de bloco ou fase. Fica nas **fontes do projeto**.
+Estado operacional atual. Em workspace/GitHub, atualizar este arquivo canônico por inteiro a cada fechamento de bloco ou fase. Na Biblioteca, publicar uma cópia completa com nome versionado (por exemplo, `current-status-v03.md`) e apontá-la como `VIGENTE` no índice; não presumir edição direta.
 
 - **Atualizado em:** [YYYY-MM-DD]
 - **Fase:** [..]
 - **Último bloco concluído:** [B0x, Prompt ID, status]
 - **Bloco em andamento:** [B0y, Prompt ID] ou "nenhum"
+- **Status da publicação:** [VIGENTE | SUBSTITUÍDO | ARQUIVADO; aplicável quando publicado como arquivo versionado]
+- **Versão/publicação anterior:** [nome ou "nenhuma"]
 
 ## 1. Concluído (com evidência)
 
