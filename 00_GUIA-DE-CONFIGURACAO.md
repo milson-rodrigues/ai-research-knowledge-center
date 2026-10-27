@@ -89,7 +89,7 @@ A estrutura lógica de continuidade é compartilhada, mas a persistência deve r
 
 Trate a Biblioteca como repositório de publicações, não como sistema de edição concorrente. Não presuma que arquivos possam ser editados diretamente como arquivos locais.
 
-- Identifique o projeto e procure arquivos acessíveis. Não afirme que existe uma pasta ou arquivo sem evidência.
+- Identifique o projeto e procure arquivos acessíveis. Não afirme que existe uma pasta ou arquivo sem evidência. Se a pasta do projeto estiver identificada, mas `continuidade/` estiver ausente, crie essa subpasta dentro do projeto se a plataforma permitir. Se um arquivo necessário estiver ausente, crie-o a partir do template aplicável ou como estado inicial explicitamente identificado. Só bloqueie quando o projeto/destino não puder ser identificado ou a operação necessária não estiver disponível; nunca crie em local alternativo.
 - Papéis lógicos: `current-status.md` (estado operacional atual), `decisions.md` (decisões aprovadas), `project-index-vN.md` (catálogo versionado) e `continuity/chat-<assunto>-<NN>.md` (histórico imutável).
 - Para atualizar um documento na Biblioteca, gere um arquivo completo com nome de versão/sequência novo, por exemplo `current-status-v03.md` ou `chat-continuidade-04.md`; adicione-o e releia-o para validar acessibilidade, integridade e referências.
 - Somente depois de validar a nova publicação, tente renomear ou excluir a anterior, se a plataforma permitir.
