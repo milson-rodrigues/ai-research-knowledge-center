@@ -83,40 +83,36 @@ Não confunda o provedor/modelo com o armazenamento. Identifique o produto e con
 
 ### 4.3 Resolver origem e destino
 
-A persistência deve respeitar as operações efetivamente disponíveis em cada ambiente. A estrutura lógica é comum, mas o método de publicação não é.
+A estrutura lógica de continuidade é compartilhada, mas a persistência deve respeitar as operações reais disponíveis em cada ambiente.
 
 #### Chats de IA e Biblioteca do ChatGPT
 
-Trate a Biblioteca como um repositório de publicações: arquivos podem ser adicionados, renomeados ou excluídos conforme os recursos disponíveis, mas não presuma edição direta como em um sistema de arquivos.
+Trate a Biblioteca como repositório de publicações, não como sistema de edição concorrente. Não presuma que arquivos possam ser editados diretamente como arquivos locais.
 
-- Identifique o projeto e procure os arquivos de continuidade acessíveis. Não afirme que existe uma pasta ou arquivo sem evidência.
-- A estrutura lógica esperada é:
-  - `current-status.md`: estado operacional atual;
-  - `decisions.md`: decisões aprovadas;
-  - `project-index-vN.md`: catálogo versionado;
-  - `continuity/chat-<assunto>-<NN>.md`: histórico imutável por conversa.
-- Ao atualizar um documento na Biblioteca, gere um arquivo completo com nome de versão/sequência nova, por exemplo `current-status-v03.md` ou `chat-continuidade-04.md`. Adicione a nova publicação e confirme que está acessível e completo antes de tentar renomear ou excluir a versão anterior.
-- Se não for possível excluir ou renomear a versão antiga, mantenha as versões e registre no índice qual é `VIGENTE), `SUBSTITUÍDO) ou `ARQUIVADO). Não permita duas versões declaradas vigentes para o mesmo papel.
-- Nunca exclua a última versão comprovadamente válida antes de validar a substituta. Se a nova publicação não puder ser lida de volta, a anterior continua sendo a fonte válida.
-- Não presuma que Biblioteca e fontes do projeto sejam sincronizadas. Se a plataforma não oferecer leitura ou escrita, entregue o conteúdo completo e marque a etapa como `BLOQUEADO).
+- Identifique o projeto e procure arquivos acessíveis. Não afirme que existe uma pasta ou arquivo sem evidência.
+- Papéis lógicos: `current-status.md` (estado operacional atual), `decisions.md` (decisões aprovadas), `project-index-vN.md` (catálogo versionado) e `continuity/chat-<assunto>-<NN>.md` (histórico imutável).
+- Para atualizar um documento na Biblioteca, gere um arquivo completo com nome de versão/sequência novo, por exemplo `current-status-v03.md` ou `chat-continuidade-04.md`; adicione-o e releia-o para validar acessibilidade, integridade e referências.
+- Somente depois de validar a nova publicação, tente renomear ou excluir a anterior, se a plataforma permitir.
+- Se não for possível renomear/excluir, mantenha as versões e marque no índice `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`. Deve haver uma única publicação vigente por papel lógico quando isso puder ser determinado.
+- Se a nova publicação não puder ser lida de volta, a anterior continua válida. Nunca a exclua nem declare sucesso sem evidência.
+- Se não houver ferramenta de escrita, entregue o Markdown completo e marque a persistência como `BLOQUEADO`.
+- Não presuma sincronização entre Biblioteca e fontes do projeto.
 
 #### Agentes de IA
 
-- Identifique o workspace real do projeto antes de escrever.
-- Leia o arquivo atual e o template aplicável; preserve contratos e conteúdo fora do escopo.
-- Atualize diretamente os arquivos canônicos existentes, sem criar versões paralelas desnecessárias.
-- Crie um novo registro em `continuity/chat-<assunto>-<NN>.md` para cada fechamento que deva integrar o histórico imutável.
-- Releia os arquivos gravados e valide o resultado. Não declare sucesso sem evidência.
+- Confirme o workspace real antes de editar.
+- Leia arquivos atuais e templates aplicáveis.
+- Atualize diretamente os arquivos canônicos existentes, preservando conteúdo fora do escopo.
+- Crie novos registros históricos em `continuity/` sem sobrescrever históricos anteriores.
+- Releia os arquivos gravados e valide o resultado.
 
 #### GitHub
 
 - Confirme repositório, branch e caminhos antes de alterar.
-- Inspecione os arquivos atuais e atualize os arquivos canônicos diretamente na branch autorizada.
-- Preserve os registros históricos; não crie uma nova versão de `current-status.md` ou `decisions.md` a cada sessão sem uma necessidade explícita.
-- Use commits como histórico de alterações do estado canônico. Para registros de conversa que devam ser imutáveis, crie um novo arquivo em `continuity/`.
-- Após gravar, releia os arquivos remotos e confira o diff. Não faça commit em `main` quando houver branch de trabalho definida.
-
-O ambiente selecionado determina onde procurar e salvar. Não troque silenciosamente de ambiente nem use outra origem como fallback.
+- Inspecione o estado atual e atualize os arquivos canônicos na branch selecionada.
+- Preserve históricos; crie um arquivo novo em `continuity/` para cada registro que deva ser imutável.
+- Releia os arquivos remotos e confira o diff após gravar.
+- Não faça alterações em `main` quando houver uma branch de trabalho definida.
 
 ### 4.4 Identificar o projeto e localizar os arquivos
 
@@ -129,16 +125,16 @@ O ambiente selecionado determina onde procurar e salvar. Não troque silenciosam
 
 ### 4.5 Preparar e validar
 
-1. Consultar este guia, `03_continuidade/handoff-novo-chat.md` e apenas os templates pertinentes à operação.
-2. Identificar o ambiente e o destino real. Listar ou pesquisar os arquivos existentes antes de criar ou substituir qualquer publicação.
-3. Distinguir os quatro papéis: estado atual, decisões aprovadas, índice/catalogação e histórico de conversa. Não usar um registro histórico como substituto automático do estado atual.
-4. Para a Biblioteca, publicar uma nova versão completa com nome novo; depois, abrir/ler a nova publicação e verificar conteúdo e referências. Somente após validação, tentar renomear ou excluir a anterior, se a plataforma permitir. Se não permitir, manter ambas e atualizar o índice para declarar o status de cada uma.
-5. Para agentes locais e GitHub, atualizar os arquivos canônicos no local selecionado e reler o conteúdo gravado. No GitHub, conferir branch, commit e diff.
-6. Criar um novo arquivo histórico para o fechamento de conversa, sem sobrescrever históricos existentes. Usar sequência livre e registrar somente fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e prompt de abertura do próximo chat.
-7. Carregar por padrão apenas o estado vigente e as decisões relevantes. Consultar registros históricos somente quando forem necessários para esclarecer dependências, evidências, decisões ou contradições.
-8. Validar a integridade das referências do índice e a preservação do conteúdo anterior relevante.
-9. Se a criação, leitura de verificação, atualização, renomeação ou exclusão falhar, preservar a última versão comprovadamente válida, marcar a etapa como `BLOQUEADO` ou `PARCIAL`, informar a operação exata e entregar o conteúdo completo para ação manual quando necessário.
-10. Informar exatamente o que foi lido, criado, atualizado, excluído, verificado ou bloqueado. Não declarar persistência sem evidência.
+1. Consulte este guia, `03_continuidade/handoff-novo-chat.md` e apenas os templates pertinentes.
+2. Identifique o projeto, o ambiente e o destino real. Liste/pesquise arquivos existentes antes de criar ou substituir publicações.
+3. Distinga estado atual, decisões aprovadas, índice e histórico de conversa.
+4. Na Biblioteca, publique um arquivo completo com nome novo, adicione-o e releia-o antes de tentar renomear/excluir a versão anterior. Se a plataforma não permitir, mantenha as versões e registre os status no índice.
+5. Em agentes locais e GitHub, atualize os arquivos canônicos no destino selecionado e releia o conteúdo gravado. No GitHub, confirme branch e diff.
+6. Crie um novo arquivo histórico para cada fechamento relevante, usando sequência livre e sem sobrescrever registros existentes.
+7. Carregue por padrão somente o estado vigente e as decisões relevantes. Consulte históricos adicionais apenas para esclarecer dependências, evidências, decisões ou contradições.
+8. Valide integridade e referências do índice, além da preservação do conteúdo anterior relevante.
+9. Se criação, atualização, releitura, renomeação ou exclusão falhar, preserve a última versão comprovadamente válida e marque a etapa como `PARCIAL` ou `BLOQUEADO`. Informe a operação exata e forneça o conteúdo completo para ação manual quando necessário.
+10. Informe o que foi realmente lido, criado, atualizado, excluído, verificado ou bloqueado. Não declare persistência sem evidência.
 
 ### 4.6 Arquivos de estado, publicações e índice
 
