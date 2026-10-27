@@ -1,6 +1,11 @@
 # project-index.md: [NOME DO PROJETO]
 
-Catálogo e ponto de entrada do projeto. Este arquivo fica nas **fontes do projeto**. Atualizado em: [YYYY-MM-DD]
+Catálogo e ponto de entrada do projeto. Em workspace/GitHub pode ser atualizado como arquivo canônico; na Biblioteca, publicar uma nova versão completa do índice e preservar a anterior até validar a nova. Atualizado em: [YYYY-MM-DD]
+
+- **Versão/publicação:** [vNN]
+- **Status desta publicação:** [VIGENTE | SUBSTITUÍDO | ARQUIVADO]
+- **Versão anterior:** [nome/versão ou "nenhuma"]
+- **Motivo da publicação:** [..]
 
 - **Sigla (para IDs de prompt):** [SIGLA]
 - **Fonte canônica do kit:** `milson-rodrigues/ai-research-knowledge-center`, branch `main`, consultada sob demanda.
@@ -15,11 +20,11 @@ Catálogo e ponto de entrada do projeto. Este arquivo fica nas **fontes do proje
 
 ## 2. Fontes e arquivos canônicos
 
-| Arquivo | Onde fica | Função |
-|---|---|---|
-| project-index.md | Fontes do projeto ou repositório do projeto | Este catálogo |
-| current-status.md | Fontes do projeto ou repositório do projeto | Estado real da execução |
-| decisions.md | Fontes do projeto ou repositório do projeto | Decisões aprovadas |
+| Arquivo | Onde fica | Função | Status da publicação |
+|---|---|---|---|
+| project-index.md / project-index-vN.md | Biblioteca, fontes do projeto ou repositório do projeto | Catálogo vigente; na Biblioteca, usar publicação versionada | VIGENTE / SUBSTITUÍDO / ARQUIVADO |
+| current-status.md / current-status-vNN.md | Biblioteca, fontes do projeto ou repositório do projeto | Estado real da execução; na Biblioteca, publicação versionada | VIGENTE / SUBSTITUÍDO / ARQUIVADO |
+| decisions.md | Biblioteca, fontes do projeto ou repositório do projeto | Decisões aprovadas | VIGENTE / SUBSTITUÍDO / ARQUIVADO |
 | 00_ROTA-DE-CONSULTA.md | Fontes do projeto ChatGPT | Bootstrap permanente; aponta para `00_GUIA-DE-CONFIGURACAO.md` |
 | 00_GUIA-DE-CONFIGURACAO.md | Repositório do kit, branch `main` | Índice operacional canônico e mutável; aliases, fluxos e dependências |
 | 01_instrucoes/rota-operacional.md | Repositório do kit, branch `main` | Ponte estável para o guia canônico; não mantém uma árvore separada |
