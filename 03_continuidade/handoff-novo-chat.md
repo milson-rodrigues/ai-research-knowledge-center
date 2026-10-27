@@ -11,7 +11,7 @@ Procedimento do fluxo `CONT-01`. A estrutura lógica é compartilhada, mas a per
 ## 2. Fechamento da conversa
 
 1. Consulte o guia canônico, este procedimento e apenas os templates necessários.
-2. Identifique o projeto e o ambiente real. Não presuma a existência de pasta ou arquivo sem evidência.
+2. Identifique o ambiente e a pasta do projeto real. Não presuma a existência de pasta ou arquivo sem evidência. Se a pasta do projeto estiver identificada, mas a subpasta `continuidade` não existir, crie `continuidade` dentro da pasta do projeto, desde que a plataforma permita. Não crie a pasta em outro local.
 3. Leia o estado atual, o índice vigente e as decisões relevantes, quando acessíveis. Consulte históricos apenas quando necessários para resolver dependências, evidências, decisões ou contradições.
 4. Registre fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, riscos, próxima ação e prompt completo de abertura do próximo chat.
 5. Crie um novo histórico em `continuity/chat-<assunto>-<NN>.md`, usando a próxima sequência livre. Nunca sobrescreva ou exclua históricos anteriores como parte da continuidade.
@@ -24,14 +24,17 @@ Procedimento do fluxo `CONT-01`. A estrutura lógica é compartilhada, mas a per
 
 A Biblioteca funciona como repositório de publicações, não como sistema de edição concorrente.
 
-1. Leia o registro e o índice atuais, se estiverem acessíveis.
-2. Gere um arquivo completo atualizado com nome de versão/sequência novo, por exemplo `current-status-v03.md`, `project-index-v03.md` ou `chat-continuidade-04.md`.
-3. Adicione o arquivo à Biblioteca.
-4. Abra/relê a publicação e confirme que está acessível e completa.
-5. Somente depois, tente renomear ou excluir a versão anterior, se a plataforma permitir.
-6. Se não for possível renomear/excluir, mantenha as versões e registre no índice `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`. Deve haver uma única publicação vigente por papel lógico quando for possível determiná-la.
-7. Se a nova versão não puder ser lida de volta, a anterior continua sendo a fonte válida. Não a exclua nem declare sucesso.
-8. Se não houver ferramenta de escrita, entregue o Markdown completo e marque a persistência como `BLOQUEADO`.
+1. Identifique a pasta do projeto na Biblioteca. Se o projeto não puder ser identificado, marque `BLOQUEADO` e não crie pasta em local incerto.
+2. Procure a subpasta `continuidade`. Se existir, inspecione seu conteúdo. Se não existir e for possível criar pastas, crie `continuidade` dentro da pasta identificada do projeto e confirme que ela aparece na Biblioteca. Se não for possível criar, registre a operação como `BLOQUEADO`.
+3. Identifique os arquivos necessários dentro de `continuidade`. Se um arquivo necessário não existir, gere-o a partir do template aplicável ou como estado inicial explicitamente identificado; não trate ausência como bloqueio automático.
+4. Leia o registro e o índice atuais, se estiverem acessíveis.
+5. Gere um arquivo completo atualizado com nome de versão/sequência novo, por exemplo `current-status-v03.md`, `project-index-v03.md` ou `chat-continuidade-04.md`.
+6. Adicione o arquivo à Biblioteca, dentro da pasta correta do projeto.
+7. Abra/relê a publicação e confirme que está acessível e completa.
+8. Somente depois, tente renomear ou excluir a versão anterior, se a plataforma permitir.
+9. Se não for possível renomear/excluir, mantenha as versões e registre no índice `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`. Deve haver uma única publicação vigente por papel lógico quando for possível determiná-la.
+10. Se a nova versão não puder ser lida de volta, a anterior continua sendo a fonte válida. Não a exclua nem declare sucesso.
+11. Se não houver ferramenta para criar pasta ou arquivo, entregue o conteúdo completo e marque apenas a operação não disponível como `BLOQUEADO`.
 
 Modelo lógico:
 - `current-status.md`: estado operacional atual. Na Biblioteca, a publicação física pode ter sufixo de versão, por exemplo `current-status-v03.md`.
