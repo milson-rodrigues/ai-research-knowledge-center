@@ -1,65 +1,67 @@
-# Testes de aceitação — CONT-01 e índice versionado
+# Testes de aceitação — CONT-01 e continuidade por ambiente
 
 ## Objetivo
 
-Verificar por evidências o fluxo de continuidade, a seleção de registros e o versionamento do índice central no ambiente de teste. Os critérios abaixo não significam que os testes já foram executados.
+Validar o fluxo de continuidade separadamente na Biblioteca do ChatGPT, em workspace de agente e no GitHub. Os critérios são especificações, não evidência de execução.
 
 ## Estados permitidos
 
 - `CONCLUÍDO`: evidência comprova todos os critérios do cenário.
 - `PARCIAL`: parte do cenário passou, mas há etapas pendentes.
-- `BLOQUEADO`: o ambiente/ferramenta impediu a execução de uma etapa.
+- `BLOQUEADO`: o ambiente/ferramenta impediu uma etapa.
 - `FALHOU`: a operação foi executada, mas não cumpriu o resultado esperado.
 
 ## Preparação
 
-1. Identificar explicitamente o ambiente de teste e o caminho real de armazenamento.
-2. Listar os arquivos existentes antes de qualquer alteração.
-3. Ler o índice vigente e registrar sua versão, identificador e conteúdo.
-4. Não executar exclusões se não existir uma cópia nova verificada.
-5. Usar arquivos de teste descartáveis sempre que possível. Não usar registros reais do usuário como dados de teste sem necessidade.
+1. Identificar ambiente, projeto e destino real.
+2. Listar os arquivos existentes e ler o índice/estado atual, quando acessíveis.
+3. Registrar as versões e evidências antes de alterar qualquer arquivo.
+4. Usar arquivos de teste descartáveis sempre que possível.
+5. Nunca excluir a última versão comprovadamente válida antes de validar a substituta.
 
 ## Cenários
 
 | ID | Cenário | Procedimento | Critério de aprovação | Estado/evidência |
 |---|---|---|---|---|
-| CT-01 | Descobrir índice vigente | Listar os arquivos e ler o índice | Uma única versão vigente identificada; se houver ambiguidade, bloqueio explícito | Pendente |
-| CT-02 | Comparar catálogo e arquivos | Comparar entradas do índice com registros existentes | Divergências reportadas; nenhum arquivo inventado | Pendente |
-| CT-03 | Selecionar um registro | Escolher um registro específico | Só o registro escolhido e dependências necessárias são lidos | Pendente |
-| CT-04 | Selecionar vários registros | Escolher duas ou mais entradas | Contexto consolidado sem perder diferenças ou decisões conflitantes | Pendente |
-| CT-05 | Selecionar todos | Escolher todos os registros pertinentes | Todos os registros catalogados pertinentes são considerados; não varre o kit inteiro sem necessidade | Pendente |
-| CT-06 | Selecionar último de um assunto | Solicitar o mais recente de uma série | Identifica a sequência mais alta real e verifica o arquivo | Pendente |
-| CT-07 | Criar registro de continuidade | Criar o próximo número livre da série | Registro independente criado sem sobrescrita e relido | Pendente |
-| CT-08 | Gerar nova versão | Copiar o índice vigente para o próximo número e documentar mudanças | Conteúdo anterior relevante preservado e mudanças explicitadas | Pendente |
-| CT-09 | Verificar antes de excluir | Reler a nova versão antes de remover a antiga | Exclusão só ocorre após validação integral da nova versão | Pendente |
-| CT-10 | Excluir versão antiga | Excluir a versão anterior após validação | Exclusão confirmada e listagem final mostra somente a versão mais nova | Pendente |
-| CT-11 | Falha ao criar nova versão | Simular ou identificar falha de gravação | Versão antiga permanece; operação marcada BLOQUEADO | Pendente |
-| CT-12 | Falha ao excluir antiga | Simular ou identificar falha de exclusão | Não alegar sucesso; documentar que duas versões permanecem e interromper novas atualizações | Pendente |
-| CT-13 | Falha de releitura | Impedir ou não conseguir verificar o conteúdo novo | Não excluir versão antiga; classificar BLOQUEADO | Pendente |
-| CT-14 | Integridade do histórico | Comparar os registros de conversa antes e depois | Nenhum registro histórico removido ou sobrescrito pelo versionamento do índice | Pendente |
-| CT-15 | Reabrir novo chat | Usar o prompt de abertura gerado | Próxima ação, bloqueios e decisões confirmados a partir dos arquivos | Pendente |
-| CT-16 | Relatório final | Consolidar os resultados | Distingue testes executados, não executados e bloqueados com evidências | Pendente |
+| CT-01 | Identificar projeto e destino | Procurar os arquivos de estado no ambiente selecionado | Projeto, caminho e arquivos encontrados documentados; acesso falho não é confundido com inexistência | Pendente |
+| CT-02 | Publicar nova versão na Biblioteca | Gerar arquivo completo com nome novo, adicionar, abrir e reler | Nova publicação acessível e completa antes de qualquer alteração à anterior | Pendente |
+| CT-03 | Excluir/renomear versão antiga | Após validar a nova, tentar operação se suportada | Se indisponível, preservar ambas e documentar a limitação; nunca perder a versão válida | Pendente |
+| CT-04 | Separar estado, decisões, índice e histórico | Inspecionar nomes, funções e referências | Estado atual, decisões aprovadas, catálogo e histórico têm papéis distintos | Pendente |
+| CT-05 | Status das publicações | Registrar status no índice | Cada publicação tem status `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`; uma única vigente por papel quando determinável | Pendente |
+| CT-06 | Falha de publicação | Simular ou observar falha de criação | Versão anterior permanece válida; resultado marcado `BLOQUEADO) | Pendente |
+| CT-07 | Falha de releitura | Não conseguir abrir/confirmar nova publicação | Não declarar sucesso nem excluir a anterior | Pendente |
+| CT-08 | Falha ao excluir/renomear | Operação não suportada ou falha | Manter as versões e tornar inequívoca a vigente no índice | Pendente |
+| CT-09 | Atualizar estado em agente/GitHub | Atualizar arquivo canônico e reler | Arquivo no destino correto contém a atualização; diff preserva conteúdo fora do escopo | Pendente |
+| CT-10 | Histórico imutável | Criar novo registro de conversa | Histórico anterior não é sobrescrito nem removido | Pendente |
+| CT-11 | Carregamento mínimo de contexto | Iniciar continuidade a partir do estado vigente | Lê estado e decisões relevantes; consulta histórico adicional apenas quando necessário | Pendente |
+| CT-12 | Seleção explícita de históricos | Solicitar um ou vários registros | Somente os selecionados e dependências necessárias são lidos | Pendente |
+| CT-13 | Índice divergente dos arquivos | Comparar catálogo com listagem real | Divergência é reportada antes de confiar no catálogo | Pendente |
+| CT-14 | Versões ambíguas | Apresentar duas versões candidatas sem status claro | Não escolher por suposição; bloquear ou solicitar evidência para resolver | Pendente |
+| CT-15 | Prompt de abertura | Gerar e usar o prompt de handoff | Próxima ação, bloqueios e decisões são confirmados a partir das fontes disponíveis | Pendente |
+| CT-16 | Relatório final | Consolidar execução | Separa testes executados, não executados e bloqueados, com evidências | Pendente |
 
 ## Registro obrigatório de cada execução
 
 Para cada cenário, registrar:
-- data e ambiente;
-- arquivo(s) consultado(s);
-- operação executada;
-- evidência de leitura antes/depois;
-- resultado observado;
-- estado: `CONCLUÍDO`, `PARCIAL`, `BLOQUEADO` ou `FALHOU`;
-- próxima ação para cenários não concluídos.
+
+- Data e ambiente.
+- Projeto e caminho consultados.
+- Arquivos lidos e operação executada.
+- Evidência antes/depois (conteúdo relido, captura ou identificador do commit).
+- Resultado observado.
+- Estado: `CONCLUÍDO`, `PARCIAL`, `BLOQUEADO) ou `FALHOU`.
+- Próxima ação para cenários não concluídos.
 
 ## Critério de aprovação do fluxo completo
 
-O fluxo completo só passa se:
-1. a seleção de contexto respeitar a escolha do usuário;
-2. o registro de continuidade for criado e relido;
-3. a nova versão do índice for criada, relida e validada;
-4. a versão antiga só for excluída depois da validação;
-5. a listagem final mostrar apenas a última versão do índice;
-6. os registros de conversa permanecerem intactos;
-7. falhas forem relatadas sem alegações de sucesso.
+1. O projeto e o destino são identificados por evidência.
+2. Na Biblioteca, a nova publicação é adicionada e relida antes de alterar a anterior.
+3. Se não houver suporte para excluir/renomear, as versões permanecem e o índice identifica a vigente.
+4. Estado atual, decisões, índice e histórico são separados.
+5. O índice explicita status e referências de versão.
+6. A versão anterior permanece válida se a nova não puder ser lida de volta.
+7. O contexto inicial usa estado atual e decisões relevantes, sem carregar todo o histórico por padrão.
+8. Os registros históricos não são sobrescritos ou excluídos.
+9. Testes são executados separadamente por ambiente; aprovação em um ambiente não comprova os demais.
 
-Executar e registrar os cenários separadamente para GitHub, Biblioteca do ChatGPT e qualquer outro ambiente. A aprovação em um ambiente não comprova os demais.
+Nenhum cenário deve ser marcado como executado apenas porque seu procedimento está documentado.
