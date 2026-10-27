@@ -1,86 +1,88 @@
 # Handoff para novo chat
 
-Este procedimento é usado pelo fluxo `CONT-01`. O destino dos registros depende do ambiente: Biblioteca no ChatGPT quando houver suporte de leitura/gravação, workspace do projeto para agentes locais e repositório/branch selecionados para GitHub. Não presuma sincronização entre Biblioteca e fontes do projeto.
+Este procedimento é usado pelo fluxo `CONT-01`. A estrutura lógica de continuidade é compartilhada entre ambientes, mas a persistência deve respeitar as operações reais disponíveis. Não presuma sincronização entre Biblioteca, fontes do projeto, workspace local e GitHub.
 
 ## 1. Quando abrir um chat novo
 
-- Uma fase/bloco foi fechado.
-- Muitos blocos no mesmo chat (referência: 5 a 8) ou respostas lentas, repetitivas ou contraditórias.
-- Lentidão do navegador por chat longo.
+- Uma fase ou bloco foi fechado.
+- O chat ficou longo, repetitivo, lento ou contraditório.
 - É necessário preservar o estado antes de mudar de conversa ou executor.
 
 ## 2. No chat atual, antes de fechar
 
-Use o seguinte pedido ou execute diretamente quando a intenção do usuário já estiver clara:
+Execute diretamente quando a intenção estiver clara:
 
-~~~
-Prepare o fechamento desta conversa conforme CONT-01.
 1. Consulte o guia canônico, este procedimento e apenas os templates necessários.
-2. Identifique o ambiente e localize os registros e o índice central no destino real; não misture Biblioteca, fontes do projeto, workspace local e GitHub.
-3. No ChatGPT, liste os arquivos relevantes e leia a versão vigente de project-index-vN.md. Se houver ambiguidade de versão, não escolha por suposição.
-4. Apresente a seleção de contexto: todos os registros pertinentes, um ou vários registros específicos, o mais recente de um assunto ou somente o estado atual. Leia apenas o que foi selecionado e as dependências necessárias.
-5. Crie um registro independente com o próximo número livre da série do assunto, sem sobrescrever ou excluir históricos existentes.
-6. Registre objetivo, ponto de encerramento, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, próxima ação e prompt completo para abrir o próximo chat. Não invente estado ausente.
-7. Grave o registro e depois liste/busque e releia o conteúdo para confirmar persistência.
-8. Atualize o índice: criar a próxima project-index-vN.md a partir do conteúdo integral da versão vigente; registrar versão anterior, data, motivo e mudanças; gravar, reler e validar a nova versão; somente depois excluir a versão anterior; por fim, listar novamente e confirmar que apenas a versão nova permanece.
-9. Se qualquer etapa de escrita, leitura de verificação ou exclusão falhar, preserve a última versão comprovadamente válida, marque BLOQUEADO, descreva a etapa exata e forneça o Markdown completo para salvamento manual. Não crie cópias alternativas repetidamente e não declare sucesso sem evidência.
-10. Informe os arquivos realmente lidos/criados/alterados/excluídos, o destino e as evidências da verificação.
-~~~
-
-No ChatGPT, não exija substituir as fontes do projeto para cada conversa se o registro puder ser salvo e lido diretamente na Biblioteca. Não alegue que a Biblioteca e as fontes estão sincronizadas.
+2. Identifique o projeto e o ambiente de destino. Não presuma que existe uma pasta na Biblioteca; procure evidências.
+3. Leia o estado atual e as decisões relevantes acessíveis. Consulte históricos apenas quando forem necessários para esclarecer decisões, evidências, dependências ou contradições.
+4. Registre objetivo, estado confirmado, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, riscos e próxima ação.
+5. Crie um arquivo histórico novo em `continuity/chat-<assunto>-<NN>.md`, usando a próxima sequência livre. Nunca sobrescreva registros históricos.
+6. Prepare o conteúdo completo do estado atual e do índice, conforme as alterações necessárias.
+7. Persista de acordo com o ambiente:
+   - **Biblioteca do ChatGPT:** gere uma nova publicação completa com nome versionado; adicione-a; abra/relê e valide-a; só depois tente renomear ou excluir a versão anterior, se a plataforma permitir. Se não permitir, mantenha ambas e declare os status no índice.
+   - **Agente local:** atualize os arquivos canônicos no workspace real e releia-os.
+   - **GitHub:** atualize os arquivos canônicos na branch explicitamente selecionada, crie um novo histórico de conversa quando necessário e releia o conteúdo remoto.
+8. Valide referências, preservação de decisões e integridade do histórico.
+9. Informe os arquivos realmente lidos, criados, atualizados, excluídos e verificados. Se uma operação falhar, preserve a última versão válida e classifique a etapa como `PARCIAL` ou `BLOQUEADO`.
 
 ## 3. Prompt de abertura do próximo chat
 
-O registro de continuidade deve incluir um prompt completo, preenchido, semelhante a:
+Inclua no registro de continuidade um prompt preenchido, semelhante a:
 
-~~~
-Novo chat do projeto [NOME] (sigla [SIGLA]), continuação da conversa registrada em [ARQUIVO].
-1. Leia o registro de continuidade e os arquivos de estado acessíveis no ambiente correto.
+```text
+Novo chat do projeto [NOME] (sigla [SIGLA]), continuação do registro [ARQUIVO].
+
+1. Consulte o índice vigente e leia o estado atual e as decisões relevantes no ambiente correto.
 2. Confirme em até 5 linhas: fase atual, último bloco concluído, bloco em andamento, bloqueios e próxima ação.
 3. Aponte inconsistências entre o registro e os arquivos atuais antes de prosseguir.
-4. Não trate hipóteses como fatos nem refaça trabalho já comprovado.
-5. Aguarde confirmação apenas se houver decisão pendente que altere materialmente a execução; caso contrário, prossiga dentro do escopo autorizado.
-~~~
+4. Consulte históricos adicionais somente se forem necessários para esclarecer uma dependência, decisão, evidência ou contradição.
+5. Não trate hipóteses como fatos nem refaça trabalho já comprovado.
+6. Prossiga dentro do escopo autorizado; pergunte apenas se uma decisão pendente alterar materialmente a execução.
+```
 
-## 4. Critério de gravação por ambiente
+## 4. Regras de publicação por ambiente
 
-- **ChatGPT:** procurar e ler a Biblioteca acessível; criar registro separado quando a ferramenta permitir; pesquisar e reler após a gravação. Fontes do projeto são separadas e não devem ser tratadas como cópia sincronizada.
-- **Agentes locais:** gravar no workspace real e reler o arquivo.
-- **GitHub:** conferir repositório, branch e caminho; criar registro sem sobrescrever o histórico; confirmar o conteúdo remoto após commit.
-- **Sem escrita disponível:** fornecer o Markdown completo e marcar a gravação como BLOQUEADO.
+### 4.1 Biblioteca do ChatGPT
 
-O handoff só está concluído quando o registro estiver persistido e verificado, ou quando o bloqueio de gravação estiver claramente documentado.
+A Biblioteca funciona como repositório de publicações, não como um sistema de edição concorrente.
 
+1. Identifique os arquivos existentes e leia o índice vigente quando acessível.
+2. Gere um arquivo completo com nome de versão novo, por exemplo `current-status-v03.md`, `project-index-v03.md` ou `chat-continuidade-04.md`.
+3. Adicione a publicação.
+4. Abra/relê o arquivo e verifique conteúdo completo, referências e versão.
+5. Só depois tente renomear ou excluir a versão anterior, se a plataforma permitir.
+6. Se não for possível renomear ou excluir, mantenha as duas versões e marque claramente no índice `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`.
+7. Se a nova publicação não puder ser lida de volta, a versão anterior continua válida. Não declare sucesso.
+8. Se não houver capacidade de escrita, entregue o Markdown completo e marque a persistência como `BLOQUEADO`.
 
-## 5. Seleção de contexto e índice versionado
+Não carregue todos os históricos por padrão. Comece pelo estado atual e pelas decisões relevantes.
 
-### 5.1 Catálogo e seleção
+### 4.2 Agentes locais
 
-O índice `project-index-vN.md` é o catálogo central para os registros de continuidade da Biblioteca do ChatGPT. Cada registro de conversa mantém nome sequencial por assunto, como `project-index-prompt_01.md` e `project-index-bug_01.md`. Esses registros são históricos independentes e não devem ser apagados ao atualizar o índice.
+- Confirme o workspace e o caminho antes de editar.
+- Atualize os arquivos canônicos existentes; não gere cópias de estado sem necessidade.
+- Preserve históricos e decisões anteriores.
+- Releia os arquivos após gravar.
 
-Ao preparar a continuidade, ofereça estas opções:
+### 4.3 GitHub
 
-- todos os registros catalogados pertinentes ao projeto;
-- um ou vários registros escolhidos pelo usuário;
-- o registro mais recente de um assunto específico;
-- somente o estado atual do projeto.
+- Confirme repositório, branch e caminho.
+- Inspecione os arquivos atuais antes de alterar.
+- Atualize `current-status.md`, `decisions.md) e o índice canônico diretamente, conforme necessário.
+- Crie um novo arquivo de histórico para cada fechamento que deva ser preservado.
+- Releia os arquivos remotos e verifique o diff após o commit. Não grave em `main` quando uma branch de trabalho tiver sido selecionada.
 
-A escolha determina quais históricos serão lidos. Leia também as dependências necessárias, mas não carregue todos os históricos por padrão. Se o índice não catalogar um arquivo que aparece na listagem real, sinalize a divergência antes de confiar no catálogo.
+## 5. Modelo lógico dos arquivos
 
-### 5.2 Versionamento
+- `current-status.md`: estado operacional atual, próxima ação, testes e bloqueios.
+- `decisions.md`: decisões aprovadas; decisões substituídas permanecem identificadas.
+- `project-index-vN.md`: catálogo versionado na Biblioteca. Cada entrada contém nome, papel, status, versão/data quando aplicável e referência à versão substituta.
+- `continuity/chat-<assunto>-<NN>.md`: histórico imutável de cada conversa.
 
-1. Identificar e ler a única versão vigente `project-index-vN.md`.
-2. Preparar a próxima versão com número sequencial livre, preservando o conteúdo anterior e alterando somente o necessário.
-3. Incluir no arquivo: versão nova, data, versão anterior, motivo, seções modificadas e registros adicionados/removidos.
-4. Gravar a nova versão e pesquisar/listar e reler o arquivo persistido.
-5. Conferir que o conteúdo anterior relevante foi preservado, que as mudanças estão presentes e que o catálogo corresponde aos registros reais.
-6. Somente após a validação, excluir a versão anterior.
-7. Listar novamente e confirmar que somente a última versão do índice permanece.
+Cada papel lógico deve ter uma única publicação `VIGENTE) quando houver evidência suficiente. O índice deve identificar as versões `SUBSTITUÍDO) e `ARQUIVADO). Se houver ambiguidade que não possa ser resolvida pelos arquivos disponíveis, interrompa a retomada e registre `BLOQUEADO`.
 
-### 5.3 Falhas e proteção contra perda
+## 6. Critério de conclusão
 
-Se a ferramenta não permitir criação, leitura de verificação ou exclusão, preservar a última versão comprovadamente válida e marcar a operação como `BLOQUEADO`. Descrever o passo que falhou e fornecer o conteúdo completo que precisa ser salvo manualmente. Não presumir que a Biblioteca e as fontes do projeto estão sincronizadas. Não tentar contornar a falha criando indefinidamente arquivos alternativos.
+A continuidade só pode ser classificada como `CONCLUÍDO` quando os arquivos necessários tiverem sido persistidos e verificados no ambiente real. Se parte da operação foi concluída, mas a publicação, releitura ou atualização do índice ficou pendente, use `PARCIAL). Se a plataforma impediu uma etapa necessária, use `BLOQUEADO`. Se a operação executada produziu resultado incorreto, use `FALHOU`.
 
-### 5.4 Critério de conclusão
-
-A continuidade só pode ser classificada como concluída quando o registro da conversa e a nova versão do índice tiverem sido lidos de volta com sucesso, o catálogo estiver consistente e a listagem final confirmar que apenas a última versão do índice permanece. Se o registro tiver sido criado, mas a atualização ou exclusão do índice estiver bloqueada, classificar o fluxo como `PARCIAL` ou `BLOQUEADO` e informar a evidência.
+Sempre diferencie testes executados, não executados e bloqueados. Não declare que um arquivo foi criado, alterado ou lido sem evidência.
