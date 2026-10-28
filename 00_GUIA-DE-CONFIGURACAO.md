@@ -88,7 +88,7 @@ A continuidade mantém quatro papéis lógicos, independentemente do ambiente:
 - `current-status.md`: fotografia do estado atual confirmado; atualizável.
 - `decisions.md`: decisões aprovadas e seu histórico; não registrar recomendações como decisões aprovadas.
 - `project-index-vN.md`: catálogo versionado dos registros e dos arquivos vigentes.
-- `continuity/chat-<assunto>-<NN>.md`: registro imutável de cada conversa encerrada, incluindo o prompt completo para o próximo chat.
+- `continuity/chat-<assunto>_<NN>.md`: registro imutável de cada conversa encerrada, incluindo o prompt completo para o próximo chat.
 
 Use nomes de assunto claros e sequências livres. Exemplos: `chat-prompt-bug_01.md`, `chat-prompt-prompt_01.md`. Antes de criar um registro, pesquise/listar os arquivos da série e escolha o próximo número disponível. Nunca sobrescreva um histórico anterior.
 
@@ -137,7 +137,7 @@ O fluxo principal é **localizar → ler → retomar → registrar → publicar 
 1. Consultar `03_continuidade/handoff-novo-chat.md` e somente os templates necessários.
 2. Registrar fatos confirmados, mudanças realizadas, evidências, bugs, decisões aprovadas, testes executados/não executados/bloqueados, pendências, riscos e próxima ação.
 3. Incluir o prompt completo de abertura do próximo chat, com instrução explícita para ler o índice, o estado, decisões relevantes e históricos necessários.
-4. Criar um novo arquivo `continuity/chat-<assunto>-<NN>.md), sem sobrescrever históricos existentes.
+4. Criar um novo arquivo `continuity/chat-<assunto>_<NN>.md), sem sobrescrever históricos existentes.
 5. Publicar/gravar o arquivo no destino real e relê-lo integralmente, ou com verificação suficiente para confirmar todo o conteúdo, integridade e referências.
 6. Atualizar `current-status.md` se o estado confirmado mudou. Atualizar o índice se foram adicionados registros, alterados estados ou modificadas referências. Preservar o histórico das decisões aprovadas.
 7. Na Biblioteca, publicar versões físicas novas para estado/índice quando necessário; validar a nova publicação antes de tentar remover/renomear a anterior. Se remoção/renomeação não for suportada, manter versões identificadas no índice.
