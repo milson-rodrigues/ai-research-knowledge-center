@@ -110,7 +110,7 @@ Use nomes de assunto claros e sequências livres. Exemplos: `chat-prompt-bug_01.
 
 - Confirme repositório, branch e caminhos; inspecione os arquivos existentes antes de alterar.
 - Atualize os arquivos vigentes diretamente na branch autorizada e adicione históricos em novos arquivos.
-- Releia os arquivos remotos e verifique o diff/commit. Não altere `main) quando uma branch de teste estiver selecionada.
+- Releia os arquivos remotos e verifique o diff/commit. Não altere `main` quando uma branch de teste estiver selecionada.
 
 ### 4.4 Identificar projeto e arquivos
 
@@ -127,7 +127,7 @@ O fluxo principal é **localizar → ler → retomar → registrar → publicar 
 #### Ao iniciar ou continuar um chat
 
 1. Ler o índice vigente e `current-status.md` (ou a publicação física vigente na Biblioteca).
-2. Ler `decisions.md) para decisões relevantes ao trabalho atual.
+2. Ler `decisions.md` para decisões relevantes ao trabalho atual.
 3. Selecionar e ler históricos pertinentes, seguindo referências do índice. Não carregar todo o histórico por padrão; consultar registros adicionais quando houver dependências, bugs, decisões, evidências ou contradições a esclarecer.
 4. Comparar o resumo com as evidências e os arquivos atuais acessíveis. Distinguir fatos verificados, relatos, hipóteses e pendências.
 5. Confirmar fase, último trabalho comprovado, testes executados/não executados/bloqueados e próxima ação. Só então prosseguir.
@@ -139,7 +139,7 @@ O fluxo principal é **localizar → ler → retomar → registrar → publicar 
 3. Incluir o prompt completo de abertura do próximo chat, com instrução explícita para ler o índice, o estado, decisões relevantes e históricos necessários.
 4. Criar um novo arquivo `continuity/chat-<assunto>-<NN>.md), sem sobrescrever históricos existentes.
 5. Publicar/gravar o arquivo no destino real e relê-lo integralmente, ou com verificação suficiente para confirmar todo o conteúdo, integridade e referências.
-6. Atualizar `current-status.md) se o estado confirmado mudou. Atualizar o índice se foram adicionados registros, alterados estados ou modificadas referências. Preservar o histórico das decisões aprovadas.
+6. Atualizar `current-status.md` se o estado confirmado mudou. Atualizar o índice se foram adicionados registros, alterados estados ou modificadas referências. Preservar o histórico das decisões aprovadas.
 7. Na Biblioteca, publicar versões físicas novas para estado/índice quando necessário; validar a nova publicação antes de tentar remover/renomear a anterior. Se remoção/renomeação não for suportada, manter versões identificadas no índice.
 8. Informar exatamente o que foi lido, criado, atualizado e verificado. Se uma operação falhar, preservar a última versão válida e marcar a etapa como `PARCIAL` ou `BLOQUEADO`.
 
