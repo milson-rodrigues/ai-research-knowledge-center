@@ -12,9 +12,9 @@ Procedimento do fluxo `CONT-01`. A estrutura lógica é compartilhada, mas a per
 
 1. Consulte o guia canônico, este procedimento e apenas os templates necessários.
 2. Identifique o ambiente e a pasta do projeto real. Não presuma a existência de pasta ou arquivo sem evidência. Se a pasta do projeto estiver identificada, mas a subpasta `continuidade` não existir, crie `continuidade` dentro da pasta do projeto, desde que a plataforma permita. Não crie a pasta em outro local.
-3. Leia o estado atual, o índice vigente e as decisões relevantes, quando acessíveis. Consulte históricos apenas quando necessários para resolver dependências, evidências, decisões ou contradições.
+3. Leia o índice vigente, o estado atual e as decisões relevantes. Consulte os históricos pertinentes apontados pelo índice; carregue outros registros somente quando necessários para dependências, evidências, decisões ou contradições.
 4. Registre fatos confirmados, decisões aprovadas, evidências, testes executados/não executados/bloqueados, pendências, riscos, próxima ação e prompt completo de abertura do próximo chat.
-5. Crie um novo histórico em `continuity/chat-<assunto>-<NN>.md`, usando a próxima sequência livre. Nunca sobrescreva ou exclua históricos anteriores como parte da continuidade.
+5. Crie um novo histórico em `continuity/chat-<assunto>_<NN>.md`, usando a próxima sequência livre (por exemplo, `chat-prompt-bug_01.md`). Nunca sobrescreva ou exclua históricos anteriores como parte da continuidade.
 6. Valide conteúdo, referências e coerência com o estado atual.
 7. Persista conforme o ambiente abaixo. Não declare sucesso sem evidência de gravação e releitura.
 
@@ -40,9 +40,9 @@ Modelo lógico:
 - `current-status.md`: estado operacional atual. Na Biblioteca, a publicação física pode ter sufixo de versão, por exemplo `current-status-v03.md`.
 - `decisions.md`: decisões aprovadas; recomendações não aprovadas não entram como decisões.
 - `project-index-vN.md`: catálogo versionado e ponto de entrada.
-- `continuity/chat-<assunto>-<NN>.md`: histórico imutável de cada conversa.
+- `continuity/chat-<assunto>_<NN>.md`: histórico imutável de cada conversa.
 
-O índice deve declarar o nome do arquivo, papel, versão/data quando aplicável, status e referência à versão substituta/anterior. Não carregue o histórico completo por padrão: comece pelo estado vigente e pelas decisões relevantes.
+O índice deve declarar o nome do arquivo, papel, versão/data quando aplicável, status e referência à versão substituta/anterior. O histórico é append-only: cada encerramento relevante gera novo registro. Não carregue o histórico completo por padrão: comece pelo estado vigente, decisões relevantes e registros pertinentes ao assunto.
 
 ### 3.2 Agentes locais
 
