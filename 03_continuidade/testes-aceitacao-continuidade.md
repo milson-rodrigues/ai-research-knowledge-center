@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Validar separadamente a continuidade na Biblioteca do ChatGPT, em workspace de agente e no GitHub. Os critérios abaixo não significam que os testes foram executados.
+Validar primeiro o ciclo funcional principal de continuidade: localizar o destino, criar/ler arquivos válidos, registrar o estado real e retomar o trabalho. Os testes de falha são complementares e não são pré-requisito para utilizar o fluxo normal.
 
 ## Estados permitidos
 
@@ -11,54 +11,47 @@ Validar separadamente a continuidade na Biblioteca do ChatGPT, em workspace de a
 - `BLOQUEADO`: ambiente/ferramenta impediu uma etapa necessária.
 - `FALHOU`: operação executada, mas resultado incorreto.
 
-## Preparação
-
-1. Identificar projeto, ambiente e destino real.
-2. Listar arquivos existentes e ler índice/estado atuais, quando acessíveis.
-3. Registrar versões e evidências antes de alterar arquivos.
-4. Preferir arquivos de teste descartáveis.
-5. Nunca excluir a última versão comprovadamente válida antes de validar a substituta.
-
-## Cenários de aceitação
+## Cenários principais — devem ser priorizados
 
 | ID | Cenário | Procedimento | Critério de aprovação | Estado/evidência |
 |---|---|---|---|---|
-| CT-01 | Identificar projeto e destino | Localizar projeto e pasta `continuidade`; se o projeto existir e a subpasta estiver ausente, criá-la no local correto e confirmar sua presença | Projeto e caminho confirmados; subpasta criada quando ausente e suportada; falha de acesso não é confundida com inexistência | Pendente |
-| CT-02 | Publicar versão na Biblioteca | Criar arquivo completo com nome novo, adicionar e reler | Nova publicação acessível e completa antes de alterar a anterior | Pendente |
-| CT-03 | Renomear/excluir versão anterior | Após validar a nova, tentar a operação se suportada | Se indisponível, preservar ambas e registrar a limitação no índice | Pendente |
-| CT-04 | Separar estado e histórico | Inspecionar papéis dos arquivos | Estado, decisões, catálogo e históricos têm responsabilidades distintas | Pendente |
-| CT-05 | Status de publicação | Registrar status no índice | Status `VIGENTE`, `SUBSTITUÍDO` ou `ARQUIVADO`; uma vigente por papel quando determinável | Pendente |
-| CT-06 | Falha ao criar versão | Simular ou observar falha de gravação | Versão anterior preservada; operação marcada `BLOQUEADO` | Pendente |
-| CT-07 | Falha de releitura | Não conseguir abrir/validar nova publicação | Não declarar sucesso nem excluir versão anterior | Pendente |
-| CT-08 | Falha ao excluir/renomear | Operação indisponível ou falha | Manter ambas; índice identifica a vigente; sem cópias de contorno | Pendente |
-| CT-09 | Atualização em agente/GitHub | Atualizar arquivo canônico e reler | Destino correto, conteúdo persistido e alterações delimitadas | Pendente |
-| CT-10 | Histórico imutável | Criar novo registro de conversa | Históricos anteriores não são sobrescritos ou removidos | Pendente |
-| CT-11 | Carregamento mínimo | Retomar a partir do estado vigente | Ler estado e decisões relevantes; buscar histórico adicional somente quando necessário | Pendente |
-| CT-12 | Seleção de históricos | Escolher um ou mais registros | Ler apenas selecionados e dependências necessárias | Pendente |
-| CT-13 | Índice divergente | Comparar catálogo com arquivos reais | Divergências reportadas antes de confiar no catálogo | Pendente |
-| CT-14 | Versões ambíguas | Apresentar múltiplas versões sem status claro | Não escolher por suposição; resolver por evidência ou bloquear | Pendente |
-| CT-15 | Prompt de abertura | Gerar e usar o handoff | Próxima ação, bloqueios e decisões confirmados nas fontes disponíveis | Pendente |
-| CT-16 | Relatório final | Consolidar a execução | Separar testes executados, não executados e bloqueados com evidências | Pendente |
+| CORE-01 | Localizar projeto e destino | Identificar projeto e pasta de continuidade; criar `continuity/` no projeto correto se ausente e suportado | Destino confirmado; ausência não é confundida com falha de acesso; pasta criada no local correto quando possível | Pendente |
+| CORE-02 | Criar registro de histórico válido | Consultar template aplicável, registrar fatos do chat, testes, evidências, bugs, decisões, pendências e próximo passo | Arquivo completo, sem fatos inventados, com prompt integral de abertura do próximo chat | Pendente |
+| CORE-03 | Persistir e reler histórico | Gravar/publicar o novo registro no ambiente selecionado e abri-lo novamente | Conteúdo persistido, acessível, íntegro e no destino correto | Pendente |
+| CORE-04 | Ler contexto para retomar | Ler índice vigente, estado atual, decisões relevantes e históricos pertinentes | Retomada correta, com separação entre fatos confirmados, relatos, hipóteses e pendências; sem carregar todo o histórico por padrão | Pendente |
+| CORE-05 | Atualizar estado e índice | Quando o registro mudar o estado ou catálogo, publicar/atualizar os arquivos correspondentes | Estado atual reflete evidências; índice aponta para arquivos reais e versão vigente; decisões aprovadas preservadas | Pendente |
+| CORE-06 | Histórico append-only | Criar outro registro sobre o mesmo assunto | Usar próxima sequência livre; não sobrescrever nem remover registros anteriores | Pendente |
+| CORE-07 | Adaptadores de persistência | Executar ciclo no ambiente selecionado (Biblioteca, workspace de agente ou GitHub) | Operações correspondem às capacidades reais do ambiente; gravação seguida de releitura | Pendente |
+| CORE-08 | Prompt de continuidade | Inspecionar o prompt de abertura incluído no registro | Instrui o próximo chat a ler índice, estado, decisões e históricos necessários antes de agir | Pendente |
+
+## Cenários complementares — falhas e casos-limite
+
+Esses cenários não bloqueiam o uso normal do ciclo principal. Executá-los quando houver oportunidade segura ou quando o plano de teste exigir. Não simular falhas destrutivas sobre a última versão válida.
+
+| ID | Cenário | Procedimento | Critério de aprovação | Estado/evidência |
+|---|---|---|---|---|
+| AUX-01 | Falha ao criar/publicar | Observar ou testar falha segura de gravação | Preservar última versão válida; marcar a etapa como `BLOQUEADO`; não declarar sucesso | Pendente |
+| AUX-02 | Falha de releitura | Não conseguir abrir/validar nova publicação | Não excluir a versão anterior nem afirmar persistência | Pendente |
+| AUX-03 | Renomear/excluir indisponível | Verificar capacidade real do ambiente após validar a nova publicação | Preservar versões e indicar claramente a vigente no índice | Pendente |
+| AUX-04 | Índice divergente | Comparar índice com arquivos reais | Reportar divergências e não confiar cegamente no catálogo | Pendente |
+| AUX-05 | Versões ambíguas | Encontrar múltiplas versões sem status claro | Resolver por evidência ou bloquear a seleção, sem adivinhar | Pendente |
 
 ## Registro obrigatório de cada execução
 
-Para cada cenário, registrar data, ambiente, projeto/caminho, arquivos consultados, operação executada, evidência antes/depois, resultado, status e próxima ação.
+Para cada cenário executado, registrar data, ambiente, projeto/caminho, arquivos consultados, operação, evidência antes/depois, resultado, status e próxima ação. Marcar explicitamente cenários não executados e bloqueados. A existência do procedimento não significa que o teste foi executado.
 
-## Critério de aprovação do fluxo completo
+## Critério de aprovação do ciclo principal
 
-1. Projeto e destino identificados por evidência.
-2. Na Biblioteca, nova publicação completa é adicionada e relida antes de alterar a anterior.
-3. Se não houver suporte a exclusão/renomeação, versões antigas permanecem e o índice declara a vigente.
-4. Estado atual, decisões, índice e histórico têm papéis separados.
-5. O índice registra status e referências de versão.
-6. Se a nova publicação não puder ser lida, a versão anterior permanece válida.
-7. O contexto inicial usa estado e decisões relevantes, sem carregar todo o histórico por padrão.
-8. Históricos não são sobrescritos nem removidos.
-9. Testes são executados separadamente por ambiente; aprovação em um não comprova os demais.
+O ciclo principal pode ser considerado `CONCLUÍDO` quando:
 
-Não marque um cenário como executado apenas porque seu procedimento está documentado.
+1. Projeto e destino foram identificados por evidência.
+2. Um histórico completo foi criado a partir de informações sustentadas pelo chat e pelas evidências.
+3. O histórico foi persistido e relido no ambiente real.
+4. O contexto foi recuperado usando índice, estado atual, decisões relevantes e históricos necessários.
+5. O registro contém o prompt completo de abertura do próximo chat.
+6. Históricos anteriores foram preservados.
+7. Testes executados, não executados e bloqueados estão separados.
+8. O índice e o estado foram atualizados quando necessário.
 
+A aprovação do ciclo principal não implica que os cenários complementares de falha foram executados nem que todos os adaptadores foram validados. Cada ambiente deve ser validado separadamente.
 
-### Regra de criação para CT-01
-
-A ausência de `continuidade/` dentro de uma pasta de projeto identificada não é, por si só, um bloqueio. O executor deve criar a subpasta no projeto correto quando a plataforma permitir e verificar que ela existe. Em seguida, deve inspecionar os arquivos necessários e criar os que estiverem ausentes a partir dos templates aplicáveis, identificando claramente arquivos iniciais. É bloqueio somente se o projeto/destino não puder ser identificado ou a operação necessária não estiver disponível. Nunca criar uma pasta substituta em outro local.
